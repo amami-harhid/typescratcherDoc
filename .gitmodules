@@ -1,0 +1,4 @@
+[submodule "docs/.vitepress/dist"]
+	path = docs/.vitepress/dist
+	url = https://github.com/amami-harhid/typescratcherDoc.git
+	branch = gh-pages
