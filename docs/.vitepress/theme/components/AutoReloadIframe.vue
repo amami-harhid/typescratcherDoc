@@ -17,14 +17,14 @@ onMounted(() => {
       if (entry.isIntersecting) {
         // 画面内に入ったら iframe を再生成
         showIframe.value = true
-        iframeRef.value.src = `${src}?timestamp=${new Date().getTime()}`
       } else {
         // 画面外に出たら iframe を破棄
         showIframe.value = false
+        iframeRef.value.src = `${src}?timestamp=${new Date().getTime()}`
       }
     },
     {
-      threshold: 0
+      threshold: 0  // 完全に隠れたときに発動
     }
   )
 
