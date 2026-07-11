@@ -1,0 +1,16 @@
+{
+  "name": "@tscratch3/typescratcherDoc",
+  "version": "0.0.1",
+  "description": "TypeScript library that generates Scratch 3-style drawings",
+  "author": "amami-harhid",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

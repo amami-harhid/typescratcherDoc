@@ -1,0 +1,52 @@
+/* ボタンの背景色や文字色、ホバー時の色を指定 */
+.VPButton.green {
+  border-color: #22c55e !important;
+  color: #ffffff !important;
+  background-color: #22c55e !important;
+}
+
+.VPButton.green:hover {
+  border-color: #16a34a !important;
+  background-color: #16a34a !important;
+}
+.VPButton.orange {
+  border-color: #fcac20 !important;
+  color: #ffffff !important;
+  background-color: #fcac20 !important;
+}
+
+.VPButton.orange:hover {
+  border-color: #fcac20 !important;
+  background-color: #fcac20 !important;
+}
+.VPButton.red {
+  border-color: #fc2020 !important;
+  color: #ffffff !important;
+  background-color: #fc2020 !important;
+}
+
+.VPButton.red:hover {
+  border-color: #fc2020 !important;
+  background-color: #fc2020 !important;
+}
+.VPButton.black {
+  border-color: #202020 !important;
+  color: #ffffff !important;
+  background-color: #202020 !important;
+}
+
+.VPButton.black:hover {
+  border-color: #202020 !important;
+  background-color: #202020 !important;
+}
+
+h1.heading > .name, h1.heading > text {
+
+    max-width: 90%;
+}
+
+img {
+    display: block; 
+    margin: auto;
+    width: 100%;
+}
