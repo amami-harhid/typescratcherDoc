@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
     title: "TypeScratcher",
-    base: "/typescratcherDoc/.vitepress/dist/",
+    base: "/typescratcherDoc/",
     description: "Scratch3風TypeScriptゲームエンジン",
     themeConfig: {
         // 画面右上のナビゲーション
