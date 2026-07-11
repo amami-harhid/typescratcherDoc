@@ -40,8 +40,7 @@
   background-color: #202020 !important;
 }
 
-h1.heading > .name, h1.heading > text {
-
+.VPHome span.name, span.text {
     max-width: 90%;
 }
 
@@ -49,4 +48,21 @@ img {
     display: block; 
     margin: auto;
     width: 100%;
+}
+
+p {
+  font-weight:500;
+}
+
+.vp-doc h2 {
+  background-color:#fc2020;
+  color:#ffffff;
+  display:flex;
+  align-items: center;
+  min-height: 70px;
+  padding-top: 0;
+  padding-left: 15px;
+}
+.tip p {
+  font-weight:600;
 }

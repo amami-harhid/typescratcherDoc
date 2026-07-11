@@ -1,12 +1,18 @@
 ---
 outline: deep
 ---
+
+
 # Samples
 
 ## Sample01
 ::: tip エンジン起動
 スプライトや背景がない状態でエンジンだけ起動する例です
 :::
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/001/"
+/>
 
 **`index.html`**
 ```html:line-numbers
@@ -33,6 +39,10 @@ Ts.engine.start();
 ::: tip スプライトとステージを表示
 画像を読み込み、スプライトや背景を作成して表示する例です
 :::
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/002/"
+/>
 
 **`index.ts`**
 ```typescript:line-numbers
@@ -63,6 +73,12 @@ Ts.engine.start();
 ::: tip スプライトを移動させてみよう
 旗をクリックしたら少しだけ進ませる
 :::
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/003/"
+/>
+
+
 **`index.ts`**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -93,6 +109,12 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
 // 開始
 Ts.engine.start();
 ```
-<video width="100%" controls preload="metadata">
-<source src="/sample03.mp4" type="video/mp4"></source>
-</video>
+## Sample04
+
+::: tip ずっと繰り返す
+旗クリックで「ずっと」動き続けるに挑戦しよう
+:::
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/004/"
+/>

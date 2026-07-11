@@ -1,4 +1,9 @@
-import DefaultTheme from 'vitepress/theme' // デフォルトのデザインを読み込む
+import DefaultTheme from 'vitepress/theme'
 import './custom.css'                      // 自分のカスタムCSSを読み込む
-
-export default DefaultTheme
+import AutoReloadIframe from './components/AutoReloadIframe.vue'
+export default{
+    extends: DefaultTheme,
+    enhanceApp({ app }) {
+        app.component('AutoReloadIframe', AutoReloadIframe)
+    }
+}

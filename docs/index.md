@@ -23,6 +23,7 @@ hero:
       text: GitHub
       link: https://github.com/amami-harhid/typescratcher
 
+
 features:
   - title: "Scratch3を愛するすべての方へ"
     details: "慣れ親しんだScratch3の動きを実現することができます"
@@ -38,3 +39,5 @@ features:
     details: "Typescriptの型を使った補完機能、ESLINTによる構文チェック機能を提供し、思考をプログラミングに集中させ、かつコードミスを未然に防止します"
 
 ---
+
+
