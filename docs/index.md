@@ -14,9 +14,12 @@ hero:
       text: クイックスタート
       link: /02_quickStart/
     - theme: brand
+      text: いろいろ試そう
+      link: /03_tryVarious
+    - theme: green
       text: 使用方法
       link: /03_how_to_use/
-    - theme: green
+    - theme: orange
       text: リファレンス
       link: /api/
     - theme: alt
