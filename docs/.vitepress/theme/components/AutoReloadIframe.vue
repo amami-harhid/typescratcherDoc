@@ -15,12 +15,15 @@ onMounted(() => {
   observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        // 画面内に入ったら iframe を再生成
+        // 画面内に入った
         showIframe.value = true
       } else {
-        // 画面外に出たら iframe を破棄
+        // 画面外に出た
+        if(showIframe.value == true){
+          // ロード済の場合、再ロードする
+          iframeRef.value.src = `${src}?timestamp=${new Date().getTime()}`
+        }
         showIframe.value = false
-        iframeRef.value.src = `${src}?timestamp=${new Date().getTime()}`
       }
     },
     {

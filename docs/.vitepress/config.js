@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-    title: "TypeScratcher",
+    title: "TypeScratcher documentation",
     base: "/typescratcherDoc/web/",
     outDir: '../web',
     description: "Scratch3風TypeScriptゲームエンジン",
@@ -9,24 +9,39 @@ export default defineConfig({
         // 画面右上のナビゲーション
         nav: [
             { text: 'ホーム', link: '/' },
-            { text: 'APIリファレンス', link: '/api/' }
         ],
         // 左側のサイドバー（TypeDocが出力したファイルを読み込む設定）
         sidebar: [
             {
-                text: 'ガイド',
+                text: '目次',
                 items: [
-                    { text: '※はじめに', link: '/' }
+                    { text: 'ホーム', link: '/' },
+                    { text: '- はじめに', link: '/01_introduction/' },
+                    { text: '- QuickStart', link: '/02_quickStart/' },
+                    { text: '-- エンジン起動', link: '/02_quickStart/001/' },
+                    { text: '-- スプライト背景表示', link: '/02_quickStart/002/' },
+                    { text: '-- スプライト移動', link: '/02_quickStart/003/' },
+                    { text: '-- ずっと繰り返す', link: '/02_quickStart/004/' },
+                    { text: '-- 画像の切り替え', link: '/02_quickStart/005/' },
+                    { text: '-- 音を鳴らす', link: '/02_quickStart/006/' },
+                    { text: '-- フキダシを表示', link: '/02_quickStart/007/' },
+                    { text: '-- クローンを作る', link: '/02_quickStart/008/' },
+                    { text: '- いろいろ試す', link: '/03_tryVarious/' },
+                    { text: '-- 大きくしたり小さくしたり', link: '/03_tryVarious/001/' },
+                    { text: '-- 画像効果を変化させてみよう', link: '/03_tryVarious/002/' },
+                    { text: '-- ペンを引いたりスタンプしたり', link: '/03_tryVarious/003/' },
+                    { text: '-- 色に触れたとき', link: '/03_tryVarious/004/' },
+                    { text: '-- いろいろなジャンプ', link: '/03_tryVarious/005/' },
+                    { text: '-- 自由落下', link: '/03_tryVarious/006/' },
+                    { text: '-- 質問をする', link: '/03_tryVarious/007/' },
+                    { text: '-- 音の効果（音量・ピッチ）', link: '/03_tryVarious/008/' },
+                    { text: '- 使用方法', link: '/03_how_to_use/' },
+                    { text: '- ガイダンス', link: '/04_guidance/' },
                 ]
             },
-            {
-                text: 'API リファレンス',
-                // TypeDoc(vitepressテーマ)が書き出す目次ファイルにリンク
-                link: '/api/', 
-            }
         ],
         socialLinks: [
-            { icon: 'github', link: 'https://github.com' }
+            { icon: 'github', link: 'https://github.com/amami-harhid/typescratcher' }
         ]
     },
     head: [

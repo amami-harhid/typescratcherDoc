@@ -5,14 +5,14 @@ layout: home
 hero:
   name: "Scratch3風ゲームエンジン"
   text: "TypeScratcher"
-  tagline: "コードプログラミングへScratch3のアイデアを結び付けよう"
+  tagline: "Scratch3のアイデアとコードプログラミングを結び付けよう"
   actions:
     - theme: orange
       text: はじめに
       link: /01_introduction/
     - theme: red
-      text: サンプル
-      link: /02_samples/
+      text: クイックスタート
+      link: /02_quickStart/
     - theme: brand
       text: 使用方法
       link: /03_how_to_use/
