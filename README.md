@@ -1,15 +1,27 @@
 # typescratcherDoc
 
-これは、VitaPressで作られている「TypeScratcherの解説サイト」です。  
+これは、「TypeScratcherの解説サイト」です。
 
-[公開サイトはここから見てください](https://amami-harhid.github.io/typescratcherDoc/web/)
+VitaPressを使って作成しています。
 
+[公開サイトはこちらです](https://amami-harhid.github.io/typescratcherDoc/web/)
 
-# npm run docs:dev
+# npm scripts
+
+```
+npm run docs:dev
+```
 
 ビルド無しで閲覧確認ができます。
 
-# npm run docs:build
+```
+npm run docs:build
+```
 
 ビルドして、生成結果を `/web` へ出力します。
 
+# Scratch3 Block
+
+次のサイトで画像化しています。
+
+[scratchblocks](https://scratchblocks.github.io/)
