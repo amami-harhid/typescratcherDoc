@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-    title: "TypeScratcher documentation",
+    title: "TypeScratcher Docs",
     base: "/typescratcherDoc/web/",
     outDir: '../web',
     description: "Scratch3風TypeScriptゲームエンジン",
@@ -40,7 +40,12 @@ export default defineConfig({
                     { text: '-- テキストを音声に', link: '/03_tryVarious/011/' },
                     { text: '-- テキストを画像に', link: '/03_tryVarious/012/' },
                     { text: '- 使用方法', link: '/04_how_to_use/' },
-                    { text: '- ガイダンス', link: '/05_guidance/' },
+                    { text: '-- VS-CODE', link: '/04_how_to_use/001_vscode/' },
+                    { text: '- レファレンス', link: '/05_reference/' },
+                    { text: '-- IMPORTと起動', link: '/05_reference/01_import/' },
+                    { text: '-- イメージ', link: '/05_reference/02_image/' },
+                    { text: '-- サウンド', link: '/05_reference/03_sound/' },
+                    { text: '-- スプライト', link: '/05_reference/04_sprite/' },
                 ]
             },
         ],

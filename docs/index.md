@@ -18,10 +18,10 @@ hero:
       link: /03_tryVarious
     - theme: green
       text: 使用方法
-      link: /03_how_to_use/
+      link: /04_how_to_use/
     - theme: orange
       text: リファレンス
-      link: /api/
+      link: /05_reference/
     - theme: alt
       text: GitHub
       link: https://github.com/amami-harhid/typescratcher
