@@ -136,7 +136,7 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/007/"
 />
 
 ::: tip メッセージ
-緑を旗を押して開始します。<br>
+緑の旗を押して開始します。<br>
 <br>
 (1) スペースキーを押すと『ねこ』が質問します。<br>
 (2) Ａキーを押すと、『ステージ』が質問をします。<br>

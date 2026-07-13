@@ -119,7 +119,7 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/008/"
 />
 
 ::: tip メッセージ
-緑を旗を押して開始します。<br>
+緑の旗を押して開始します。<br>
 <br>
 (1) スペースキーを押すと『Chill』が鳴り始めます<br>
 (2) Ｄキーを押すと、音量が５下がります（下限０）<br>

@@ -11,6 +11,10 @@ outline: deep
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
+// デバグモード=Trueのとき
+// スプライトを囲む矩形を自動描画する
+Ts.Env.debugMode = true;
+
 // 【画像読み込み】
 import catSvg from './assets/cat.svg';
 import WaterSvg from './assets/water.svg';
@@ -21,18 +25,6 @@ export const CatImage = new Ts.Image( {catSvg} );
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`sub/sounds.ts`**
-```typescript:line-numbers
-import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-
-// 【音読み込み】
-import ChillWav from './assets/Chill.wav';
-
-/* CHILL SOUND */
-export const ChillSound = new Ts.Sound({ChillWav});
-
-```
-
 
 ### **`index.ts`**
 ```typescript:line-numbers
@@ -42,9 +34,6 @@ import { Sprite } from "@tscratch3/typescratcher";
 // イメージを取り込む
 import { CatImage, WaterImage } from './sub/images';
 
-// サウンドを取り込む
-import { ChillSound } from './sub/sounds';
-
 // 【スプライト】(Spriteネコ)
 const cat = new Ts.Sprite('cat');
 
@@ -52,62 +41,80 @@ const cat = new Ts.Sprite('cat');
 cat.Costume.add( [CatImage] );
 cat.Motion.position.xy = [ 0, 0 ];
 
-// サウンドをスプライトへ追加
-cat.Sound.add([ ChillSound ]);
-
 // 【ステージ】(water)
 const stage = new Ts.Stage();
 stage.Backdrop.add( [WaterImage] );
 
-/** 変数：音量 */
-const volume = Ts.Variable.number( 100 ); 
-Ts.Variable.monitoring( { volume } );
-/** 変数：ピッチ */
-const pitch = Ts.Variable.number( 0 );
-Ts.Variable.monitoring( { pitch } );
+// 変数(タッチ)
+const speechText = Ts.Variable.string( 'こら、触ったね' ); 
+Ts.Variable.monitoring( { text: speechText } );
 
 // 緑の旗が押されたときの「ねこ」のスレッド
 cat.Event.flagPresser().func = async function*(this:Sprite){
-    // ずっと繰り返し音を鳴らす
+    this.Looks.size.scale = [250, 250];
+    // Speech 
+    // 国をJAPANESEとし、
+    // 声タイプ(ALTO)⇒声タイプ(FEMAIL)へ新規コピー
+    // 声タイプ(FEMAIL)のピッチを 150 に変更する。
+    this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.VoiceType.ALTO).typeCopyTo("FEMAIL").pitch(150);
+    // Speech 
+    // 国をJAPANESEとし、
+    // 声タイプ(TENOR)⇒声タイプ(MAIL)へ新規コピー
+    // 声タイプ(MAIL)のピッチを 50 に変更する。
+    this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.VoiceType.TENOR).typeCopyTo("MAIL").pitch(50);
+    /** タッチ判定 */
+    const _touch = () => {
+        return this.Sensing.mouse.isTouching;
+    }
+    /** 声タイプ切り分けフラグ */
+    let speechFlag = true;
     for(;;) {
-        await this.Sound.playUntilDone(ChillSound);
+
+        if(_touch()){ // タッチしているとき
+            if(speechFlag){ 
+                // ピッチ加工したFEMAILの声
+                await this.Speech.type("FEMAIL").speech(speechText.text);
+
+            }else{
+                // ピッチ加工したMAILの声
+                await this.Speech.type("MAIL").speech(speechText.text);
+
+            }
+            // 声タイプ反転
+            speechFlag = !speechFlag;
+            // マウスが触っている間、待つ
+            await this.Control.waitWhile(_touch);
+        }
         yield;
     }
 };
 
-// キー「A」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'a' ).func = async function*(this:Sprite) {
-    // ボリュームを あげる
-    this.Sound.addVolume(ChillSound, +5);
-    volume.value = this.Sound.getVolume(ChillSound);
-}
-// キー「D」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'd' ).func = async function*(this:Sprite) {
-    // ボリュームを さげる
-    this.Sound.addVolume(ChillSound, -5);
-    volume.value = this.Sound.getVolume(ChillSound);
-}
-// キー「W」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'w' ).func = async function*(this:Sprite) {
-    // ピッチを あげる
-    this.Sound.addPitch(ChillSound, +5);
-    pitch.value = this.Sound.getPitch(ChillSound);
-}
-// キー「X」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'x' ).func = async function*(this:Sprite) {
-    // ピッチを さげる
-    this.Sound.addPitch(ChillSound, -5);
-    pitch.value = this.Sound.getPitch(ChillSound);
-}
 
 // 開始
 Ts.engine.start();
 ```
 
 ::: warning index.tsについて
-音が鳴っている最終に、音量、ピッチを変更しています。
-『`this.Sound.addVolume(ChillSound, 5);`』 →音量を5だけUPします（マイナス値にするとDOWNします）
-『`this.Sound.addPitch(ChillSound, 5);`』 →ピッチを5だけUPします（マイナス値にするとDOWNします）
+『`this.Speech.locale(Ts.SpeechLocale.JAPANESE)`』 <br>
+locale(国)を設定します。<br>
+デフォルト(省略時)はJAPANESEです。<br>
+ENGLISHにしたい場合は`Ts.SpeechLocale.ENGLISH`とします。<br>
+<br>
+『`this.Speech.type(Ts.VoiceType.ALTO)`』 <br>
+声タイプを選択します。<br>
+<br>
+『`this.Speech.typeCopyTo("FEMAIL")`』 <br>
+新たな声タイプを作り出します。<br>
+ここではピッチを変えてみるので元の声タイプピッチを破壊しないように、新たに声タイプを作り出しています。<br>
+元のALTOのまま使う場合は、新たに作り出す必要はありません。<br>
+<br>
+『`this.Speech.pitch(150)`』 <br>
+現在選択している声タイプのピッチを指定値で設定します。<br>
+<br>
+『`await this.Speech.speech(文字列)`』<br>
+選択中の声タイプによる音声合成を行い、発声します。<br>
+声タイプを切り替えない場合は １度だけ声タイプを選択しておけばよいのですが、声タイプを切り替えて発声したい場合は、『this.Speech.type(声タイプ)』として声タイプを都度選択しましょう。
+
 :::
 
 
@@ -119,13 +126,11 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/"
 />
 
 ::: tip メッセージ
-緑を旗を押して開始します。<br>
+緑の旗を押して開始します。<br>
 <br>
-(1) スペースキーを押すと『Chill』が鳴り始めます<br>
-(2) Ｄキーを押すと、音量が５下がります（下限０）<br>
-(3) Ａキーを押すと、音量が５上がります（上限１００）<br>
-(4) Ｗキーを押すと、ピッチが５上がります（上限３６０）<br>
-(5) Ｘキーを押すと、ピッチが５下がります（下限－３６０）<br>
+スプライトにマウスが触れると、「こら、触ったね」とスピーチします。<br>
+スプライトにマウスが触れるつど、声が「女性」⇒「男性」⇒「女性」・・・<br>
+と切り替わります。
 <br>
 :::
 

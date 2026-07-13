@@ -131,7 +131,7 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/"
 />
 
 ::: tip 線とスタンプ
-緑を旗を押すと、『犬』が左右に動きます。<br>
+緑の旗を押すと、『犬』が左右に動きます。<br>
 キー『A』を押すと、『等速ジャンプ』をします。<br>
 キー『B』を押すと、『放物風ジャンプ』をします。<br>
 :::

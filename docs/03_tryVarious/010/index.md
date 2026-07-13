@@ -18,18 +18,7 @@ import WaterSvg from './assets/water.svg';
 /* ネコ */
 export const CatImage = new Ts.Image( {catSvg} );
 /* 水中 */
-export const WaterImage = new Ts.Image({WaterSvg});
-
-```
-### **`sub/sounds.ts`**
-```typescript:line-numbers
-import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-
-// 【音読み込み】
-import ChillWav from './assets/Chill.wav';
-
-/* CHILL SOUND */
-export const ChillSound = new Ts.Sound({ChillWav});
+export const WaterImage = new Ts.Image( {WaterSvg} );
 
 ```
 
@@ -42,9 +31,6 @@ import { Sprite } from "@tscratch3/typescratcher";
 // イメージを取り込む
 import { CatImage, WaterImage } from './sub/images';
 
-// サウンドを取り込む
-import { ChillSound } from './sub/sounds';
-
 // 【スプライト】(Spriteネコ)
 const cat = new Ts.Sprite('cat');
 
@@ -52,62 +38,47 @@ const cat = new Ts.Sprite('cat');
 cat.Costume.add( [CatImage] );
 cat.Motion.position.xy = [ 0, 0 ];
 
-// サウンドをスプライトへ追加
-cat.Sound.add([ ChillSound ]);
+// 大きさの設定
+cat.Looks.size.scale = [250, 250];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
 stage.Backdrop.add( [WaterImage] );
 
-/** 変数：音量 */
-const volume = Ts.Variable.number( 100 ); 
-Ts.Variable.monitoring( { volume } );
-/** 変数：ピッチ */
-const pitch = Ts.Variable.number( 0 );
-Ts.Variable.monitoring( { pitch } );
+// 変数
+const touch = Ts.Variable.string( '' ); // タッチ
+Ts.Variable.monitoring( { touch } );
 
-// 緑の旗が押されたときの「ねこ」のスレッド
+// 旗が押されたときの「ねこ」のスレッド
 cat.Event.flagPresser().func = async function*(this:Sprite){
-    // ずっと繰り返し音を鳴らす
+    this.Looks.size.scale = [250, 250];
+    touch.text = ''; // 変数の値を初期化
+};
+
+// 旗が押されたときの「ねこ」のスレッド
+cat.Event.flagPresser().func = async function*(this:Sprite){
+    /** 色の変化量 */
+    const changeColor = 15;
     for(;;) {
-        await this.Sound.playUntilDone(ChillSound);
+        if( this.Sensing.mouse.isTouching ) {
+            // マウスが触れたとき
+            this.Looks.effect.change(Ts.ImageEffective.COLOR, changeColor); // 色の効果を変える
+            touch.text = '触れた';
+
+        }else{
+
+            touch.text = '';
+        }
         yield;
     }
 };
-
-// キー「A」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'a' ).func = async function*(this:Sprite) {
-    // ボリュームを あげる
-    this.Sound.addVolume(ChillSound, +5);
-    volume.value = this.Sound.getVolume(ChillSound);
-}
-// キー「D」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'd' ).func = async function*(this:Sprite) {
-    // ボリュームを さげる
-    this.Sound.addVolume(ChillSound, -5);
-    volume.value = this.Sound.getVolume(ChillSound);
-}
-// キー「W」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'w' ).func = async function*(this:Sprite) {
-    // ピッチを あげる
-    this.Sound.addPitch(ChillSound, +5);
-    pitch.value = this.Sound.getPitch(ChillSound);
-}
-// キー「X」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'x' ).func = async function*(this:Sprite) {
-    // ピッチを さげる
-    this.Sound.addPitch(ChillSound, -5);
-    pitch.value = this.Sound.getPitch(ChillSound);
-}
 
 // 開始
 Ts.engine.start();
 ```
 
 ::: warning index.tsについて
-音が鳴っている最終に、音量、ピッチを変更しています。
-『`this.Sound.addVolume(ChillSound, 5);`』 →音量を5だけUPします（マイナス値にするとDOWNします）
-『`this.Sound.addPitch(ChillSound, 5);`』 →ピッチを5だけUPします（マイナス値にするとDOWNします）
+『`this.Sensing.mouse.isTouching`』 は、マウスポインターに触れているか否かの論理値を返します。
 :::
 
 
@@ -119,13 +90,9 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/010/"
 />
 
 ::: tip メッセージ
-緑を旗を押して開始します。<br>
+緑の旗を押して開始します。<br>
 <br>
-(1) スペースキーを押すと『Chill』が鳴り始めます<br>
-(2) Ｄキーを押すと、音量が５下がります（下限０）<br>
-(3) Ａキーを押すと、音量が５上がります（上限１００）<br>
-(4) Ｗキーを押すと、ピッチが５上がります（上限３６０）<br>
-(5) Ｘキーを押すと、ピッチが５下がります（下限－３６０）<br>
+マウスポインターがスクラッチネコに触れている間、スクラッチネコの画像効果（色）が変化します。
 <br>
 :::
 

@@ -109,7 +109,7 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/004/"
 />
 
 ::: tip 線とスタンプ
-緑を旗を押すと、『サメ』が『マウスの方向へ進む』動作をします。<br>
+緑の旗を押すと、『サメ』が『マウスの方向へ進む』動作をします。<br>
 『サメ』『雲の色』(白) 、『道路の色』(薄いオレンジ)に触れたら、左上の変数表示『Touching』が変化します。<br>
 :::
 
