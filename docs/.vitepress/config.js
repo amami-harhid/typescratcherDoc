@@ -24,6 +24,7 @@ export default defineConfig({
                     { text: '-- スプライト', link: '/02_reference/04_sprite' },
                     { text: '-- ステージ', link: '/02_reference/05_stage' },
                     { text: '-- Motion(動き)', link: '/02_reference/06_Motion' },
+                    { text: '-- Looks(見た目)', link: '/02_reference/07_Looks' },
                     { text: '- 使用方法', link: '/03_how_to_use/' },
                     { text: '-- VS-CODE', link: '/03_how_to_use/001_vscode' },
                     { text: '- 例題集', link: '/04_examples/' },
