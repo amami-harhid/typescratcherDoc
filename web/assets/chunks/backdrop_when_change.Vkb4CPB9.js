@@ -1,1 +1,0 @@
-const c="/typescratcherDoc/web/backdrop_next.svg",s="/typescratcherDoc/web/backdrop_name.svg",t="/typescratcherDoc/web/backdrop_name_wait.svg",e="/typescratcherDoc/web/backdrop_when_change.svg";export{c as _,s as a,t as b,e as c};
