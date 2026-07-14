@@ -10,18 +10,18 @@ hero:
     - theme: orange
       text: はじめに
       link: /01_introduction/
+    - theme: green
+      text: リファレンス
+      link: /02_reference/
     - theme: red
-      text: クイックスタート
-      link: /02_quickStart/
+      text: 使用方法
+      link: /03_how_to_use/
+    - theme: gold
+      text: 例題
+      link: /04_examples/
     - theme: brand
       text: いろいろ試そう
-      link: /03_tryVarious
-    - theme: green
-      text: 使用方法
-      link: /04_how_to_use/
-    - theme: orange
-      text: リファレンス
-      link: /05_reference/
+      link: /05_tryVarious
     - theme: alt
       text: GitHub
       link: https://github.com/amami-harhid/typescratcher

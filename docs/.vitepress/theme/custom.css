@@ -6,7 +6,7 @@
 }
 
 .VPButton.green:hover {
-  border-color: #16a34a !important;
+  border-color: #202020 !important;
   background-color: #16a34a !important;
 }
 .VPButton.orange {
@@ -16,7 +16,7 @@
 }
 
 .VPButton.orange:hover {
-  border-color: #fcac20 !important;
+  border-color: #202020 !important;
   background-color: #fcac20 !important;
 }
 .VPButton.red {
@@ -26,7 +26,7 @@
 }
 
 .VPButton.red:hover {
-  border-color: #fc2020 !important;
+  border-color: #202020 !important;
   background-color: #fc2020 !important;
 }
 .VPButton.black {
@@ -38,6 +38,23 @@
 .VPButton.black:hover {
   border-color: #202020 !important;
   background-color: #202020 !important;
+}
+.VPButton.gold {
+  border-color: #FFD700 !important;
+  color: #0f0f0f !important;
+  background-color: #FFD700 !important;
+}
+
+.VPButton.gold:hover {
+  border-color: #202020 !important;
+  background-color: #FFD700 !important;
+}
+
+.VPButton.brand:hover {
+  border-color: #202020 !important;
+}
+.VPButton.alt:hover {
+  border-color: #202020 !important;
 }
 
 .VPHome span.name, span.text {
@@ -54,17 +71,49 @@ img.left {
     margin-left: 0;
     width: 100%;
 }
+img.block {
+    display: block; 
+    margin-left: 0;
+    height: 50px;
+}
+
+table.block tr {
+  border: none !important;
+}
+
+table.block td {
+  border: none !important;
+}
 
 p {
   font-weight:500;
 }
 
+.vp-doc h1 {
+  background-color:darkgreen;
+  color:#ffffff;
+  display:flex;
+  align-items: center;
+  min-height: 85px;
+  padding-top: 0;
+  padding-left: 15px;
+}
+
 .vp-doc h2 {
-  background-color:#fc2020;
+  background-color:midnightblue;
   color:#ffffff;
   display:flex;
   align-items: center;
   min-height: 70px;
+  padding-top: 0;
+  padding-left: 15px;
+}
+.vp-doc h3 {
+  background-color:royalblue;
+  color:#ffffff;
+  display:flex;
+  align-items: center;
+  min-height: 40px;
   padding-top: 0;
   padding-left: 15px;
 }
