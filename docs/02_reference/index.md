@@ -13,5 +13,8 @@ TypeScracherのプログラミング方法を解説します。
 - Looks(見た目)
 - Control(制御)
 - Event(イベント)
+- Sensing(調べる)
 - Broadcast(メッセージ)
 - Variable(変数)
+- Pen(ペン)
+- FontImage(文字列イメージ)

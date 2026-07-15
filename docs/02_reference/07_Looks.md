@@ -8,16 +8,29 @@ Looksは次のメソッドを持ちます。
 
 ## sprite.Looks
 
-- Looks.costume (コスチューム操作)
-- Looks.backdrop (背景操作)
-- Looks.size (サイズ操作)
-- Looks.effect ( 画像効果操作 )
-- Looks.layer (階層操作)
-- Looks.bubble ( フキダシ操作 )
-- Looks.visible ( 表示/隠す )
+<table>
+<thead>
+<tr><th>グループ</th><th>意味</th></tr>
+</thead>
+<tbody>
+<tr><td>Looks.costume</td><td>コスチューム操作</td></tr>
+<tr><td>Looks.backdrop</td><td>背景操作</td></tr>
+<tr><td>Looks.size</td><td>サイズ操作</td></tr>
+<tr><td>Looks.effect</td><td>画像効果操作</td></tr>
+<tr><td>Looks.bubble</td><td>フキダシ操作</td></tr>
+<tr><td>Looks.visible</td><td>表示/隠す</td></tr>
+</tbody>
+</table>
 
 ## stage.Looks
 
-- Looks.backdrop (背景操作)
-- Looks.effect ( 画像効果操作 )
+<table>
+<thead>
+<tr><th>グループ</th><th>意味</th></tr>
+</thead>
+<tbody>
+<tr><td>Looks.backdrop</td><td>背景操作</td></tr>
+<tr><td>Looks.effect</td><td>画像効果操作</td></tr>
+</tbody>
+</table>
 

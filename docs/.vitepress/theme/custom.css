@@ -85,6 +85,10 @@ table.block td {
   border: none !important;
 }
 
+table, thead, tbody, th, tr, td {
+  font-weight:900;
+}
+
 p {
   font-weight:500;
 }
