@@ -79,14 +79,20 @@ img.block {
 
 table.block tr {
   border: none !important;
+  width:100%;
 }
 
 table.block td {
   border: none !important;
+  width: 50%;
 }
 
 table, thead, tbody, th, tr, td {
   font-weight:900;
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: #00000000;
 }
 
 p {

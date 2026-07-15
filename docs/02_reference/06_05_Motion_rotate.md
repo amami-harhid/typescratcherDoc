@@ -28,13 +28,11 @@ sprite.Motion.Motion.rotation.style = Ts.Rotation.DONT_ROTATE;
     <img class="block" src="/rotationLeftRight.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
         <td>
             <img class="block" src="/rotationDontRotate.svg"/>
+        </td>
+        <td>
         </td>
     </tr>
 </tbody>

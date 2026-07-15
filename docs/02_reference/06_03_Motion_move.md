@@ -19,10 +19,10 @@ sprite.Motion.move.to( [ 150, 100] )
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/moveSteps10.svg" style="min-width: 150px; margin: 5px;"/>
+    <img class="block" src="/moveSteps10.svg"/>
     </td>
     <td>
-    <img class="block" src="/positionX150Y100.svg" style="min-width: 150px; margin: 5px;"/>
+    <img class="block" src="/positionX150Y100.svg"/>
     </td>
     </tr>
 </tbody>
@@ -52,38 +52,34 @@ await sprite.Motion.move.glideToMouse( 1, otherSprite );
 
 <table class="block">
 <tbody>
-    <tr>
-    <td>
-    <img class="block" src="/glideTo.svg" style="min-width: 150px; margin: 5px;"/>
+<tr>
+    <td style="width:80%;">
+    <img class="block" src="/glideTo.svg"/>
     </td>
-    </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
-    <tr>
     <td>
-    <img class="block" src="/glideToRandom.svg" style="min-width: 150px; margin: 5px;"/>
     </td>
-    </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
-    <tr>
+</tr>
+<tr>
     <td>
-    <img class="block" src="/glideToMousePointer.svg" style="min-width: 150px; margin: 5px;"/>
+    <img class="block" src="/glideToRandom.svg"/>
     </td>
-    </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
-    <tr>
     <td>
-    <img class="block" src="/glideToOtherSprite.svg" style="min-width: 150px; margin: 5px;"/>
     </td>
-    </tr>
+</tr>
+<tr>
+    <td>
+    <img class="block" src="/glideToMousePointer.svg"/>
+    </td>
+    <td>
+    </td>
+</tr>
+<tr>
+    <td>
+    <img class="block" src="/glideToOtherSprite.svg"/>
+    </td>
+    <td>
+    </td>
+</tr>
 </tbody>
 </table>
 
@@ -106,19 +102,17 @@ sprite.Motion.move.toSprite( otherSprite );
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/moveToRandom.svg" style="min-width: 150px; margin: 5px;"/>
+    <img class="block" src="/moveToRandom.svg"/>
     </td>
     <td>
-    <img class="block" src="/moveToMousePointer.svg" style="min-width: 150px; margin: 5px;"/>
+    <img class="block" src="/moveToMousePointer.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
     <td>
     <img class="block" src="/moveToOtherSprite.svg" style="min-width: 150px; margin: 5px;"/>
+    </td>
+    <td>
     </td>
     </tr>
 </tbody>
@@ -138,6 +132,8 @@ sprite.Motion.move.ifOnEdgeBounce();
         <tr>
             <td>
                 <img class="block" src="/ifOnEdgeBounce.svg"/>
+            </td>
+            <td>
             </td>
         </tr>
     </tbody>

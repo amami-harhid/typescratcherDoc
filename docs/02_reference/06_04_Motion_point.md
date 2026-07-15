@@ -26,17 +26,16 @@ sprite.Motion.point.toRandom();
                 <img class="block" src="/pointToOtherSprite.svg"/>
             </td>
         </tr>
-    </tbody>
-</table>
-<table class="block">
-    <tbody>
         <tr>
             <td>
                 <img class="block" src="/motionPointToRandom.svg"/>
             </td>
+            <td>
+            </td>
         </tr>
     </tbody>
 </table>
+
 <br>
 
 ---

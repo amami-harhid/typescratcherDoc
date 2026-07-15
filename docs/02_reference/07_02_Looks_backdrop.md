@@ -35,10 +35,6 @@ sprite.Looks.backdrop.switchRandom();
     <img class="block" src="/backdropSwitch.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
     <td>
     <img class="block" src="/backdropPrevious.svg"/>
@@ -82,10 +78,6 @@ await stage.Looks.backdrop.switchRandomAndWait();
     <img class="block" src="/backdropSwitchWait.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
     <td>
     <img class="block" src="/backdropPreviousWait.svg"/>

@@ -21,6 +21,8 @@ sprite.Motion.position.xy = [150, 100];
     <td>
     <img class="block" src="/positionX150Y100.svg"/>
     </td>
+    <td>
+    </td>
     </tr>
 </tbody>
 </table>

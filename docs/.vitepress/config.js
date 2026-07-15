@@ -54,6 +54,7 @@ export default defineConfig({
                     { text: '&nbsp;&nbsp;&nbsp;Control(制御)', link: '/02_reference/08_Control' },
                     { text: '&nbsp;&nbsp;&nbsp;Control.wait', link: '/02_reference/08_01_controlWait' },
                     { text: '&nbsp;&nbsp;&nbsp;Event(イベント)', link: '/02_reference/09_Event' },
+                    { text: '&nbsp;&nbsp;&nbsp;Event.flagPresser', link: '/02_reference/09_01_Event_flagPresser' },
                     { text: '&nbsp;&nbsp;&nbsp;Sensing(調べる)', link: '/02_reference/10_Sensing' },
                     { text: '&nbsp;&nbsp;&nbsp;Broadcast(メッセージ)', link: '/02_reference/11_Broadcast' },
                     { text: '&nbsp;&nbsp;&nbsp;Variable(変数)', link: '/02_reference/12_Variable' },
@@ -62,6 +63,7 @@ export default defineConfig({
                     { text: '&nbsp;&nbsp;&nbsp;繰り返し構文', link: '/02_reference/15_Loop' },
                     { text: '使用方法', link: '/03_how_to_use/' },
                     { text: '例題集', link: '/04_examples/' },
+                    //
                 ]
             }],
             '/03_how_to_use/':[{

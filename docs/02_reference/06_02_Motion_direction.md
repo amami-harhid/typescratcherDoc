@@ -32,10 +32,15 @@ sprite.Motion.position.y -= 15;
     <td>
     <img class="block" src="/turnRight15.svg" style="min-width: 150px; margin: 5px;"/>
     </td>
+    </tr>
+    <tr>
     <td>
     <img class="block" src="/turnLeft15.svg" style="min-width: 150px; margin: 5px;"/>
+    </td>
+    <td>
     </td>
     </tr>
 </tbody>
 </table>
+
 ---
