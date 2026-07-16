@@ -6,6 +6,8 @@ outline: deep
 
 ## Pen.HSVColor ( カラー )
 
+### Pen.HSVColor.hsv ( hsvカラー値を設定 )
+
 <table class="block">
 <tbody>
     <tr>
@@ -19,6 +21,26 @@ outline: deep
 </table>
 
 ---
+
+```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
+
+const cat = new Ts.Sprite('cat');
+
+const thread = async function*(this:Sprite) {
+    // HSVカラー値を設定する
+    this.Pen.HSVColor.hsv = {
+        hue: 67,          // 色
+        saturation: 95,   // 鮮やかさ
+        brightness: 73,   // 明るさ
+        transparency: 0,  // 透明度
+    }; 
+} 
+
+```
+
+
 
 ### Pen.HSVColor.hue ( 色相 )
 

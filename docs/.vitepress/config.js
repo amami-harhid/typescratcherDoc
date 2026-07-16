@@ -81,7 +81,9 @@ export default defineConfig({
                     { text: '&nbsp;&nbsp;&nbsp;Pen.stamp', link: '/02_reference/13_03_Pen_stamp' },
                     { text: '&nbsp;&nbsp;&nbsp;Pen.size', link: '/02_reference/13_04_Pen_size' },
                     { text: '&nbsp;&nbsp;&nbsp;Pen.hsvColor', link: '/02_reference/13_05_Pen_color' },
-                    { text: '&nbsp;&nbsp;&nbsp;FontImage(文字イメージ)', link: '/02_reference/14_FontImage' },
+                    { text: '&nbsp;&nbsp;&nbsp;Font(フォント)', link: '/02_reference/14_FontImage' },
+                    { text: '&nbsp;&nbsp;&nbsp;Font.scratch3フォント', link: '/02_reference/14_01_FontImage_scratch3' },
+                    { text: '&nbsp;&nbsp;&nbsp;Font.外部フォント', link: '/02_reference/14_02_FontImage_external_font' },
                     { text: '使用方法', link: '/03_how_to_use/' },
                     { text: '例題集', link: '/04_examples/' },
                     //
