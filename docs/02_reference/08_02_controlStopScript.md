@@ -6,6 +6,20 @@ outline: deep
 
 ### Control.stopThisScript (このスレッドを止める)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/controlStopThisScript.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 #### Sprite/Stage
 ```typescript:line-numbers
 
@@ -22,11 +36,15 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 }
 
 ```
+---
+
+### Control.stopOtherScripts (スプライトの他のスレッドを止める)
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/controlStopThisScript.svg"/>
+    <img class="block" src="/controlStopOtherScript.svg"/>
     </td>
     <td>
     </td>
@@ -35,8 +53,6 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 </table>
 
 ---
-
-### Control.stopOtherScripts (スプライトの他のスレッドを止める)
 
 #### Sprite/Stage
 ```typescript:line-numbers
@@ -93,11 +109,17 @@ fuga.Event.flagPresser().func = async function*(this:Sprite) {
 
 
 ```
+
+---
+
+
+### Control.stopAll (すべてのスクリプトを止める)
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/controlStopOtherScript.svg"/>
+    <img class="block" src="/controlStopAll.svg"/>
     </td>
     <td>
     </td>
@@ -106,9 +128,6 @@ fuga.Event.flagPresser().func = async function*(this:Sprite) {
 </table>
 
 ---
-
-
-### Control.stopAll (すべてのスクリプトを止める)
 
 #### Sprite/Stage
 ```typescript:line-numbers
@@ -151,16 +170,4 @@ fuga.Event.flagPresser().func = async function*(this:Sprite) {
 
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/controlStopAll.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---

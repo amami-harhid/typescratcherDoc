@@ -7,6 +7,21 @@ outline: deep
 
 ### ドラッグ可能(draggable)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingDragmodeDraggable.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/sensingDragmodeNoDraggable.svg"/>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -30,17 +45,4 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingDragmodeDraggable.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/sensingDragmodeNoDraggable.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---

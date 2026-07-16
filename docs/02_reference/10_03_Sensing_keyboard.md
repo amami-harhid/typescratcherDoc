@@ -7,6 +7,20 @@ outline: deep
 
 ### キーが押されているかの判定
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingKeyboardDown.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -25,17 +39,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingKeyboardDown.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 
@@ -55,6 +58,20 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 
 ### どれかのキーが押されているかの判定
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingKeyboardDownAny.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -73,18 +90,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingKeyboardDownAny.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 

@@ -5,6 +5,20 @@ outline: deep
 
 ## Broadcast.reciever (メッセージを受信したときのスレッド定義)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/broadcastReceiver.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite, Stage } from "@tscratch3/typescratcher";
@@ -24,16 +38,4 @@ stage.Broadcast.reciever( messageId ).func = async function*(this:Stage) {
     // ここにスレッドのコードを書く
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/broadcastReceiver.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---

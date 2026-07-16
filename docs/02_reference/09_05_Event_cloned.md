@@ -5,6 +5,20 @@ outline: deep
 
 ## Event.clone (クローンが作られたときのスレッドを定義)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/eventCloned.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ### Sprite
 
 ```typescript:line-numbers
@@ -25,17 +39,6 @@ cat.Event.cloned().func = async function*(this:Sprite) {
 }
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventCloned.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 

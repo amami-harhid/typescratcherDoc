@@ -7,6 +7,20 @@ outline: deep
 
 ### 『色』に触れていることの判定
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingColorTouch.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -31,11 +45,16 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
+---
+
+
+### 『色』が『色』に触れていることの判定
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingColorTouch.svg"/>
+    <img class="block" src="/sensingColorTouchColor.svg"/>
     </td>
     <td>
     </td>
@@ -44,9 +63,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 </table>
 
 ---
-
-
-### 『色』が『色』に触れていることの判定
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -74,16 +90,5 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingColorTouchColor.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---

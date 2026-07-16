@@ -5,6 +5,20 @@ outline: deep
 
 ## Event.keyPresser (キーが押されたときのスレッド定義)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/eventKeyPressSpace.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ### Ts.Keyboard を使う場合
 
 ```typescript:line-numbers
@@ -18,18 +32,6 @@ cat.Event.keyPresser( Ts.Keyboard.SPACE ).func = async function*(this:Sprite) {
     // ここにスレッドのコードを書く
 } 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventKeyPressSpace.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 #### 『`Ts.Keyboard`』
@@ -48,21 +50,6 @@ cat.Event.keyPresser( Ts.Keyboard.SPACE ).func = async function*(this:Sprite) {
 
 ### コンスタント値を使う場合
 
-```typescript:line-numbers
-import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import type { Stage } from "@tscratch3/typescratcher";
-
-const cat = new Ts.Sprite('cat');
-
-const KEY_A = 'a';
-
-// キー『A』が押されたときのスプライト(cat)のスレッド
-cat.Event.keyPresser( KEY_A ).func = async function*(this:Sprite) {
-    // ここにスレッドのコードを書く
-} 
-```
----
-
 <table class="block">
 <tbody>
     <tr>
@@ -78,20 +65,25 @@ cat.Event.keyPresser( KEY_A ).func = async function*(this:Sprite) {
 ---
 
 
-### どれかのキーが押されたときの定義
-
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Stage } from "@tscratch3/typescratcher";
 
 const cat = new Ts.Sprite('cat');
 
-// 『どれかの』キーが押されたときのスプライト(cat)のスレッド
-cat.Event.keyPresser( Ts.Keyboard.ANY ).func = async function*(this:Sprite) {
+const KEY_A = 'a';
+
+// キー『A』が押されたときのスプライト(cat)のスレッド
+cat.Event.keyPresser( KEY_A ).func = async function*(this:Sprite) {
     // ここにスレッドのコードを書く
 } 
 ```
 ---
+
+
+
+### どれかのキーが押されたときの定義
+
 
 <table class="block">
 <tbody>
@@ -106,5 +98,19 @@ cat.Event.keyPresser( Ts.Keyboard.ANY ).func = async function*(this:Sprite) {
 </table>
 
 ---
+
+```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
+import type { Stage } from "@tscratch3/typescratcher";
+
+const cat = new Ts.Sprite('cat');
+
+// 『どれかの』キーが押されたときのスプライト(cat)のスレッド
+cat.Event.keyPresser( Ts.Keyboard.ANY ).func = async function*(this:Sprite) {
+    // ここにスレッドのコードを書く
+} 
+```
+---
+
 
 

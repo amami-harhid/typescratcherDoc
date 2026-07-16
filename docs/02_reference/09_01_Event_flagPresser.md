@@ -5,6 +5,22 @@ outline: deep
 
 ## Event.flagPresser (旗が押されたときのスレッド定義)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/eventFlagpresser.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
+### Sprite
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -28,18 +44,7 @@ functionのなかで使われる『`this`』の型を明示するために、引
 『`this`』の型は『`Sprite`』です、『`Stage`』です！！、と宣言をしているわけです。
 :::
 
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventFlagpresser.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
----
+### Stage
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -52,17 +57,4 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
     // ここにスレッドのコードを書く
 } 
 ```
----
-
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventFlagpresser.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 ---

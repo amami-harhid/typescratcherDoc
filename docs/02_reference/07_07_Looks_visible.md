@@ -6,15 +6,6 @@ outline: deep
 
 ## 【Sprite限定】Looks.visible (表示非表示)
 
-
-```typescript:line-numbers
-// 表示する
-sprite.Looks.visible.show();  
-
-// 隠す
-sprite.Looks.visible.hide(); 
-```
-
 <table class="block">
 <tbody>
     <tr>
@@ -27,5 +18,16 @@ sprite.Looks.visible.hide();
     </tr>
 </tbody>
 </table>
+
+---
+
+```typescript:line-numbers
+// 表示する
+sprite.Looks.visible.show();  
+
+// 隠す
+sprite.Looks.visible.hide(); 
+```
+
 
 ---

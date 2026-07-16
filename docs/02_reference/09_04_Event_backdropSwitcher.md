@@ -5,6 +5,20 @@ outline: deep
 
 ## Event.backdropSwitcher (背景が変わったときのスレッド定義)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/eventBackdropSwitched.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ### Sprite
 
 ```typescript:line-numbers
@@ -32,17 +46,6 @@ cat.Event.backdropSwitcher(BackdropImage02).func = async function*(this:Sprite) 
 }
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventBackdropSwitched.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 
@@ -73,17 +76,6 @@ stage.Event.backdropSwitcher(BackdropImage02).func = async function*(this:Sprite
 }
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventBackdropSwitched.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 

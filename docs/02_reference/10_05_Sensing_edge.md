@@ -7,6 +7,20 @@ outline: deep
 
 ### 枠に触っていることの判定
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingEdgeTouching.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ### Sprite
 
 ```typescript:line-numbers
@@ -28,18 +42,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingEdgeTouching.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 ### Stage

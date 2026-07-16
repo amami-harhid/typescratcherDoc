@@ -7,6 +7,20 @@ outline: deep
 
 ### スプライトに触れているかの判定
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingSpriteTouch.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -29,11 +43,16 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
+
+---
+
+### スプライトとの距離
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingSpriteTouch.svg"/>
+    <img class="block" src="/sensingSpriteDistance.svg"/>
     </td>
     <td>
     </td>
@@ -42,8 +61,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 </table>
 
 ---
-
-### スプライトとの距離
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -70,17 +87,5 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingSpriteDistance.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---

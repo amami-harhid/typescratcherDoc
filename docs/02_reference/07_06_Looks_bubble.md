@@ -8,15 +8,6 @@ outline: deep
 
 ### フキダシを表示する
 
-```typescript:line-numbers
-// 言う
-sprite.Looks.bubble.say('こんにちは'); 
-
-// 考える
-sprite.Looks.bubble.think('うーん...'); 
-
-```
-
 <table class="block">
 <tbody>
     <tr>
@@ -32,17 +23,19 @@ sprite.Looks.bubble.think('うーん...');
 
 ---
 
-
-### フキダシを〇秒、表示する
-
 ```typescript:line-numbers
-// 〇秒、言う
-await sprite.Looks.bubble.sayForSecs('こんにちは', 2 ); // 2秒、言う 
+// 言う
+sprite.Looks.bubble.say('こんにちは'); 
 
-// 〇秒、考える
-await sprite.Looks.bubble.thinkForSecs('うーん...', 2 ); // 2秒、考える
+// 考える
+sprite.Looks.bubble.think('うーん...'); 
 
 ```
+
+---
+
+
+### フキダシを〇秒、表示する
 
 <table class="block">
 <tbody>
@@ -59,16 +52,19 @@ await sprite.Looks.bubble.thinkForSecs('うーん...', 2 ); // 2秒、考える
 
 ---
 
-### フキダシを消す
-
 ```typescript:line-numbers
-// 消す
-sprite.Looks.bubble.say( '' ); 
+// 〇秒、言う
+await sprite.Looks.bubble.sayForSecs('こんにちは', 2 ); // 2秒、言う 
 
-// 消す
-sprite.Looks.bubble.think( '' );
+// 〇秒、考える
+await sprite.Looks.bubble.thinkForSecs('うーん...', 2 ); // 2秒、考える
 
 ```
+
+
+---
+
+### フキダシを消す
 
 <table class="block">
 <tbody>
@@ -82,6 +78,18 @@ sprite.Looks.bubble.think( '' );
     </tr>
 </tbody>
 </table>
+
+---
+
+```typescript:line-numbers
+// 消す
+sprite.Looks.bubble.say( '' ); 
+
+// 消す
+sprite.Looks.bubble.think( '' );
+
+```
+
 
 ---
 

@@ -5,6 +5,20 @@ outline: deep
 
 ## Sensing.askAndWait (質問をして答えを待つ)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingAskAndWait.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ### Spriteが質問する
 
 ```typescript:line-numbers
@@ -29,18 +43,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     console.log('おわり');
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingAskAndWait.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 ::: tip スプライトが質問すると
@@ -71,18 +73,6 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
     console.log('おわり');
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingAskAndWait.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 

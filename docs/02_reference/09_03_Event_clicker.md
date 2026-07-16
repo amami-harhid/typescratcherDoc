@@ -5,6 +5,20 @@ outline: deep
 
 ## Event.clicker (自身が押されたときのスレッド定義)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/eventClickSprite.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ### Sprite
 
 ```typescript:line-numbers
@@ -19,17 +33,6 @@ cat.Event.clicker().func = async function*(this:Sprite) {
 }
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventClickSprite.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 
@@ -48,18 +51,5 @@ stage.Event.clicker().func = async function*(this:Sprite) {
 ```
 ---
 
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/eventClickStage.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
----
 
 

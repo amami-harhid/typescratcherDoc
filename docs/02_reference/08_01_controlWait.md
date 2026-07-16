@@ -6,11 +6,6 @@ outline: deep
 
 ### Control.wait (指定した秒数、待つ)
 
-#### sprite
-```typescript:line-numbers
-// 指定した秒数、待つ
-await sprite.Control.wait( 2 ); 
-```
 <table class="block">
 <tbody>
     <tr>
@@ -21,6 +16,13 @@ await sprite.Control.wait( 2 );
 </tbody>
 </table>
 
+---
+
+#### sprite
+```typescript:line-numbers
+// 指定した秒数、待つ
+await sprite.Control.wait( 2 ); 
+```
 ---
 
 #### stage
@@ -28,20 +30,21 @@ await sprite.Control.wait( 2 );
 // 指定した秒数、待つ
 await stage.Control.wait( 2 ); 
 ```
+---
+
+### Control.waitUntil (指定した条件が成立するまで、待つ)
 
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/controlWait.svg"/>
+    <img class="block" src="/controlWaitUntil.svg"/>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
-### Control.waitUntil (指定した条件が成立するまで、待つ)
 
 #### Sprite/Stage
 ```typescript:line-numbers
@@ -62,15 +65,6 @@ await stage.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 );
 アロー関数は、『`() => 条件式`』　の形式で書きます。
 :::
 
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/controlWaitUntil.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 

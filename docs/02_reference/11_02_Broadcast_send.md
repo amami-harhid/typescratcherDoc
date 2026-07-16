@@ -5,6 +5,20 @@ outline: deep
 
 ## Broadcast.send (メッセージを送る)
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/broadcastSend.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -27,11 +41,15 @@ cat.Broadcast.receiver( messageId ).func = async function*(this:Sprite) {
     this.Looks.bubble.say('メッセージ受信した');
 }
 ```
+---
+
+## Broadcast.sendAndWait (メッセージを送り、終わるまで待つ)
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/broadcastSend.svg"/>
+    <img class="block" src="/broadcastSendAndWait.svg"/>
     </td>
     <td>
     </td>
@@ -40,8 +58,6 @@ cat.Broadcast.receiver( messageId ).func = async function*(this:Sprite) {
 </table>
 
 ---
-
-## Broadcast.sendAndWait (メッセージを送り、終わるまで待つ)
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -68,17 +84,5 @@ cat.Broadcast.receiver( messageId ).func = async function*(this:Sprite) {
     await this.Looks.bubble.sayForSecs('メッセージ受信した', 2); 
 }
 ```
-
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/broadcastSendAndWait.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---

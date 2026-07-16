@@ -7,6 +7,21 @@ outline: deep
 
 ### タイマーリセットとタイマー値
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingTimer_reset.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/sensingTimer_timer.svg"/>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 タイマーは エンジンが起動してから、またはリセットしてからのミリ秒単位の時間です。
 
 ```typescript:line-numbers
@@ -32,17 +47,4 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingTimer_reset.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/sensingTimer_timer.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---

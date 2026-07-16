@@ -7,6 +7,20 @@ outline: deep
 
 ### マウスが押されていることの判定
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingMouseDown.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
@@ -26,18 +40,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingMouseDown.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 ```typescript:line-numbers
@@ -58,21 +60,24 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
     }
 }
 ```
+---
+
+### マウス座標（X座標、Y座標）
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingMouseDown.svg"/>
+    <img class="block" src="/sensingMouseX.svg"/>
     </td>
     <td>
+    <img class="block" src="/sensingMouseY.svg"/>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
-### マウス座標（X座標、Y座標）
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -95,20 +100,8 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingMouseX.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/sensingMouseY.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
+
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Stage } from "@tscratch3/typescratcher";
@@ -138,22 +131,23 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
     }
 }
 ```
+---
+
+### 【Sprite限定】マウスタッチしていることの判定
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingMouseX.svg"/>
+    <img class="block" src="/sensingMouseTouching.svg"/>
     </td>
     <td>
-    <img class="block" src="/sensingMouseY.svg"/>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
-### 【Sprite限定】マウスタッチしていることの判定
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -174,11 +168,15 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
+---
+
+### 【Sprite限定】マウスポインターまでの距離
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingMouseTouching.svg"/>
+    <img class="block" src="/sensingMouseDistance.svg"/>
     </td>
     <td>
     </td>
@@ -187,8 +185,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 </table>
 
 ---
-
-### 【Sprite限定】マウスポインターまでの距離
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -215,18 +211,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     }
 }
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/sensingMouseDistance.svg"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
-
 ---
 
 ### 【Sprite限定】マウスポインターへの向き
