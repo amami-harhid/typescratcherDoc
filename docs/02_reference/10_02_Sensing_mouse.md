@@ -188,11 +188,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 
 ---
 
-::: tip マウスタッチ
-ステージにこのメソッドはありません。
-:::
-
-
 ### 【Sprite限定】マウスポインターまでの距離
 
 ```typescript:line-numbers
