@@ -78,7 +78,7 @@ export default defineConfig({
                     { text: '&nbsp;&nbsp;&nbsp;Pen(ペン)', link: '/02_reference/13_Pen' },
                     { text: '&nbsp;&nbsp;&nbsp;Pen.clear', link: '/02_reference/13_01_Pen_clear' },
                     { text: '&nbsp;&nbsp;&nbsp;Pen.up/down', link: '/02_reference/13_02_Pen_up_down' },
-                    { text: '&nbsp;&nbsp;&nbsp;Pen.up/down', link: '/02_reference/13_03_Pen_stamp' },
+                    { text: '&nbsp;&nbsp;&nbsp;Pen.stamp', link: '/02_reference/13_03_Pen_stamp' },
                     { text: '&nbsp;&nbsp;&nbsp;Pen.size', link: '/02_reference/13_04_Pen_size' },
                     { text: '&nbsp;&nbsp;&nbsp;Pen.hsvColor', link: '/02_reference/13_05_Pen_color' },
                     { text: '&nbsp;&nbsp;&nbsp;FontImage(文字イメージ)', link: '/02_reference/14_FontImage' },
