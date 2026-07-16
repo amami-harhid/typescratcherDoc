@@ -3,11 +3,9 @@ outline: deep
 ---
 # Sensing(調べる)
 
-## Sensing.edge (端 関連)
+## Sensing.dragMode (スプライトドラッグ 関連)
 
-### 枠に触っていることの判定
-
-### Sprite
+### ドラッグ可能(draggable)
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -17,31 +15,32 @@ const cat = new Ts.Sprite('cat');
 
 // 旗が押されたときの『cat』のスレッド
 cat.Event.flagPresser().func = async function*(this:Sprite) {
-    // ずっと繰り返す    
-    for( ;; ) {
-        this.Motion.move.steps(10); // 10 進める
-        if( this.Sensing.edge.isTouching ) {
-            // Trueのとき端にふれている
-            this.Motion.direction.degree *= -1; // 向きを反転させる
-        }
-        yield;
-    }
+
+    await this.Control.wait(10); // 10秒待つ
+
+    // 旗が押されたあと 10秒経過したら、
+    // スプライト『cat』をドラッグ移動可能とする。
+    this.Sensing.dragMode.draggable = true;
+
+    await this.Control.wait(10); // 10秒待つ
+
+    // ドラッグ可能とした後、さらに10秒経過したら
+    // スプライト『cat』をドラッグ移動不可とする。
+    this.Sensing.dragMode.draggable = false;
+
 }
 ```
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingEdgeTouching.svg"/>
+    <img class="block" src="/sensingDragmodeDraggable.svg"/>
     </td>
     <td>
+    <img class="block" src="/sensingDragmodeNoDraggable.svg"/>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
-### Stage
-
-ステージには「クローンされたとき」のメソッドはありません。<br>(ステージにはクローンする機能を持たせていないため)

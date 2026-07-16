@@ -3,11 +3,9 @@ outline: deep
 ---
 # Sensing(調べる)
 
-## Sensing.edge (端 関連)
+## Sensing.sprite (スプライト 関連)
 
-### 枠に触っていることの判定
-
-### Sprite
+### スプライトに触れているかの判定
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -15,14 +13,17 @@ import type { Sprite } from "@tscratch3/typescratcher";
 
 const cat = new Ts.Sprite('cat');
 
+const dog = new Ts.Sprite('dog');
+
 // 旗が押されたときの『cat』のスレッド
 cat.Event.flagPresser().func = async function*(this:Sprite) {
     // ずっと繰り返す    
     for( ;; ) {
-        this.Motion.move.steps(10); // 10 進める
-        if( this.Sensing.edge.isTouching ) {
-            // Trueのとき端にふれている
-            this.Motion.direction.degree *= -1; // 向きを反転させる
+        // スプライト『dog』に触れているかの判定
+        if( this.Sensing.sprite.isTouching( [dog] ) ) {
+            // Trueのとき『dog』に触れている
+            // 非表示にする
+            this.Looks.visible.hide();
         }
         yield;
     }
@@ -32,7 +33,7 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingEdgeTouching.svg"/>
+    <img class="block" src="/sensingSpriteTouch.svg"/>
     </td>
     <td>
     </td>
@@ -42,6 +43,44 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 
 ---
 
-### Stage
+### スプライトとの距離
 
-ステージには「クローンされたとき」のメソッドはありません。<br>(ステージにはクローンする機能を持たせていないため)
+```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
+
+const cat = new Ts.Sprite('cat');
+
+const dog = new Ts.Sprite('dog');
+
+// 旗が押されたときの『cat』のスレッド
+cat.Event.flagPresser().func = async function*(this:Sprite) {
+    // ずっと繰り返す    
+    for( ;; ) {
+
+        // スプライト『dog』までの距離
+        const _disatnce = this.Sensing.sprite.distance( dog );
+        
+        if( _distance < 20 ) {
+            // 『dog』までの距離が 20未満になったときは
+            //  ループを抜ける（スレッドが終わる）
+            break;
+        }
+        yield;
+    }
+}
+```
+
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/sensingSpriteDistance.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---

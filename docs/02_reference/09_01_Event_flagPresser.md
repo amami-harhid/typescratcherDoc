@@ -16,6 +16,18 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     // ここにスレッドのコードを書く
 } 
 ```
+
+::: tip 『`async function*(this:Sprite) `』
+
+スレッドの function 引数として、『`this: 型`』を渡していますが、これは本当に呼出し時に『`this`』が渡されてくるわけではありません。<br>
+
+functionのなかで使われる『`this`』の型を明示するために、引数がゼロ個の場合でも『`this:型`』を疑似引数として付与しています。
+
+これは『`Typescript`』における『`this`』の使い方の仕様です。<br>
+
+『`this`』の型は『`Sprite`』です、『`Stage`』です！！、と宣言をしているわけです。
+:::
+
 <table class="block">
 <tbody>
     <tr>

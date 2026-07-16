@@ -16,11 +16,3 @@ outline: deep
 <tr><td>Broadcast.receiver</td><td>メッセージ受信時のスレッドの定義</td></tr>
 </tbody>
 </table>
-
-## Sprite.Broadcast
-
-Stage限定のBroadcastの分類はありません。
-
-## Stage.Broadcast
-
-Stage限定のBroadcastの分類はありません。

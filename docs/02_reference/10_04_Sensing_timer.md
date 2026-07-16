@@ -3,11 +3,11 @@ outline: deep
 ---
 # Sensing(調べる)
 
-## Sensing.edge (端 関連)
+## Sensing.timer (タイマー 関連)
 
-### 枠に触っていることの判定
+### タイマーリセットとタイマー値
 
-### Sprite
+タイマーは エンジンが起動してから、またはリセットしてからのミリ秒単位の時間です。
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
@@ -17,12 +17,16 @@ const cat = new Ts.Sprite('cat');
 
 // 旗が押されたときの『cat』のスレッド
 cat.Event.flagPresser().func = async function*(this:Sprite) {
+
+    // タイマーをリセットする
+    this.Sensing.timer.reset();
+
     // ずっと繰り返す    
     for( ;; ) {
-        this.Motion.move.steps(10); // 10 進める
-        if( this.Sensing.edge.isTouching ) {
-            // Trueのとき端にふれている
-            this.Motion.direction.degree *= -1; // 向きを反転させる
+        if( this.Sensing.timer.timer > 1500 ) { // ミリ秒
+            // スレッド開始から 1500 秒経過していたら
+            // ループを抜ける
+            breka;
         }
         yield;
     }
@@ -32,16 +36,13 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/sensingEdgeTouching.svg"/>
+    <img class="block" src="/sensingTimer_reset.svg"/>
     </td>
     <td>
+    <img class="block" src="/sensingTimer_timer.svg"/>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
-### Stage
-
-ステージには「クローンされたとき」のメソッドはありません。<br>(ステージにはクローンする機能を持たせていないため)
