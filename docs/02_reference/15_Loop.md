@@ -6,6 +6,20 @@ outline: deep
 
 ### ずっと繰り返す
 
+<table class="block_Y">
+<tbody>
+    <tr>
+    <td>
+    <img class="block_Y" src="/forever.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
@@ -46,6 +60,21 @@ while( true ) {
 
 
 ### 指定した回数、繰り返す
+
+<table class="block_Y">
+<tbody>
+    <tr>
+    <td>
+    <img class="block_Y" src="/forInterval.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 
 スレッドの中で書くとします。
 
@@ -159,6 +188,19 @@ sprite.Event.flagPresser().func = async function*(this: Sprite) {
 
 
 ### ループの入れ子
+
+<table class="block" style="height:200px;" >
+<tbody>
+    <tr>
+    <td>
+    <img class="block_Y" src="/forNesting.svg"  style="height:180px;"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
 
 例えば二重ループは次のように書きます。<br>
 Scratch3流とするには、すべての繰り返しの最後に『`yield`』(次のフレームになるまで停止して待つ)が必要です。

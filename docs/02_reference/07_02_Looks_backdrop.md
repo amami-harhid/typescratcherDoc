@@ -6,25 +6,6 @@ outline: deep
 
 ## Looks.backdrop (背景操作)
 
-```typescript:line-numbers
-// 次の背景にする
-sprite.Looks.backdrop.next(); 
-
-// 指定した背景にする ( HogeBackdropImage にする )
-sprite.Looks.backdrop.name = HogeBackdropImage.name;
-
-// 指定した背景にする ( HogeBackdropImage にする )
-sprite.Looks.backdrop.switch( HogeBackdropImage );
-
-// 前の背景にする
-sprite.Looks.backdrop.previous();
-
-// どれかの背景にする
-sprite.Looks.backdrop.switchRandom();
-
-```
----
-
 <table class="block">
 <tbody>
     <tr>
@@ -48,25 +29,27 @@ sprite.Looks.backdrop.switchRandom();
 
 ---
 
-## 【Stage限定】Looks.backdrop (背景操作)
-
 ```typescript:line-numbers
-// 次の背景にして待つ
-await stage.Looks.backdrop.nextAndWait(); 
+// 次の背景にする
+sprite.Looks.backdrop.next(); 
 
-// 指定した背景にして待つ ( HogeBackdropImage にする )
-await stage.Looks.backdrop.name = HogeBackdropImage.name;
+// 指定した背景にする ( HogeBackdropImage にする )
+sprite.Looks.backdrop.name = HogeBackdropImage.name;
 
-// 指定した背景にして待つ ( HogeBackdropImage にする )
-await stage.Looks.backdrop.switch( HogeBackdropImage);
+// 指定した背景にする ( HogeBackdropImage にする )
+sprite.Looks.backdrop.switch( HogeBackdropImage );
 
-// 前の背景にして待つ
-await stage.Looks.backdrop.previousAndWait();
+// 前の背景にする
+sprite.Looks.backdrop.previous();
 
-// どれかの背景にして待つ
-await stage.Looks.backdrop.switchRandomAndWait();
+// どれかの背景にする
+sprite.Looks.backdrop.switchRandom();
 
 ```
+---
+
+
+## 【Stage限定】Looks.backdrop (背景操作)
 
 <table class="block">
 <tbody>
@@ -88,5 +71,26 @@ await stage.Looks.backdrop.switchRandomAndWait();
     </tr>
 </tbody>
 </table>
+
+---
+
+```typescript:line-numbers
+// 次の背景にして待つ
+await stage.Looks.backdrop.nextAndWait(); 
+
+// 指定した背景にして待つ ( HogeBackdropImage にする )
+await stage.Looks.backdrop.name = HogeBackdropImage.name;
+
+// 指定した背景にして待つ ( HogeBackdropImage にする )
+await stage.Looks.backdrop.switch( HogeBackdropImage);
+
+// 前の背景にして待つ
+await stage.Looks.backdrop.previousAndWait();
+
+// どれかの背景にして待つ
+await stage.Looks.backdrop.switchRandomAndWait();
+
+```
+
 
 ---

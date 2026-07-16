@@ -77,12 +77,27 @@ img.block {
     height: 50px;
 }
 
+img.block_Y {
+    display: block; 
+    margin-left: 0;
+    height: 80px;
+}
+
 table.block tr {
   border: none !important;
   width:100%;
 }
 
+table.block_Y tr {
+  border: none !important;
+  width:100%;
+}
+
 table.block td {
+  border: none !important;
+  width: 50%;
+}
+table.block_Y td {
   border: none !important;
   width: 50%;
 }

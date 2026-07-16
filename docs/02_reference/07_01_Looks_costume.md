@@ -5,19 +5,6 @@ outline: deep
 
 ## 【Sprite限定】Looks.costume (コスチューム操作)
 
-```typescript:line-numbers
-// 次のコスチュームにする
-sprite.Looks.costume.next(); 
-
-// 指定したコスチュームにする ( HogeImage にする )
-sprite.Looks.costume.name = HogeImage.name;
-
-// 指定したコスチュームにする ( HogeImage にする )
-sprite.Looks.costume.switch( HogeImage );
-
-```
----
-
 <table class="block">
 <tbody>
     <tr>
@@ -30,4 +17,19 @@ sprite.Looks.costume.switch( HogeImage );
     </tr>
 </tbody>
 </table>
+
+---
+
+```typescript:line-numbers
+// 次のコスチュームにする
+sprite.Looks.costume.next(); 
+
+// 指定したコスチュームにする ( HogeImage にする )
+sprite.Looks.costume.name = HogeImage.name;
+
+// 指定したコスチュームにする ( HogeImage にする )
+sprite.Looks.costume.switch( HogeImage );
+
+```
+
 ---

@@ -5,17 +5,6 @@ outline: deep
 
 ## Motion.point (向ける)
 
-```typescript:line-numbers
-// マウスポインターへ向ける
-sprite.Motion.point.toMouse();
-
-// 他のスプライトの座標へ向ける
-sprite.Motion.point.toSprite( otherSprite );
-
-// ランダムな方向へ向く
-sprite.Motion.point.toRandom();
-
-```
 <table class="block">
     <tbody>
         <tr>
@@ -36,6 +25,18 @@ sprite.Motion.point.toRandom();
     </tbody>
 </table>
 
-<br>
+---
+
+```typescript:line-numbers
+// マウスポインターへ向ける
+sprite.Motion.point.toMouse();
+
+// 他のスプライトの座標へ向ける
+sprite.Motion.point.toSprite( otherSprite );
+
+// ランダムな方向へ向く
+sprite.Motion.point.toRandom();
+
+```
 
 ---

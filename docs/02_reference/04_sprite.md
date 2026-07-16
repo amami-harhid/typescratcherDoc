@@ -59,6 +59,20 @@ cat.Costume.add( [ CatImage, Cat2Image ] );
 
 スプライトの座標を設定できます。
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/positionX150Y100.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+座標の位置はScratch3と同じです(中央が(X:0, Y:0))
+
 ```typescript:line-numbers
 
 // スプライトを作る
@@ -71,12 +85,6 @@ cat.Motion.position.xy = [ 150, 100 ];
 動き系のメソッドは、Motionを経由して参照します。
 動かす、座標を設定する、回転させる、向ける、などは Motionに属します。
 :::
-
----
-<img class="left" src="/positionX150Y100.svg" style="width:30%;"/>
-座標の位置はScratch3と同じです(中央が(X:0, Y:0))
-
----
 
 
 ## スプライトの大きさ

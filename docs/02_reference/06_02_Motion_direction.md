@@ -8,21 +8,6 @@ outline: deep
 
 ### 角度を設定
 
-```typescript:line-numbers
-
-// 角度を設定
-sprite.Motion.direction.degree = 90; // 右向きにする
-
-// 角度を◎ずつ変える（ 時計回り ）
-sprite.Motion.position.y += 15; 
-
-// 角度を◎ずつ変える（ 反時計回り ）
-sprite.Motion.position.y -= 15; 
-
-```
-
----
-
 <table class="block">
 <tbody>
     <tr>
@@ -44,3 +29,20 @@ sprite.Motion.position.y -= 15;
 </table>
 
 ---
+
+
+```typescript:line-numbers
+
+// 角度を設定
+sprite.Motion.direction.degree = 90; // 右向きにする
+
+// 角度を◎ずつ変える（ 時計回り ）
+sprite.Motion.position.y += 15; 
+
+// 角度を◎ずつ変える（ 反時計回り ）
+sprite.Motion.position.y -= 15; 
+
+```
+
+---
+

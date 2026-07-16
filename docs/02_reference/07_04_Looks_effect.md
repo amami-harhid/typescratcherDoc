@@ -34,6 +34,20 @@ Ts.ImageEffective.GHOST
 ```
 ### 画像効果をクリア
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/looksEffectClear.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 
 // 画像効果をクリアする
@@ -42,11 +56,41 @@ sprite.Looks.effect.clear();
 
 ```
 
+---
+
+### 画像効果を設定する
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/looksEffectClear.svg"/>
+    <img class="block" src="/looksEffectSetColor.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/looksEffectSetFisheye.svg"/>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <img class="block" src="/looksEffectSetWhirl.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/looksEffectSetPixelate.svg"/>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <img class="block" src="/looksEffectSetMosaic.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/looksEffectSetBrightness.svg"/>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <img class="block" src="/looksEffectSetGhost.svg"/>
+    </td>
+    <td>
     </td>
     </tr>
 </tbody>
@@ -54,7 +98,7 @@ sprite.Looks.effect.clear();
 
 ---
 
-### 画像効果を設定する
+
 
 ```typescript:line-numbers
 
@@ -81,55 +125,48 @@ sprite.Looks.effect.set(Ts.ImageEffective.GHOST, 50);
 
 ```
 
+
+---
+
+### 画像効果を〇〇ずつ変える
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/looksEffectSetColor.svg"/>
+    <img class="block" src="/looksEffectChangeColor.svg"/>
     </td>
     <td>
-    <img class="block" src="/looksEffectSetFisheye.svg"/>
+    <img class="block" src="/looksEffectChangeFisheye.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
     <td>
-    <img class="block" src="/looksEffectSetWhirl.svg"/>
+    <img class="block" src="/looksEffectChangeWhirl.svg"/>
     </td>
     <td>
-    <img class="block" src="/looksEffectSetPixelate.svg"/>
+    <img class="block" src="/looksEffectChangePixelate.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
     <td>
-    <img class="block" src="/looksEffectSetMosaic.svg"/>
+    <img class="block" src="/looksEffectChangeMozaic.svg"/>
     </td>
     <td>
-    <img class="block" src="/looksEffectSetBrightness.svg"/>
+    <img class="block" src="/looksEffectChangeBrightness.svg"/>
     </td>
     </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
     <tr>
     <td>
-    <img class="block" src="/looksEffectSetGhost.svg"/>
+    <img class="block" src="/looksEffectChangeGhost.svg"/>
+    </td>
+    <td>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
-### 画像効果を〇〇ずつ変える
 
 ```typescript:line-numbers
 
@@ -155,50 +192,5 @@ sprite.Looks.effect.change(Ts.ImageEffective.BRIGHTNESS, 50);
 sprite.Looks.effect.change(Ts.ImageEffective.GHOST, 50);
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/looksEffectChangeColor.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/looksEffectChangeFisheye.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/looksEffectChangeWhirl.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/looksEffectChangePixelate.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/looksEffectChangeMozaic.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/looksEffectChangeBrightness.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/looksEffectChangeGhost.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---

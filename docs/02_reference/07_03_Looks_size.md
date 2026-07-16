@@ -8,6 +8,20 @@ outline: deep
 
 ### 大きさ（パーセンテージ）
 
+<table class="block">
+<tbody>
+    <tr>
+    <td>
+    <img class="block" src="/looksSizeScale.svg"/>
+    </td>
+    <td>
+    </td>
+    </tr>
+</tbody>
+</table>
+
+---
+
 ```typescript:line-numbers
 // 大きさ(パーセンテージ)を設定する ( 横150%, 縦150% )
 sprite.Looks.size.scale = [150, 150]; 
@@ -19,18 +33,21 @@ sprite.Looks.size.scale.w = 150;
 sprite.Looks.size.scale.h = 150; 
 ```
 
+---
+
 <table class="block">
 <tbody>
     <tr>
     <td>
-    <img class="block" src="/looksSizeScale.svg"/>
+    <img class="block" src="/looksChangeScale.svg"/>
+    </td>
+    <td>
     </td>
     </tr>
 </tbody>
 </table>
 
 ---
-
 
 ```typescript:line-numbers
 // 大きさ(パーセンテージ)を〇〇ずつ変える ( 横10%  )
@@ -39,15 +56,6 @@ sprite.Looks.size.scale.w += 10;
 // 大きさ(パーセンテージ)を〇〇ずつ変える ( 縦10%  )
 sprite.Looks.size.scale.h += 10; 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/looksChangeScale.svg"/>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ### 大きさ（ピクセル）
 

@@ -6,15 +6,6 @@ outline: deep
 
 ## Motion.move (動かす)
 
-```typescript:line-numbers
-
-// 10歩動かす
-sprite.Motion.move.steps(10);
-
-// 指定した座標へ行く( [X座標, Y座標 ] )
-sprite.Motion.move.to( [ 150, 100] )
-
-```
 <table class="block">
 <tbody>
     <tr>
@@ -28,7 +19,42 @@ sprite.Motion.move.to( [ 150, 100] )
 </tbody>
 </table>
 
+---
+
+```typescript:line-numbers
+
+// 10歩動かす
+sprite.Motion.move.steps(10);
+
+// 指定した座標へ行く( [X座標, Y座標 ] )
+sprite.Motion.move.to( [ 150, 100] )
+
+```
+
 ### スライド移動
+
+<table class="block">
+<tbody>
+<tr>
+    <td>
+    <img class="block" src="/glideTo.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/glideToRandom.svg"/>
+    </td>
+</tr>
+<tr>
+    <td>
+    <img class="block" src="/glideToMousePointer.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/glideToOtherSprite.svg"/>
+    </td>
+</tr>
+</tbody>
+</table>
+
+---
 
 ```typescript:line-numbers
 
@@ -50,32 +76,22 @@ await sprite.Motion.move.glideToMouse( 1, otherSprite );
 
 ```
 
+
+### ランダムに移動
+
 <table class="block">
 <tbody>
 <tr>
-    <td style="width:80%;">
-    <img class="block" src="/glideTo.svg"/>
+    <td>
+    <img class="block" src="/moveToRandom.svg"/>
     </td>
     <td>
-    </td>
-</tr>
-<tr>
-    <td>
-    <img class="block" src="/glideToRandom.svg"/>
-    </td>
-    <td>
+    <img class="block" src="/moveToMousePointer.svg"/>
     </td>
 </tr>
 <tr>
     <td>
-    <img class="block" src="/glideToMousePointer.svg"/>
-    </td>
-    <td>
-    </td>
-</tr>
-<tr>
-    <td>
-    <img class="block" src="/glideToOtherSprite.svg"/>
+    <img class="block" src="/moveToOtherSprite.svg"/>
     </td>
     <td>
     </td>
@@ -83,7 +99,7 @@ await sprite.Motion.move.glideToMouse( 1, otherSprite );
 </tbody>
 </table>
 
-### ランダムに移動
+---
 
 ```typescript:line-numbers
 
@@ -98,35 +114,11 @@ sprite.Motion.move.toSprite( otherSprite );
 
 
 ```
-<table class="block">
-<tbody>
-    <tr>
-    <td>
-    <img class="block" src="/moveToRandom.svg"/>
-    </td>
-    <td>
-    <img class="block" src="/moveToMousePointer.svg"/>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <img class="block" src="/moveToOtherSprite.svg" style="min-width: 150px; margin: 5px;"/>
-    </td>
-    <td>
-    </td>
-    </tr>
-</tbody>
-</table>
 
 ---
 
 ### 跳ね返る
 
-```typescript:line-numbers
-// 端についたら跳ね返る
-sprite.Motion.move.ifOnEdgeBounce();
-
-```
 <table class="block">
     <tbody>
         <tr>
@@ -138,6 +130,13 @@ sprite.Motion.move.ifOnEdgeBounce();
         </tr>
     </tbody>
 </table>
-<br>
+
+---
+
+```typescript:line-numbers
+// 端についたら跳ね返る
+sprite.Motion.move.ifOnEdgeBounce();
+
+```
 
 ---
