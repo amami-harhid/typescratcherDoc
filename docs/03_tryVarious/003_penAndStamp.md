@@ -91,7 +91,7 @@ shark.Event.flagPresser().func = async function*(this: Sprite) {
             this.Motion.move.toRandom();
 
             // ペン太さを太くしていく
-            this.Pen.Size.thickness += 1;
+            this.Pen.size.thickness += 1;
 
             // ペンの色を変える
             this.Pen.HSVColor.hue += 15; // 色相 [0 - 360]
@@ -139,7 +139,7 @@ Ts.engine.start();
 `this.Pen.HSVColor.brightness` は明度です。<br>
 `this.Pen.HSVColor.transparency` は 透明度です<br>
 <br>
-『Penの太さ』は、`Pen.Size.thickness` で与えます。<br>
+『Penの太さ』は、`Pen.size.thickness` で与えます。<br>
 <br>
 『スタンプ』は、`Pen.stamp()`でとることができます。
 
