@@ -25,6 +25,9 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/amami-harhid/typescratcher
+    - theme: alt
+      text: Game(Sample)
+      link: https://amami-harhid.github.io/typeScratchCoder/src/04_games/001/
 
 
 features:
