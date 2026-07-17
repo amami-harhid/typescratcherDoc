@@ -24,7 +24,7 @@ export default defineConfig({
                     { text: '2 例題集', link: '/02_examples/' },
                     { text: '3 いろいろ試す', link: '/03_tryVarious/' },
                     { text: '4 レファレンス', link: '/04_reference/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/02_examples/':[{
@@ -43,7 +43,7 @@ export default defineConfig({
                     { text: '2-8 クローンを作る', link: '/02_examples/08_clones' },
                     { text: '3 いろいろ試す', link: '/03_tryVarious/' },
                     { text: '4 レファレンス', link: '/04_reference/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ],
             }],
             '/03_tryVarious/':[{
@@ -66,7 +66,7 @@ export default defineConfig({
                     { text: '3-11 テキストを音声に', link: '/03_tryVarious/011_textToSounds' },
                     { text: '3-12 テキストを画像に', link: '/03_tryVarious/012_textToImages' },                
                     { text: '4 レファレンス', link: '/04_reference/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/':[{
@@ -85,7 +85,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/01_base/':[{
@@ -112,7 +112,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/01_base/FontImage/':[{
@@ -141,7 +141,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/02_Motion/':[{
@@ -165,7 +165,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/03_Looks/':[{
@@ -191,7 +191,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/04_Control/':[{
@@ -212,7 +212,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/05_Event/':[{
@@ -236,7 +236,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/06_Broadcast/':[{
@@ -258,7 +258,7 @@ export default defineConfig({
                     { text: '4-6-3 Broadcast.send(引数付き)', link: '/04_reference/06_Broadcast/03_Broadcast_send_params' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/07_Sensing/':[{
@@ -285,7 +285,7 @@ export default defineConfig({
                     { text: '4-7-7 Sensing.sprite', link: '/04_reference/07_Sensing/07_Sensing_sprite' },
                     { text: '4-7-8 Sensing.dragMode', link: '/04_reference/07_Sensing/08_Sensing_dragMode' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/04_reference/08_Pen/':[{
@@ -309,7 +309,7 @@ export default defineConfig({
                     { text: '4-8-3 Pen.stamp', link: '/04_reference/08_Pen/03_Pen_stamp' },
                     { text: '4-8-4 Pen.size', link: '/04_reference/08_Pen/04_Pen_size' },
                     { text: '4-8-5 Pen.hsvColor', link: '/04_reference/08_Pen/05_Pen_color' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                 ]
             }],
             '/05_how_to_use/':[{
@@ -320,7 +320,7 @@ export default defineConfig({
                     { text: '2 例題集', link: '/02_examples/' },
                     { text: '3 いろいろ試す', link: '/03_tryVarious/' },
                     { text: '4 レファレンス', link: '/04_reference/' },
-                    { text: '5 使用方法', link: '/05_how_to_use/' },
+                    { text: '5 導入', link: '/05_how_to_use/' },
                     { text: '5-1 VS-CODE', link: '/05_how_to_use/001_vscode' },
                 ]
             }],
