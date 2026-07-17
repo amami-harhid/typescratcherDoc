@@ -7,7 +7,27 @@ outline: deep
 音量を変更したり、ピッチ（音の高さ）を変更したりしてみましょう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/008/"
+/>
+
+::: tip メッセージ
+緑の旗を押して開始します。<br>
+<br>
+(1) スペースキーを押すと『Chill』が鳴り始めます<br>
+(2) Ｄキーを押すと、音量が５下がります（下限０）<br>
+(3) Ａキーを押すと、音量が５上がります（上限１００）<br>
+(4) Ｗキーを押すと、ピッチが５上がります（上限３６０）<br>
+(5) Ｘキーを押すと、ピッチが５下がります（下限－３６０）<br>
+<br>
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -21,7 +41,7 @@ export const CatImage = new Ts.Image( {catSvg} );
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`sub/sounds.ts`**
+### **sub/sounds.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -34,7 +54,7 @@ export const ChillSound = new Ts.Sound({ChillWav});
 ```
 
 
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -111,23 +131,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/008/"
-/>
-
-::: tip メッセージ
-緑の旗を押して開始します。<br>
-<br>
-(1) スペースキーを押すと『Chill』が鳴り始めます<br>
-(2) Ｄキーを押すと、音量が５下がります（下限０）<br>
-(3) Ａキーを押すと、音量が５上がります（上限１００）<br>
-(4) Ｗキーを押すと、ピッチが５上がります（上限３６０）<br>
-(5) Ｘキーを押すと、ピッチが５下がります（下限－３６０）<br>
-<br>
-:::
-
----
 <br>

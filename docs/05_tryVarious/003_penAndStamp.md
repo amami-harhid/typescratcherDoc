@@ -7,8 +7,25 @@ outline: deep
 ランダムな場所へスプライトを移動させながら、ペンで線を引いてみましょう。
 そして、スタンプを押してみましょう。
 :::
+### 動作例
+TypeScratcherロゴをクリックすると表示を始めます
 
-### **`sub/images.ts`***
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/003/"
+/>
+
+::: tip 線とスタンプ
+緑の旗を押すと、『サメ』が『どこかへ行く』動作をします（ランダムな場所へ移動）。<br>
+移動しながら、ペンで線を引きます。<br>
+ペンの太さや色がジョジョに変化していきます。<br>
+<br>
+ペンを引き終えたら、スタンプを押し始めます。
+:::
+
+---
+
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -24,7 +41,7 @@ export const SharkImage = new Ts.Image( {sharkPng} );
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -129,20 +146,4 @@ Ts.engine.start();
 
 :::
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
-
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/003/"
-/>
-
-::: tip 線とスタンプ
-緑の旗を押すと、『サメ』が『どこかへ行く』動作をします（ランダムな場所へ移動）。<br>
-移動しながら、ペンで線を引きます。<br>
-ペンの太さや色がジョジョに変化していきます。<br>
-<br>
-ペンを引き終えたら、スタンプを押し始めます。
-:::
-
----
 <br>

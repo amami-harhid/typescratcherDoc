@@ -7,7 +7,26 @@ outline: deep
 テキストを音声にしてスピーチさせよう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/"
+/>
+
+::: tip メッセージ
+緑の旗を押して開始します。<br>
+<br>
+スプライトにマウスが触れると、「こら、触ったね」とスピーチします。<br>
+スプライトにマウスが触れるつど、声が「女性」⇒「男性」⇒「女性」・・・<br>
+と切り替わります。
+<br>
+:::
+
+
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -26,7 +45,7 @@ export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
 
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -117,22 +136,6 @@ ENGLISHにしたい場合は`Ts.SpeechLocale.ENGLISH`とします。<br>
 
 :::
 
-
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
-
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/"
-/>
-
-::: tip メッセージ
-緑の旗を押して開始します。<br>
-<br>
-スプライトにマウスが触れると、「こら、触ったね」とスピーチします。<br>
-スプライトにマウスが触れるつど、声が「女性」⇒「男性」⇒「女性」・・・<br>
-と切り替わります。
-<br>
-:::
 
 ---
 <br>

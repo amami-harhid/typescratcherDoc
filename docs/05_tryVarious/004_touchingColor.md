@@ -7,7 +7,23 @@ outline: deep
 指定した色に触れたとき、の判定をさせてみましょう。
 :::
 
-### **`sub/images.ts`***
+
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます。
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/004/"
+/>
+
+::: tip 線とスタンプ
+緑の旗を押すと、『サメ』が『マウスの方向へ進む』動作をします。<br>
+『サメ』『雲の色』(白) 、『道路の色』(薄いオレンジ)に触れたら、左上の変数表示『Touching』が変化します。<br>
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -21,7 +37,7 @@ const SharkImage = new Ts.Image( {sharkPng} );
 const ColorfulCityImage = new Ts.Image({ColorfulCityPng});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -98,20 +114,6 @@ Ts.engine.start();
 <video controls>
     <source src="/colorZilla.mp4"/>
 </video>
-
----
-
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
-
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/004/"
-/>
-
-::: tip 線とスタンプ
-緑の旗を押すと、『サメ』が『マウスの方向へ進む』動作をします。<br>
-『サメ』『雲の色』(白) 、『道路の色』(薄いオレンジ)に触れたら、左上の変数表示『Touching』が変化します。<br>
-:::
 
 ---
 <br>

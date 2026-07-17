@@ -7,7 +7,23 @@ outline: deep
 等速ジャンプと放物風ジャンプを試してみましょう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/"
+/>
+
+::: tip 線とスタンプ
+緑の旗を押すと、『犬』が左右に動きます。<br>
+キー『A』を押すと、『等速ジャンプ』をします。<br>
+キー『B』を押すと、『放物風ジャンプ』をします。<br>
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -21,7 +37,7 @@ export const DogImage = new Ts.Image( {dogPng} );
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -123,18 +139,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/"
-/>
-
-::: tip 線とスタンプ
-緑の旗を押すと、『犬』が左右に動きます。<br>
-キー『A』を押すと、『等速ジャンプ』をします。<br>
-キー『B』を押すと、『放物風ジャンプ』をします。<br>
-:::
-
----
 <br>

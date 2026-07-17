@@ -7,7 +7,28 @@ outline: deep
 メッセージを送信し、受信したときのスレッドを定義してみましょう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/006/"
+/>
+
+::: tip メッセージ
+緑の旗を押すと、ブロックの横幅をステージ横幅に合わせ、ステージの底部に合わせます。<br><br>
+ブロックの配置が終わった後にメッセージを送信し、メッセージを受信したときに次を行います<br>
+<br>
+(1)『犬』が自由落下しブロックに触れる直前でブロックの上部で落下を止めます。 <br>
+(2) 左右の矢印キーで『犬』が左右に動きます。<br>
+(3) スペースキーを押すと、『放物風ジャンプ』をします。<br>
+<br>
+PEN機能を有効にしているので、落下したり、ジャンプする軌跡を線で描きます。
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -24,7 +45,7 @@ export const BlockImage = new Ts.Image({blockSvg});
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -212,23 +233,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/006/"
-/>
-
-::: tip メッセージ
-緑の旗を押すと、ブロックの横幅をステージ横幅に合わせ、ステージの底部に合わせます。<br><br>
-ブロックの配置が終わった後にメッセージを送信し、メッセージを受信したときに次を行います<br>
-<br>
-(1)『犬』が自由落下しブロックに触れる直前でブロックの上部で落下を止めます。 <br>
-(2) 左右の矢印キーで『犬』が左右に動きます。<br>
-(3) スペースキーを押すと、『放物風ジャンプ』をします。<br>
-<br>
-PEN機能を有効にしているので、落下したり、ジャンプする軌跡を線で描きます。
-:::
-
----
 <br>

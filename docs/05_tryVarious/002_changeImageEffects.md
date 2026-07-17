@@ -7,7 +7,17 @@ outline: deep
 １０回繰り返して大きくして、１０回繰り返して小さくします。
 :::
 
-### **`sub/images.ts`***
+### 動作例
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/002/"
+/>
+
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -23,7 +33,7 @@ export const SharkImage = new Ts.Image( {sharkPng} );
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -135,13 +145,4 @@ Ts.engine.start();
 
 :::
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
-
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/002/"
-/>
-
-
----
 <br>

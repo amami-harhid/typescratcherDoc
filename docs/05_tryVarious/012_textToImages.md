@@ -7,7 +7,25 @@ outline: deep
 テキストをスプライトとして表示してみよう。
 :::
 
-### **`sub/images.ts`***
+### 動作例
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/012/"
+/>
+
+::: tip メッセージ
+緑の旗を押して開始します。<br>
+<br>
+「Ohoo my typescratcher」をイメージ化して、スプライトのコスチュームとして使用しています。<br>
+<br>
+文字をスプライトとしている証拠として、文字が端に触れたら跳ね返えらせています。
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -17,7 +35,7 @@ export const BlueSkyImage = new Ts.Image({BluSkySvg});
 
 ```
 
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -78,20 +96,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/012/"
-/>
-
-::: tip メッセージ
-緑の旗を押して開始します。<br>
-<br>
-「Ohoo my typescratcher」をイメージ化して、スプライトのコスチュームとして使用しています。<br>
-<br>
-文字をスプライトとしている証拠として、文字が端に触れたら跳ね返えらせています。
-:::
-
----
 <br>

@@ -7,7 +7,22 @@ outline: deep
 １０回繰り返して大きくして、１０回繰り返して小さくします。
 :::
 
-### **`sub/images.ts`***
+### 動作例
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/001/"
+/>
+
+::: warning 大きさの変化の方向
+Scratch3本家では、大きさを変えるとき縦横が同じく変化しますが、`TypeScratcher`では、縦方向のみ、横方向のみ、と大きさを変化させることができます。<br>
+<br>
+ここでは試していませんが、大きさをマイナス値にすると、向きが反転します。<br>例えば横方向を -100 とすると、左右反転する効果を得られます。
+
+:::
+
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -20,7 +35,7 @@ export const ObakeImage = new Ts.Image( {ObakeSvg} );
 export const BasketballImage = new Ts.Image({BasketballPng});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -92,20 +107,6 @@ Ts.engine.start();
 <br>
 今回は、0,1,2,3,4,5,6,7,8,9 の値を必要とせず、「１０回繰り返す」だけでよいので、『`_`』としています。
 <br>
-:::
-
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
-
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/001/"
-/>
-
-::: warning 大きさの変化の方向
-Scratch3本家では、大きさを変えるとき縦横が同じく変化しますが、`TypeScratcher`では、縦方向のみ、横方向のみ、と大きさを変化させることができます。<br>
-<br>
-ここでは試していませんが、大きさをマイナス値にすると、向きが反転します。<br>例えば横方向を -100 とすると、左右反転する効果を得られます。
-
 :::
 
 ---

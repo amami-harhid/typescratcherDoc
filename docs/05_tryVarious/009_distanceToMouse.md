@@ -7,7 +7,26 @@ outline: deep
 マウスを近づけたとき、何かをしてみよう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/009/"
+/>
+
+::: tip メッセージ
+緑の旗を押して開始します。<br>
+<br>
+変数「distance」がスプライト中心座標からのマウス座標距離です。<br>
+スプライトを囲む矩形の上下・左右の辺のいずれかに接する円を想定し、円の半径が変数「radius」です。<br>
+変数「distance」< 変数「radius」の場合、画像効果が発生することを観察してください。
+<br>
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -22,7 +41,7 @@ export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
 
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -107,21 +126,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/009/"
-/>
-
-::: tip メッセージ
-緑の旗を押して開始します。<br>
-<br>
-変数「distance」がスプライト中心座標からのマウス座標距離です。<br>
-スプライトを囲む矩形の上下・左右の辺のいずれかに接する円を想定し、円の半径が変数「radius」です。<br>
-変数「distance」< 変数「radius」の場合、画像効果が発生することを観察してください。
-<br>
-:::
-
----
 <br>

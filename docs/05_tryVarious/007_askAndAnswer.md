@@ -7,7 +7,27 @@ outline: deep
 スプライトが質問して応答を待つ、ステージが質問して応答を待つ、を試してみましょう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/007/"
+/>
+
+::: tip メッセージ
+緑の旗を押して開始します。<br>
+<br>
+(1) スペースキーを押すと『ねこ』が質問します。<br>
+(2) Ａキーを押すと、『ステージ』が質問をします。<br>
+(3) 答えが「はい」「いいえ」以外の場合は、再度の質問をします。<br>
+(4) 答えが「はい」「いいえ」の場合、スレッドはすべて終了します。<br>
+(5) 再開するときは「緑の旗」を押してください。<br>
+<br>
+:::
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -21,7 +41,7 @@ export const CatImage = new Ts.Image( {catSvg} );
 export const WaterImage = new Ts.Image({WaterSvg});
 
 ```
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -128,23 +148,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/007/"
-/>
-
-::: tip メッセージ
-緑の旗を押して開始します。<br>
-<br>
-(1) スペースキーを押すと『ねこ』が質問します。<br>
-(2) Ａキーを押すと、『ステージ』が質問をします。<br>
-(3) 答えが「はい」「いいえ」以外の場合は、再度の質問をします。<br>
-(4) 答えが「はい」「いいえ」の場合、スレッドはすべて終了します。<br>
-(5) 再開するときは「緑の旗」を押してください。<br>
-<br>
-:::
-
----
 <br>

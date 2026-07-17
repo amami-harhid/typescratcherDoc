@@ -1,13 +1,30 @@
 ---
 outline: deep
 ---
-# マウスが触れた
+# マウスが触れた 
 
 ::: tip マウスが触れた
 マウスが触れたときに、何かをしてみよう。
 :::
 
-### **`sub/images.ts`***
+### 動作例 【タブレット非推奨】
+
+TypeScratcherロゴをクリックすると表示を始めます
+
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/010/"
+/>
+
+::: tip メッセージ
+緑の旗を押して開始します。<br>
+<br>
+マウスポインターがスクラッチネコに触れている間、スクラッチネコの画像効果（色）が変化します。
+<br>
+:::
+
+---
+
+### **sub/images.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
@@ -23,7 +40,7 @@ export const WaterImage = new Ts.Image( {WaterSvg} );
 ```
 
 
-### **`index.ts`**
+### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { Sprite } from "@tscratch3/typescratcher";
@@ -82,19 +99,5 @@ Ts.engine.start();
 :::
 
 
-### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
-<AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/010/"
-/>
-
-::: tip メッセージ
-緑の旗を押して開始します。<br>
-<br>
-マウスポインターがスクラッチネコに触れている間、スクラッチネコの画像効果（色）が変化します。
-<br>
-:::
-
----
 <br>
