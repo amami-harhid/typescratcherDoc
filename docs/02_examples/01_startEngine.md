@@ -9,7 +9,9 @@ outline: deep
 :::
 
 ### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
+TypeScratcherロゴをクリックすると表示を始めます。
+
+なにも表示しないステージだけが表示されるはずです。
 
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/001/"

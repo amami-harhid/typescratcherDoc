@@ -17,7 +17,7 @@ export default defineConfig({
                 items: [
                     { text: 'ホーム', link: '/' },
                     { text: '1 TypeScracherとは', link: '/01_introduction/' },
-                    { text: '1-1 お勧めしたい方', link: '/01_introduction/01' },
+                    { text: '1-1 作者より', link: '/01_introduction/01' },
                     { text: '1-2 特徴', link: '/01_introduction/02' },
                     { text: '1-3 簡単なサンプル', link: '/01_introduction/03' },
                     { text: '1-4 免責・使用条件', link: '/01_introduction/04' },
