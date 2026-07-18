@@ -19,8 +19,17 @@ outline: deep
     <img class="block" src="/variablesSetter.svg"/>
     </td>
     </tr>
+    <tr>
+    <td>
+    <img class="block" src="/variableShow.svg"/>
+    </td>
+    <td>
+    <img class="block" src="/variableHide.svg"/>
+    </td>
+    </tr>
 </tbody>
 </table>
+
 
 ---
 
