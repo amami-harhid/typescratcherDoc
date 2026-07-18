@@ -25,61 +25,30 @@ outline: deep
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
-// 変数を定義する
-const volume = Ts.Variable.number( 100 ); // 初期値を100とする
-Ts.Variable.monitoring( { volume } ); // モニター対象にする
+// 乱数を生成する( 0 以上 ～ 10 以下の間の整数の乱数 )
+const randomValue = Ts.operations.randomValue( 0, 10 );
+console.log(`randomValue=${randomValue}`);
+// → 整数で 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 がランダムに出力される
 
-volume.hide(); // 変数を隠す
-
-volume.show(); // 変数を表示する
-
-volume.value = 20;  // 変数の値を 20 にする
-
-volume.value += 10;  // 変数の値に 10を加算する
-
-
+// 乱数を生成する( 0 以上 ～ 10 未満の間の小数付きの乱数 )
+const randomDecimalValue = Ts.operations.randomDecimalValue( 0, 10 );
+console.log(`randomDecimalValue=${randomDecimalValue}`);
+// → 0 ～ 10 (0を含み,10を含まない)小数値がランダムに出力される
 ```
 
-変数『`volume`』を表示するときのモニターの名前を変えるときは次のようにします。
-
-```typescript:line-numbers
-
-// 変数を定義する
-const volume = Ts.Variable.number( 100 ); // 初期値を100とする
-// モニター表示の名前を 'ボリューム'にする
-Ts.Variable.monitoring( { 'ボリューム': volume } ); 
-
-```
-
-![画像2](/Sample_variables_change_name.png)
+### 加減乗算
 
 
-## Variable.string ( 文字列型の変数 を作る )
-
-変数『`message`』を作成します。
-
-```typescript:line-numbers
-import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-
-// 変数を定義する
-const message = Ts.Variable.string( 'こんにちは' ); // 初期値を'こんにちは'とする
-Ts.Variable.monitoring( { message } ); // モニター対象にする
-
-message.hide(); // 変数を隠す
-
-message.show(); // 変数を表示する
-
-```
-
-![画像3](/Sample_variables_string.png)
+### 剰余
 
 
-```typescript:line-numbers
-message.text = 'こんばんは';  // 変数の値を 「こんばんは」 にする
-```
-![画像4](/Sample_variables_string2.png)
+### 比較演算
 
-```typescript:line-numbers
-message.text += '、みなさん';  // 変数の値に 「、みなさん」を追加する
-```
-![画像5](/Sample_variables_string3.png)
+
+### 論理演算
+
+
+### 文字列の結合
+
+
+### 
