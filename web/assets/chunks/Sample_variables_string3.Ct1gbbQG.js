@@ -1,0 +1,1 @@
+const a="/typescratcherDoc/web/Sample_variables_change_name.png",e="/typescratcherDoc/web/Sample_variables_string.png",s="/typescratcherDoc/web/Sample_variables_string2.png",r="/typescratcherDoc/web/Sample_variables_string3.png";export{a as _,e as a,s as b,r as c};
