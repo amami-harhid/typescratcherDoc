@@ -28,7 +28,7 @@ outline: deep
 
 ---
 
-<video width="70%" controls preload="metadata">
+<video width="100%" controls preload="metadata">
 <source src="/gameSampleTeleportation.mp4" type="video/mp4"></source>
 </video>
 
