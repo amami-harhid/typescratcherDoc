@@ -142,6 +142,3 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
-
-# sb3
-*.sb3
