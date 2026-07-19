@@ -20,7 +20,7 @@ hero:
       text: リファレンス
       link: /04_reference/
     - theme: red
-      text: 導入
+      text: Codespaces
       link: /05_how_to_use/
     - theme: alt
       text: GitHub
@@ -29,9 +29,9 @@ hero:
 
 features:
   - title: "Scratch3を愛するすべての方へ"
-    details: "慣れ親しんだScratch3の動きを実現することができます"
+    details: "コードプログラミングにて、慣れ親しんだScratch3の動きを表現できます"
   - title: "イベント駆動型"
-    details: "イベント駆動型のコードで、スレッド並列動作を実現しています"
+    details: "イベント駆動型のスレッド並列動作を実現しています"
   - title: "TypeScript"
     details: "Typescript(Javascript)のコーディングを学ぶ教材としておすすめです"
   - title: "繰り返し構文"
@@ -39,7 +39,7 @@ features:
   - title: "Scratch3の素材を流用可能"
     details: "Scratch3の画像や音をそのまま流用できるので素材を入手しやすいです"
   - title: "間違えにくい工夫"
-    details: "Typescriptの型を使った補完機能、ESLINTによる構文チェック機能を提供し、思考をプログラミングに集中させ、かつコードミスを未然に防止します"
+    details: "Typescriptの型を使った補完機能、ESLintによる構文チェック機能を提供し、思考をプログラミングに集中させ、コードミスを未然に防止します"
 
 ---
 
