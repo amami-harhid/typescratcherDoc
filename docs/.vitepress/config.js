@@ -322,7 +322,10 @@ export default defineConfig({
                     { text: '3 いろいろ試す', link: '/03_tryVarious/' },
                     { text: '4 レファレンス', link: '/04_reference/' },
                     { text: '5 導入', link: '/05_how_to_use/' },
-                    { text: '5-1 VS-CODE', link: '/05_how_to_use/001_vscode' },
+                    { text: '5-1 Githubアカウント', link: '/05_how_to_use/001_githubAccount' },
+                    { text: '5-2 Githubアプリ', link: '/05_how_to_use/002_githubApp' },
+                    { text: '5-3 Githubレポジトリ', link: '/05_how_to_use/003_githubRepo' },
+                    { text: '5-4 GithubCodespaces', link: '/05_how_to_use/004_githubCodespaces' },
                 ]
             }],
         },
