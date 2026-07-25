@@ -31,10 +31,10 @@ outline: deep
 
 ```typescript:line-numbers
 // 最前面にする
-sprite.Looks.layer.gotoFront(); 
+sprite.Looks.layer.gotoFrontLayer(); 
 
 // 最背面にする
-sprite.Looks.layer.gotoBack(); 
+sprite.Looks.layer.gotoBackLayer(); 
 
 // 手前に出す
 sprite.Looks.layer.goForwardLayers( 1 ); // 1つ手前に出す

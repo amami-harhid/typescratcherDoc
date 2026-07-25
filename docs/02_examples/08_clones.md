@@ -37,7 +37,7 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( [ BlueskyImage ] ); // 背景を追加
 
 // 【旗クリックされたとき】( ネコ )
-catA.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function*(this: Sprite) {
     // ずっと繰り返す
     for(;;){
         // 1秒ごとにクローンを作る
