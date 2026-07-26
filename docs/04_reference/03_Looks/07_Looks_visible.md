@@ -4,7 +4,7 @@ outline: deep
 
 # Looks(見た目)
 
-## 【Sprite限定】Looks.visible (表示非表示)
+## 【Sprite限定】Looks.visible (可視性操作)
 
 <table class="block">
 <tbody>

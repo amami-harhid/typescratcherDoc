@@ -33,9 +33,9 @@ import catSvg from './assets/cat.svg';
 import WaterSvg from './assets/water.svg';
 
 /* ネコ */
-export const CatImage = new Ts.Image( {catSvg} );
+export const CatImage = new Ts.Image( { catSvg } );
 /* 水中 */
-export const WaterImage = new Ts.Image( {WaterSvg} );
+export const WaterImage = new Ts.Image( { WaterSvg } );
 
 ```
 
@@ -49,10 +49,10 @@ import { Sprite } from "@tscratch3/typescratcher";
 import { CatImage, WaterImage } from './sub/images';
 
 // 【スプライト】(Spriteネコ)
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
@@ -60,26 +60,26 @@ cat.Looks.size.scale = [250, 250];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
 const touch = Ts.Variable.string( '' ); // タッチ
 Ts.Variable.monitoring( { touch } );
 
 // 旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite){
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     this.Looks.size.scale = [250, 250];
     touch.text = ''; // 変数の値を初期化
 };
 
 // 旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite){
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     /** 色の変化量 */
     const changeColor = 15;
     for(;;) {
         if( this.Sensing.mouse.isTouching ) {
             // マウスが触れたとき
-            this.Looks.effect.change(Ts.ImageEffective.COLOR, changeColor); // 色の効果を変える
+            this.Looks.effect.change( Ts.ImageEffective.COLOR, changeColor ); // 色の効果を変える
             touch.text = '触れた';
 
         }else{

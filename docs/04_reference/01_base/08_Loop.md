@@ -23,7 +23,7 @@ outline: deep
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function*(this: Sprite) {
+sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     // ずっと繰り返す
     for(;;) {
@@ -33,7 +33,7 @@ sprite.Event.flagPresser().func = async function*(this: Sprite) {
     }
 }
 
-stage.Event.flagPresser().func = async function*(this: Stage) {
+stage.Event.flagPresser().func = async function* ( this: Stage ) {
 
     // ずっと繰り返す
     for( ;; ) {
@@ -79,10 +79,10 @@ while( true ) {
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function*(this: Sprite) {
+sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     // 〇回繰り返す
-    for(const _idx of Ts.Loop.Iterator( 10 )) { // 10回繰り返す
+    for( const _idx of Ts.Loop.Iterator( 10 ) ) { // 10回繰り返す
         // いろんな処理を書く
         yield; // 次のフレームになるまで待つ
     }
@@ -95,8 +95,8 @@ sprite.Event.flagPresser().func = async function*(this: Sprite) {
 『`Ts.Loop.Iterator(10)`』は、配列[0,1,2,3,4,5,6,7,8,9]を返す『TypeScratcher』のサポートメソッドです。<br>
 <br>
 ```
-for(const _idx of Ts.Loop.Iterator(10)) {
-    console.log(`_idx=`,_idx);
+for( const _idx of Ts.Loop.Iterator( 10 ) ) {
+    console.log( `_idx=`, _idx );
     yield;
 }
 ```
@@ -137,7 +137,7 @@ for(let idx = 0 ; idx < 10; idx++) {
 
 ```typescript:line-numbers
 
-sprite.Event.flagPresser().func = async function*(this: Sprite) {
+sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     for( ;; ) {
         // いろんなコードを書く
@@ -164,10 +164,10 @@ sprite.Event.flagPresser().func = async function*(this: Sprite) {
 
 ```typescript:line-numbers
 
-sprite.Event.flagPresser().func = async function*(this: Sprite) {
+sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     for( ;; ) {
-        this.Motion.move.steps(10); // 10 進める
+        this.Motion.move.steps( 10 ); // 10 進める
         // (↓)端に触れたときのIF文
         if( this.Sensing.edge.isTouching ) {
             // 端に触れたなら
@@ -206,20 +206,20 @@ sprite.Event.flagPresser().func = async function*(this: Sprite) {
 Scratch3流とするには、すべての繰り返しの最後に『`yield`』(次のフレームになるまで停止して待つ)が必要です。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function*(this: Sprite) {
+sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     //　ずっと繰り返す (内部で〇回繰り返す)
     for( ;; ) {
 
         // 10回繰り返す
-        for(const _idx of Ts.Loop.Iterator(10)) {
+        for( const _idx of Ts.Loop.Iterator( 10 ) ) {
             // スプライトの大きさ(幅)を 5%ずつ大きくする
             this.Looks.size.scale.w += 5;
             yield;
         }
         
         // 10回繰り返す
-        for(const _idx of Ts.Loop.Iterator(10)) {
+        for( const _idx of Ts.Loop.Iterator( 10 ) ) {
             // スプライトの大きさ(幅)を 5%ずつ小さくする
             this.Looks.size.scale.w -= 5;            
             yield;

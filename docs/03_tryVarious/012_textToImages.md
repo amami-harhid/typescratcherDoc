@@ -31,7 +31,7 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 // 【画像読み込み】
 import BluSkySvg from './assets/Blue Sky.svg';
-export const BlueSkyImage = new Ts.Image({BluSkySvg});
+export const BlueSkyImage = new Ts.Image( { BluSkySvg } );
 
 ```
 
@@ -45,7 +45,7 @@ import { BlueSkyImage } from './sub/images';
 
 // 【ステージ】(BlueSkyImage)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [BlueSkyImage] );
+stage.Backdrop.add( BlueSkyImage );
 
 // 文字列イメージ化
 const HELLO = 'Ohoo my typescratcher';
@@ -53,16 +53,16 @@ const attribute : SvgImageAttributes = {
     fill: '#f00000', // 文字色
     font_family: Ts.ScratchFontFamily.Scratch
 };
-const helloImage = new Ts.FontImage(attribute);
+const helloImage = new Ts.FontImage( attribute );
 await helloImage.textToSvg(HELLO);
 
 // 文字スプライトを作成
 const moji = new Ts.Sprite('moji');
-moji.Costume.add( [helloImage] );
+moji.Costume.add( helloImage );
 moji.Looks.size.scale = [50,50];
 
 // 旗が押されたときの「文字」のスレッド
-moji.Event.flagPresser().func = async function*(this: Sprite) {
+moji.Event.flagPresser().func = async function* ( this: Sprite ) {
     // 中心座標
     this.Motion.position.xy = [0, 0];
     // 右90度
@@ -70,9 +70,9 @@ moji.Event.flagPresser().func = async function*(this: Sprite) {
     // 回転方法は自由に回転
     this.Motion.rotation.style = Ts.Rotation.ALL_AROUND;
     // ずっと繰り返す
-    for(;;) {
+    for( ;; ) {
         // 向いている方向へ進む
-        this.Motion.move.steps(2);
+        this.Motion.move.steps( 2 );
         // 向きを変える
         this.Motion.direction.degree += 1;
         // もし端に触れたら跳ね返る

@@ -35,9 +35,9 @@ import catSvg from './assets/cat.svg';
 import WaterSvg from './assets/water.svg';
 
 /* ネコ */
-export const CatImage = new Ts.Image( {catSvg} );
+export const CatImage = new Ts.Image( { catSvg } );
 /* 水中 */
-export const WaterImage = new Ts.Image({WaterSvg});
+export const WaterImage = new Ts.Image( { WaterSvg } );
 
 ```
 
@@ -50,10 +50,10 @@ import { Sprite } from "@tscratch3/typescratcher";
 import { CatImage, WaterImage } from './sub/images';
 
 // 【スプライト】(Spriteネコ)
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
@@ -61,7 +61,7 @@ cat.Looks.size.scale = [250, 250];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
 const distance = Ts.Variable.number( 100 ); //距離
@@ -74,31 +74,31 @@ const pixelate = Ts.Variable.number( 0 ); // ピクセル効果の値
 Ts.Variable.monitoring( { pixelate } )
 
 // 緑の旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite){
+cat.Event.flagPresser().func = async function* ( this:Sprite ){
     this.Looks.size.scale = [250, 250];
     // スプライトを囲む矩形の情報を取り出す
     const bounds = this.Looks.size.drawingSize;
     //スプライトを囲む矩形の上下・左右の辺のいずれかに接する円を
     // 想定し、円の半径を計算しておく（距離の閾値値として）
-    radius.value = Math.floor(Math.max( bounds.width / 2, bounds.height / 2 )); // 上下・左右の大きい方を採用
+    radius.value = Math.floor( Math.max( bounds.width / 2, bounds.height / 2 ) ); // 上下・左右の大きい方を採用
 };
 
 // 緑の旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite){
+cat.Event.flagPresser().func = async function* ( this:Sprite ){
     // スプライト中心座標とマウス座標の間の距離を取得する。
     // 距離を元にスプライトを囲む「円」にマウスポインターが入ったか
     // を計算し、円に入っているときは画像効果（幽霊効果・ピクセル効果）
     // を変化させる。
-    for(;;) {
+    for( ;; ) {
         const _distance = this.Sensing.mouse.distance;
         distance.value = Math.floor(_distance);
-        if(distance.value < radius.value) {
-            const _ghost = (1 - distance.value/radius.value)*100;
+        if( distance.value < radius.value ) {
+            const _ghost = ( 1 - distance.value/radius.value ) * 100;
             ghost.value = Math.floor(_ghost); 
-            const _pixelate = (1 - distance.value/radius.value)*100;
+            const _pixelate = ( 1 - distance.value/radius.value ) * 100;
             pixelate.value = Math.floor( _pixelate );
-            this.Looks.effect.set(Ts.ImageEffective.GHOST, ghost.value);
-            this.Looks.effect.set(Ts.ImageEffective.PIXELATE, pixelate.value);
+            this.Looks.effect.set( Ts.ImageEffective.GHOST, ghost.value );
+            this.Looks.effect.set(T s.ImageEffective.PIXELATE, pixelate.value );
         }else{
             this.Looks.effect.clear();
         }

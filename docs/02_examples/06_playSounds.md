@@ -31,8 +31,8 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 const Boing = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/53a3c2e27d1fb5fdb14aaf0cb41e7889.wav/get'; 
 const AElecGuitar = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/fa5f7fea601e9368dd68449d9a54c995.wav/get';
 // サウンド作成
-export const BoingSound = new Ts.Sound({ Boing })
-export const AElecGuitarSound = new Ts.Sound({ AElecGuitar });
+export const BoingSound = new Ts.Sound( { Boing } )
+export const AElecGuitarSound = new Ts.Sound( { AElecGuitar } );
 ```
 ::: warning sub/sounds.ts
 『サウンド』を作るサブモジュールです。<br>
@@ -53,30 +53,30 @@ import { BoingSound, AElecGuitarSound } from "./sub/sounds";
 
 // スプライト作成
 const cat = new Ts.Sprite( "cat" );
-cat.Costume.add( [ CatAImage, CatBImage ] ); // イメージを追加
-cat.Sound.add( [ AElecGuitarSound, BoingSound ] ); // 音を追加
+cat.Costume.add( CatAImage, CatBImage ); // イメージを追加
+cat.Sound.add( AElecGuitarSound, BoingSound ); // 音を追加
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add( [ BlueskyImage, CanyonImage ] ); // 背景を追加
+stage.Backdrop.add( BlueskyImage, CanyonImage ); // 背景を追加
 
 // 【旗クリックされたとき】のイベント定義
-cat.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function*( this: Sprite ) {
 
-    for(;;) {
-        this.Motion.move.steps(10);
+    for( ;; ) {
+        this.Motion.move.steps( 10 );
         this.Motion.move.ifOnEdgeBounce();
         this.Looks.costume.next(); // 次のコスチュームにする
         this.Looks.backdrop.next(); // 次の背景にする
-        await this.Control.wait(0.1); // 0.1秒だけ待つ
+        await this.Control.wait( 0.1 ); // 0.1秒だけ待つ
         yield;
     }
 }
 // 【旗クリックされたとき】のイベント定義（別スレッド）
-cat.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function*( this: Sprite ) {
     
     let boingSoundFlag = true;
-    for(;;){
+    for( ;; ){
         // Sensing: 「調べる」系
         // edge: 「端」に関する処理
         // Sensing.edge.isTouching:  端にふれていたら true を返す
@@ -85,9 +85,9 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
             if(boingSoundFlag === true){
                 // Sound: 「音」系
                 // Sound.play :  指定したサウンドを鳴らす
-                this.Sound.play(BoingSound);
+                this.Sound.play( BoingSound );
             }else{
-                this.Sound.play(AElecGuitarSound);
+                this.Sound.play( AElecGuitarSound );
             }
             await this.Control.wait(0.1);
             // 鳴らす音のフラグを反転させる

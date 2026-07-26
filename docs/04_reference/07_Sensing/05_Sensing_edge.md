@@ -27,13 +27,13 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
-        this.Motion.move.steps(10); // 10 進める
+        this.Motion.move.steps( 10 ); // 10 進める
         if( this.Sensing.edge.isTouching ) {
             // Trueのとき端にふれている
             this.Motion.direction.degree *= -1; // 向きを反転させる

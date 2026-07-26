@@ -32,9 +32,9 @@ import sharkPng from '@Assets/shark.png';
 const ColorfulCityPng = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/04d18ddd1b85f0ea30beb14b8da49f60.png/get';
 
 /** サメ **/
-const SharkImage = new Ts.Image( {sharkPng} );
+const SharkImage = new Ts.Image( { sharkPng } );
 /** カラフルな街 **/
-const ColorfulCityImage = new Ts.Image({ColorfulCityPng});
+const ColorfulCityImage = new Ts.Image( { ColorfulCityPng } );
 
 ```
 ### **index.ts**
@@ -46,44 +46,44 @@ import { Sprite } from "@tscratch3/typescratcher";
 import { SharkImage, ColorfulCityImage } from './sub/images';
 
 // 【スプライト】(さめ)
-const shark = new Ts.Sprite('shark');
+const shark = new Ts.Sprite( 'shark' );
 // サメイメージをスプライトへ追加
-shark.Costume.add( [SharkImage] );
+shark.Costume.add( SharkImage );
 // サメの大きさを 10%にする
 shark.Looks.size.scale = [10, 10];
 shark.Looks.size.scale.w *= -1; // サメの横の向きを反転させる( マイナスを掛けている )
 
 // 【ステージ】
 const stage = new Ts.Stage();
-stage.Backdrop.add( [ColorfulCityImage] ); // 背景を追加
+stage.Backdrop.add( ColorfulCityImage ); // 背景を追加
 
 // 変数（文字列の変数を用意）
-const Touching = Ts.Variable.string('');
-Ts.Variable.monitoring({Touching}); // モニター監視対象
+const Touching = Ts.Variable.string( '' );
+Ts.Variable.monitoring( { Touching } ); // モニター監視対象
 
 
 // 旗が押されたとき（マウスの方向へ移動させる）
-shark.Event.flagPresser().func = async function*(this: Sprite) {
+shark.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     this.Motion.position.xy = [ 0, 0 ];
     // ずっと繰り返す
-    for(;;){
+    for( ;; ){
         // マウスに向ける
         this.Motion.point.toMouse();
         // 進める
-        this.Motion.move.steps(5);
+        this.Motion.move.steps( 5 );
         yield;
     }
 }
 
 // 旗が押されたとき( )
-shark.Event.flagPresser().func = async function*(this: Sprite) {
+shark.Event.flagPresser().func = async function* ( this: Sprite ) {
 
     // ずっと繰り返す
-    for(;;){
-        if(this.Sensing.color.isTouching('#ffffff')) {
+    for( ;; ){
+        if( this.Sensing.color.isTouching( '#ffffff' ) ) {
             Touching.text = '雲の色に触れた';
-        }else if(this.Sensing.color.isTouching('#FFED9C')) {
+        }else if( this.Sensing.color.isTouching( '#FFED9C' ) ) {
             Touching.text = '道路の色に触れた';
         }else{
             Touching.text = '';
@@ -97,7 +97,7 @@ Ts.engine.start();
 ```
 
 ::: warning index.tsについて
-『`this.Sensing.color.isTouching('#ffffff')`』は、『色に触れているか』を意味します。<br>
+『`this.Sensing.color.isTouching( '#ffffff' )`』は、『色に触れているか』を意味します。<br>
 色は 16進数のRGB指定で表現します。
 <br>
 ブラウザCHROMEでは、プラグイン「ColorZilla」で色をピックできます。

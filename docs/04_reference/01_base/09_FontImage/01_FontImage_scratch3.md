@@ -48,8 +48,8 @@ const helloImage = new Ts.FontImage( attribute );
 await helloImage.textToSvg(HellText);
 
 // スプライトを作成
-const helloSprite = new Ts.Sprite('hello');
+const helloSprite = new Ts.Sprite( 'hello' );
 // コスチュームとして FontImageを設定
-helloSprite.Costume.add( [ helloImage ] );
+helloSprite.Costume.add( helloImage );
 
 ```

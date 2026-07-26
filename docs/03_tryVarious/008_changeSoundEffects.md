@@ -36,9 +36,9 @@ import catSvg from './assets/cat.svg';
 import WaterSvg from './assets/water.svg';
 
 /* ネコ */
-export const CatImage = new Ts.Image( {catSvg} );
+export const CatImage = new Ts.Image( { catSvg } );
 /* 水中 */
-export const WaterImage = new Ts.Image({WaterSvg});
+export const WaterImage = new Ts.Image( { WaterSvg } );
 
 ```
 ### **sub/sounds.ts**
@@ -49,7 +49,7 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import ChillWav from './assets/Chill.wav';
 
 /* CHILL SOUND */
-export const ChillSound = new Ts.Sound({ChillWav});
+export const ChillSound = new Ts.Sound( { ChillWav } );
 
 ```
 
@@ -66,18 +66,18 @@ import { CatImage, WaterImage } from './sub/images';
 import { ChillSound } from './sub/sounds';
 
 // 【スプライト】(Spriteネコ)
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // サウンドをスプライトへ追加
-cat.Sound.add([ ChillSound ]);
+cat.Sound.add( ChillSound );
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 /** 変数：音量 */
 const volume = Ts.Variable.number( 100 ); 
@@ -87,37 +87,37 @@ const pitch = Ts.Variable.number( 0 );
 Ts.Variable.monitoring( { pitch } );
 
 // 緑の旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite){
+cat.Event.flagPresser().func = async function* ( this:Sprite ){
     // ずっと繰り返し音を鳴らす
-    for(;;) {
-        await this.Sound.playUntilDone(ChillSound);
+    for( ;; ) {
+        await this.Sound.playUntilDone( ChillSound );
         yield;
     }
 };
 
 // キー「A」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'a' ).func = async function*(this:Sprite) {
+cat.Event.keyPresser( 'a' ).func = async function* ( this:Sprite ) {
     // ボリュームを あげる
-    this.Sound.addVolume(ChillSound, +5);
-    volume.value = this.Sound.getVolume(ChillSound);
+    this.Sound.addVolume( ChillSound, +5 );
+    volume.value = this.Sound.getVolume( ChillSound );
 }
 // キー「D」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'd' ).func = async function*(this:Sprite) {
+cat.Event.keyPresser( 'd' ).func = async function* ( this:Sprite ) {
     // ボリュームを さげる
-    this.Sound.addVolume(ChillSound, -5);
-    volume.value = this.Sound.getVolume(ChillSound);
+    this.Sound.addVolume( ChillSound, -5 );
+    volume.value = this.Sound.getVolume( ChillSound );
 }
 // キー「W」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'w' ).func = async function*(this:Sprite) {
+cat.Event.keyPresser( 'w' ).func = async function* ( this:Sprite ) {
     // ピッチを あげる
-    this.Sound.addPitch(ChillSound, +5);
-    pitch.value = this.Sound.getPitch(ChillSound);
+    this.Sound.addPitch( ChillSound, +5 );
+    pitch.value = this.Sound.getPitch( ChillSound );
 }
 // キー「X」を押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( 'x' ).func = async function*(this:Sprite) {
+cat.Event.keyPresser( 'x' ).func = async function* ( this:Sprite ) {
     // ピッチを さげる
-    this.Sound.addPitch(ChillSound, -5);
-    pitch.value = this.Sound.getPitch(ChillSound);
+    this.Sound.addPitch( ChillSound, -5 );
+    pitch.value = this.Sound.getPitch( ChillSound );
 }
 
 // 開始

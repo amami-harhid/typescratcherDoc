@@ -11,7 +11,7 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 // 外部フォントを読み込む
 const HarryPotter = "https://amami-harhid.github.io/tscratch3assets/assets/fonts/HarryPotter-ov4z.woff";
-const HarryPotterFont = new Ts.Font({HarryPotter});
+const HarryPotterFont = new Ts.Font( { HarryPotter } );
 
 ```
 
@@ -23,7 +23,7 @@ import { Sprite, SvgImageAttributes } from "@tscratch3/typescratcher";
 
 // 外部フォントを読み込む
 const HarryPotter = "https://amami-harhid.github.io/tscratch3assets/assets/fonts/HarryPotter-ov4z.woff";
-const HarryPotterFont = new Ts.Font({HarryPotter});
+const HarryPotterFont = new Ts.Font( { HarryPotter } );
 
 // フォント属性を指定
 const fontAttribute: SvgImageAttributes = {
@@ -33,13 +33,13 @@ const fontAttribute: SvgImageAttributes = {
 // フォントイメージを作成
 const mojiImage = new Ts.FontImage(fontAttribute);
 // フォントイメージへテキストを渡す（SVGイメージ化）
-mojiImage.textToSvg('HarryPotter text');
+mojiImage.textToSvg( 'HarryPotter text' );
 
 // スプライトを作成
-const moji = new Ts.Sprite('moji');
+const moji = new Ts.Sprite( 'moji' );
 
 // フォントイメージをコスチュームとして追加
-moji.Costume.add([mojiImage]);
+moji.Costume.add( mojiImage );
 
 ```
 

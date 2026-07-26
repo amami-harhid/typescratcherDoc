@@ -25,10 +25,10 @@ outline: deep
 
 ```typescript:line-numbers
 // 言う
-sprite.Looks.bubble.say('こんにちは'); 
+sprite.Looks.bubble.say( 'こんにちは' ); 
 
 // 考える
-sprite.Looks.bubble.think('うーん...'); 
+sprite.Looks.bubble.think( 'うーん...' ); 
 
 ```
 

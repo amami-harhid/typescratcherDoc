@@ -9,7 +9,7 @@ outline: deep
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 ```
 :::tip Sprite への渡し方
@@ -35,18 +35,16 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import { CatAImage, Cat2Image } from "./sub/images";
 
 // スプライトを作る
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // コスチュームを設定する
-cat.Costume.add( [ CatImage, Cat2Image ] );
+cat.Costume.add( CatImage, Cat2Image );
 // これで、スプライトcat に ２つのコスチュームを持たせました。
 
 ```
 
 :::tip Costume の渡し方
-`cat.Costume.add( [ CatImage, Cat2Image ] )` と イメージを配列で渡してください。<br><br>
-コスチューム１個だけのときでも １個の要素を持つ配列を渡してください。<br>
-`cat.Costume.add( [ CatImage ] )`
+`cat.Costume.add( CatImage, Cat2Image )` と イメージを引数で渡してください。<br><br>
 <br>
 <br>
 最初に渡したイメージが、デフォルトのコスチュームになります。
@@ -76,7 +74,7 @@ cat.Costume.add( [ CatImage, Cat2Image ] );
 ```typescript:line-numbers
 
 // スプライトを作る
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 // 座標を設定する
 cat.Motion.position.xy = [ 150, 100 ];
 
@@ -94,7 +92,7 @@ cat.Motion.position.xy = [ 150, 100 ];
 ```typescript:line-numbers
 
 // スプライトを作る
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 // 座標を設定する
 cat.Looks.scale.size = [ 50, 150 ]; // 横50%, 縦150%
 

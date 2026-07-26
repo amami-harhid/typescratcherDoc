@@ -38,14 +38,14 @@ const BlueskyImage = new Ts.Image( { BlueskySvg } );
 
 // スプライト作成
 const cat = new Ts.Sprite( "cat" );
-cat.Costume.add( [ CatAImage ] ); // イメージを追加
+cat.Costume.add( CatAImage ); // イメージを追加
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add( [ BlueskyImage ] ); // 背景を追加
+stage.Backdrop.add( BlueskyImage ); // 背景を追加
 
 // 旗クリックされたとき、のイベント定義
-cat.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function*( this: Sprite ) {
     // Motion.move.steps : 指定した数だけ動かす
     this.Motion.move.steps(5);
 }

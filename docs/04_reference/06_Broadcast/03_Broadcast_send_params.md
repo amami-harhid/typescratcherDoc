@@ -16,13 +16,13 @@ Scratch3 本家では、メッセージ送受信時に引数（可変パラメ�
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 /** メッセージID */
 const messageId = 'BroadcastTest';
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 
     await this.Control.wait(10); // 10秒待つ
     const bubbleMessage = 'メッセージ受信した';
@@ -31,7 +31,7 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 }
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
-cat.Broadcast.receiver( messageId ).func = async function*(this:Sprite, 
+cat.Broadcast.receiver( messageId ).func = async function* ( this:Sprite, 
     bubbleMessage: string) {
 
     // 渡された文字列を使って『言う』
@@ -54,13 +54,13 @@ Scratch3 本家では、メッセージ送受信時に引数（可変パラメ�
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 /** メッセージID */
 const messageId = 'BroadcastTest';
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 
     await this.Control.wait(10); // 10秒待つ
     const bubbleMessage = 'メッセージ受信した';
@@ -68,16 +68,16 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     // メッセージを送って待つ
     await this.Broadcast.sendAndWait( messageId, bubbleSec );// 引数２つ
     // 『変数を使って言う』が終わった
-    console.log('終わり')
+    console.log( '終わり' );
 }
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
-cat.Broadcast.receiver( messageId ).func = async function*(this:Sprite, 
+cat.Broadcast.receiver( messageId ).func = async function* ( this:Sprite, 
     bubbleMessage: string, bubbleSec: number) {
 
     // 渡された文字列を使って『言う』
     // 渡された秒数の間、言う
-    await this.Looks.bubble.sayForSecs('メッセージ受信した', bubbleSec); 
+    await this.Looks.bubble.sayForSecs( 'メッセージ受信した', bubbleSec ); 
 }
 ```
 

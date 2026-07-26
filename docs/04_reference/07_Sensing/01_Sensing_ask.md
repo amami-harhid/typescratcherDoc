@@ -27,22 +27,22 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
         // スプライトが質問する
-        const answer = await this.Sensing.askAndWait('何か答えて');
-        if(answer == 'YES') {
+        const answer = await this.Sensing.askAndWait( '何か答えて' );
+        if( answer == 'YES' ) {
             // ループを抜ける
             break;
         }
-        console.log('Answer=', answer); // コンソールログへ答えを出力する
+        console.log( 'Answer=', answer ); // コンソールログへ答えを出力する
         yield;
     }
-    console.log('おわり');
+    console.log( 'おわり' );
 }
 ```
 ---
@@ -60,19 +60,19 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗が押されたときの『stage』のスレッド
-stage.Event.flagPresser().func = async function*(this:Stage) {
+stage.Event.flagPresser().func = async function* ( this:Stage ) {
     // ずっと繰り返す
     for( ;; ) {
         // ステージが質問する
-        const answer = await this.Sensing.askAndWait('何か答えて');
-        if(answer == 'YES') {
+        const answer = await this.Sensing.askAndWait( '何か答えて' );
+        if( answer == 'YES' ) {
             // ループを抜ける
             break;
         }
-        console.log('Answer=', answer); // コンソールログへ答えを出力する
+        console.log( 'Answer=', answer ); // コンソールログへ答えを出力する
         yield;
     }
-    console.log('おわり');
+    console.log( 'おわり' );
 }
 ```
 ---

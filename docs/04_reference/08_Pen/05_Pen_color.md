@@ -26,9 +26,9 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
-const thread = async function*(this:Sprite) {
+const thread = async function* ( this:Sprite ) {
     // HSVカラー値を設定する
     this.Pen.HSVColor.hsv = {
         hue: 67,          // 色
@@ -65,12 +65,12 @@ const thread = async function*(this:Sprite) {
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
-const threadA = async function*(this:Sprite) {
+const threadA = async function* ( this:Sprite ) {
     this.Pen.HSVColor.hue = 10; // HSV(色相)を設定する
 } 
-const threadB = async function*(this:Sprite) {
+const threadB = async function* ( this:Sprite ) {
     this.Pen.HSVColor.hue += 10; // HSV(色相)を10ずつ変える
 } 
 

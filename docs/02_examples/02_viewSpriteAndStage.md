@@ -29,8 +29,8 @@ const CatASvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/bcf454acf8
 const BlueskySvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/e7c147730f19d284bcd7b3f00af19bb6.svg/get';
 
 // イメージ作成
-export const CatAImage = new Ts.Image({ CatASvg });
-export const BlueskyImage = new Ts.Image({ BlueskySvg });
+export const CatAImage = new Ts.Image( { CatASvg } );
+export const BlueskyImage = new Ts.Image( { BlueskySvg } );
 ```
 ::: warning sub/sounds.ts
 サウンドを作りだすコードです。<br><br>このコードを本体(index.ts)の中に書いてもOKですが、サブモジュールとして分離してみました。<br>
@@ -50,11 +50,11 @@ import { CatAImage, BlueskyImage } from './sub/images';
 
 // スプライト作成
 const cat = new Ts.Sprite( "cat" );
-cat.Costume.add( [ CatAImage ] ); // イメージを追加
+cat.Costume.add( CatAImage ); // イメージを追加
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add( [ BlueskyImage ] ); // 背景を追加
+stage.Backdrop.add( BlueskyImage ); // 背景を追加
 
 // 開始
 Ts.engine.start();
@@ -63,8 +63,9 @@ Ts.engine.start();
 スプライトを `new Sprite('名前')`でして生成します。<br>
 ステージを `new Stage()` で生成します。<br>
 Javascriptの流儀として、それぞれ、`const` (コンスタント定義) で宣言することを推奨します。<br>
-`Costume.add( [ イメージ ] )`, `Backdrop.add( [ イメージ ] )` は、コスチューム、背景としてイメージを追加している箇所です。<br>
-`[ ]` は配列を表現する書き方であり、`add`メソッドへは同時に複数のイメージを 配列として与えることが可能です。
+`Costume.add( イメージ, イメージ, ... )`, `Backdrop.add( イメージ, イメージ, ... )` は、コスチューム、背景としてイメージを追加している箇所です。<br>
+複数のイメージを渡すときは、カンマ`,`区切りで渡すとよいです。(例：`add(イメージA, イメージB, イメージC)`)<br>
+イメージの配列`[ ]` の形で引数を渡すときは、`add( ... imageArray )`と `...`をつけるとよいです。
 :::
 
 <br>

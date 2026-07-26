@@ -34,10 +34,10 @@ const BlueskySvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/e7c1477
 const CanyonPng = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/c7c0b27b959193a0b570a9639cfe8158.png/get';
 
 // イメージ作成
-export const CatAImage = new Ts.Image({ CatASvg });
-export const CatBImage = new Ts.Image({ CatBSvg });
-export const BlueskyImage = new Ts.Image({ BlueskySvg });
-export const CanyonImage = new Ts.Image({CanyonPng});
+export const CatAImage = new Ts.Image( { CatASvg } );
+export const CatBImage = new Ts.Image( { CatBSvg } );
+export const BlueskyImage = new Ts.Image( { BlueskySvg } );
+export const CanyonImage = new Ts.Image( { CanyonPng } );
 
 ```
 
@@ -51,18 +51,17 @@ import { CatAImage, CatBImage, BlueskyImage, CanyonImage } from './sub/images';
 
 // スプライト作成
 const cat = new Ts.Sprite( "cat" );
-cat.Costume.add( [ CatAImage, CatBImage ] ); // イメージを追加
+cat.Costume.add( CatAImage, CatBImage ); // イメージを２個追加
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add( [ BlueskyImage, CanyonImage ] ); // 背景を追加
+stage.Backdrop.add( BlueskyImage, CanyonImage ); // 背景を２個追加
 
 // 【旗クリックされたとき】
-cat.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function*( this: Sprite ) {
     
-    
-    for(;;) {
-        this.Motion.move.steps(5);
+    for( ;; ) {
+        this.Motion.move.steps( 5 );
         this.Motion.move.ifOnEdgeBounce();
         // Looks: 「見た目」系
         // Looks.costume.next: 「次のコスチュームにする」

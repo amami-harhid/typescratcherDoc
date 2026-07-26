@@ -24,9 +24,9 @@ outline: deep
 ```typescript:line-numbers
 
 const hoge = new Ts.Sprite('hoge');
-hoge.Event.flagPresser().func = async function*(this:Sprite) {
+hoge.Event.flagPresser().func = async function* ( this:Sprite ) {
 
-    for(const _idx of Ts.Loop.Iterator(100)) {
+    for( const _idx of Ts.Loop.Iterator( 100 ) ) {
         if(_idx == 50) {
             // このスクリプトを止める
             this.Control.stopThisScript();
@@ -57,12 +57,12 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 #### Sprite/Stage
 ```typescript:line-numbers
 
-const hoge = new Ts.Sprite('hoge');
+const hoge = new Ts.Sprite( 'hoge' );
 
-const fuga = new Ts.Sprite('fuga');
+const fuga = new Ts.Sprite( 'fuga' );
 
 // 旗が押されたときのスレッド（hoge): スレッド０１
-hoge.Event.flagPresser().func = async function*(this:Sprite) {
+hoge.Event.flagPresser().func = async function* ( this:Sprite ) {
     // 『5秒間』待つ
     await this.Control.wait( 5 );
     // スクリプトの他のスクリプトを停止する 
@@ -71,10 +71,10 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 }
 
 // 旗が押されたときのスレッド（hoge) : スレッド０２
-hoge.Event.flagPresser().func = async function*(this:Sprite) {
+hoge.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
-        this.Motion.move.steps(10); // 進む
+        this.Motion.move.steps( 10 ); // 進む
         yield;
     }
 }
@@ -83,7 +83,7 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 // ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 
 // 旗が押されたときのスレッド（hoge): スレッド０３
-hoge.Event.flagPresser().func = async function*(this:Sprite) {
+hoge.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
         this.Motion.direction.degree += 5; // 回転する
@@ -95,7 +95,7 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 // ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 
 // 旗が押されたときのスレッド（fuga): スレッド０４
-fuga.Event.flagPresser().func = async function*(this:Sprite) {
+fuga.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
         this.Motion.position.y += 5; // Y座標を +5 ずつ増やす
@@ -132,12 +132,12 @@ fuga.Event.flagPresser().func = async function*(this:Sprite) {
 #### Sprite/Stage
 ```typescript:line-numbers
 
-const hoge = new Ts.Sprite('hoge');
+const hoge = new Ts.Sprite( 'hoge' );
 
-const fuga = new Ts.Sprite('fuga');
+const fuga = new Ts.Sprite( 'fuga' );
 
 // 旗が押されたときのスレッド（hoge): スレッド０１
-hoge.Event.flagPresser().func = async function*(this:Sprite) {
+hoge.Event.flagPresser().func = async function* ( this:Sprite ) {
     // 『5秒間』待つ
     await this.Control.wait( 5 );
     // 全てのスクリプトを停止する 
@@ -145,10 +145,10 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 }
 
 // 旗が押されたときのスレッド（hoge) : スレッド０２
-hoge.Event.flagPresser().func = async function*(this:Sprite) {
+hoge.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
-        this.Motion.move.steps(10); // 進む
+        this.Motion.move.steps( 10 ); // 進む
         yield;
     }
 }
@@ -157,7 +157,7 @@ hoge.Event.flagPresser().func = async function*(this:Sprite) {
 // ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 
 // 旗が押されたときのスレッド（fuga): スレッド０３
-fuga.Event.flagPresser().func = async function*(this:Sprite) {
+fuga.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
         this.Motion.position.y += 5; // Y座標を +5 ずつ増やす

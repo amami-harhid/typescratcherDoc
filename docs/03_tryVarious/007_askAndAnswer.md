@@ -36,9 +36,9 @@ import catSvg from './assets/cat.svg';
 import WaterSvg from './assets/water.svg';
 
 /* ネコ */
-export const CatImage = new Ts.Image( {catSvg} );
+export const CatImage = new Ts.Image( { catSvg } );
 /* 水中 */
-export const WaterImage = new Ts.Image({WaterSvg});
+export const WaterImage = new Ts.Image( { WaterSvg } );
 
 ```
 ### **index.ts**
@@ -54,25 +54,25 @@ const StageWidth = Ts.StageBounds.w;
 const StageHeight = Ts.StageBounds.h;
 
 // 【スプライト】(Spriteネコ)
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
-const answer = Ts.Variable.string(''); 
-Ts.Variable.monitoring({'答え': answer});
+const answer = Ts.Variable.string( '' ); 
+Ts.Variable.monitoring( { '答え': answer } );
 answer.hide(); // 隠す
 
 /** 質問中のフラグ */
 let askingNow = false;
 // 旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite){
+cat.Event.flagPresser().func = async function* ( this:Sprite ){
     answer.hide(); // 変数(answer)を隠す
     askingNow = false;
     this.Motion.position.xy = [ 0, 0 ];
@@ -81,60 +81,60 @@ cat.Event.flagPresser().func = async function*(this:Sprite){
 /** スプライト（ねこ）に質問をさせるメッセージ */
 const ASKING = 'ASKING';
 // スペースキーが押されたときの「ねこ」のスレッド
-cat.Event.keyPresser(Ts.Keyboard.SPACE).func = async function*(this:Sprite) {
-    if(askingNow === true)
+cat.Event.keyPresser( Ts.Keyboard.SPACE ).func = async function* ( this:Sprite ) {
+    if( askingNow === true )
         return;
     // 質問処理中でないときメッセージ（ASKING）を送る
-    this.Broadcast.send(ASKING);
+    this.Broadcast.send( ASKING );
 }
 // メッセージ「ASKING」を受け取ったときの「ネコ」のスレッド
-cat.Broadcast.receiver(ASKING).func = async function*(this:Sprite) {
+cat.Broadcast.receiver( ASKING ).func = async function* ( this:Sprite ) {
     askingNow = true;
     // 質問をして応答を待つ
     // 応答が返ったとき変数(answer)に答えを入れる
-    answer.text = await this.Sensing.askAndWait('今日はご機嫌よろしいですか？');
+    answer.text = await this.Sensing.askAndWait( '今日はご機嫌よろしいですか？' );
     answer.show();
 
-    if(answer.text == 'はい') {
-        this.Looks.bubble.say('YES');   // フキダシ（言う）
+    if( answer.text == 'はい' ) {
+        this.Looks.bubble.say( 'YES' );   // フキダシ（言う）
 
-    }else if(answer.text == 'いいえ') {
-        this.Looks.bubble.think('no....'); // フキダシ（考える）
+    }else if( answer.text == 'いいえ' ) {
+        this.Looks.bubble.think( 'no....' ); // フキダシ（考える）
 
     }else{
         // 答えが「はい」「いいえ」でない場合
-        this.Looks.bubble.say(''); // フキダシを消す
+        this.Looks.bubble.say( '' ); // フキダシを消す
         askingNow = false;
         // 彩度、質問をするため、メッセージを送る
-        this.Broadcast.send(ASKING);
+        this.Broadcast.send( ASKING );
     }
 }
 /** メッセージＩＤ(ステージに質問させる) */
 const ASKING_STAGE = "ASKING_STAGE";
 // キー「Ａ」が押されたときの「ステージ」のスレッド
-stage.Event.keyPresser('A').func = async function*(this:Stage) {
-    if(askingNow === false){
+stage.Event.keyPresser( 'A' ).func = async function* ( this:Stage ) {
+    if( askingNow === false ){
         askingNow = true;
         // メッセージを送り、終わるまで待つ
-        await this.Broadcast.sendAndWait(ASKING_STAGE);
+        await this.Broadcast.sendAndWait( ASKING_STAGE );
         askingNow = false;
     }
 
 }
 // メッセージ「ASKING_STAGE」を受け取ったときの「ステージ」のスレッド
-stage.Broadcast.receiver(ASKING_STAGE).func = async function*(this:Sprite) {
+stage.Broadcast.receiver( ASKING_STAGE ).func = async function* ( this:Sprite ) {
     answer.hide();
 
     // 質問をして応答を待つ
     // 応答が返ったとき変数(answer)に答えを入れる
-    answer.text = await this.Sensing.askAndWait('ステージだよ。「はい」か「いいえ」で答えて')
+    answer.text = await this.Sensing.askAndWait( 'ステージだよ。「はい」か「いいえ」で答えて' );
     answer.show();
-    if(answer.text == 'はい' || answer.text == 'いいえ'){
+    if( answer.text == 'はい' || answer.text == 'いいえ' ){
         return;
     }
     // 答えが「はい」「いいえ」でない場合
     // 彩度、質問をするためのメッセージを送る
-    this.Broadcast.send(ASKING_STAGE);
+    this.Broadcast.send( ASKING_STAGE );
 }
 
 // 開始

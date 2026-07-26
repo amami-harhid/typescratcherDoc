@@ -30,32 +30,32 @@ import { CatAImage, BlueskyImage } from "./sub/images";
 
 // スプライト作成(ネコ)
 const cat = new Ts.Sprite( "catA" );
-cat.Costume.add( [ CatAImage ] ); // イメージを追加
+cat.Costume.add( CatAImage ); // イメージを追加
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add( [ BlueskyImage ] ); // 背景を追加
+stage.Backdrop.add( BlueskyImage ); // 背景を追加
 
 // 【旗クリックされたとき】( ネコ )
-cat.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function* ( this: Sprite ) {
     // ずっと繰り返す
-    for(;;){
+    for( ;; ){
         // 1秒ごとにクローンを作る
-        await this.Control.wait(1);
+        await this.Control.wait( 1 );
         this.Control.clone();
         yield;
     }
 }
 // ネコがクローンされたときのクローンのスレッド
-cat.Event.cloned().func = async function*(this:Sprite) {
+cat.Event.cloned().func = async function* ( this:Sprite ) {
     // Looks.size.scale　へ 大きさの配列を設定
     this.Looks.size.scale = [20, 20]; // 横・縦 20% にする
-    this.Motion.direction.degree = Ts.Utils.randomValue(0, 360);
+    this.Motion.direction.degree = Ts.Utils.randomValue( 0, 360 );
     // ずっと繰り返す
-    for(;;) {
-        this.Motion.move.steps(10);
+    for( ;; ) {
+        this.Motion.move.steps( 10 );
         // Sensing.edge.isTouching は「端に触れた」ときにTrueを返す
-        if(this.Sensing.edge.isTouching){
+        if( this.Sensing.edge.isTouching ){
             // break で繰り返しループを抜ける
             break;
         }

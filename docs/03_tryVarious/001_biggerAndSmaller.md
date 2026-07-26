@@ -31,8 +31,8 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import ObakeSvg from './assets/obake.svg';
 import BasketballPng from './assets/Basketball 2.png';
 
-export const ObakeImage = new Ts.Image( {ObakeSvg} );
-export const BasketballImage = new Ts.Image({BasketballPng});
+export const ObakeImage = new Ts.Image( { ObakeSvg } );
+export const BasketballImage = new Ts.Image( { BasketballPng } );
 
 ```
 ### **index.ts**
@@ -44,43 +44,43 @@ import { Sprite } from "@tscratch3/typescratcher";
 import { ObakeImage, BasketballImage } from './sub/images';
 
 // 【スプライト】(おばけ)
-const obake = new Ts.Sprite('obake');
+const obake = new Ts.Sprite( 'obake' );
 // おばけ画像をスプライトへ追加
-obake.Costume.add( [ObakeImage] ); 
+obake.Costume.add( ObakeImage ); 
 
 // 【ステージ】(BlueSky)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [BasketballImage] );
+stage.Backdrop.add( BasketballImage );
 
 // 旗が押されたときの『obake』のスレッド
-obake.Event.flagPresser().func = async function*(this: Sprite) {
+obake.Event.flagPresser().func = async function* ( this: Sprite ) {
     // 初期位置 ( 中央 )
     this.Motion.position.xy = [0, 0];
     // 初期の大きさ ( 100% )
     this.Looks.size.scale = [100, 100];
 
     // ずっと繰り返す
-    for(;;){
+    for( ;; ){
         // 10回繰り返す(横に大きくする)
-        for(const _ of Ts.Loop.Iterator(10)) {
+        for( const _ of Ts.Loop.Iterator( 10 ) ) {
             this.Looks.size.w += 5;
             //console.log('w + 5 ', this.Looks.size.scale)
             yield;
         }
         // 10回繰り返す(縦に大きくする)
-        for(const _ of Ts.Loop.Iterator(10)) {
+        for( const _ of Ts.Loop.Iterator( 10 ) ) {
             this.Looks.size.h += 5;
             //console.log('h + 5 ', this.Looks.size.scale)
             yield;
         }
         // 10回繰り返す(横に小さくする)
-        for(const _ of Ts.Loop.Iterator(10)) {
+        for( const _ of Ts.Loop.Iterator( 10 ) ) {
             this.Looks.size.w -= 5;
             //console.log('w - 5 ', this.Looks.size.scale)
             yield;
         }
         // 10回繰り返す(縦に小さくする)
-        for(const _ of Ts.Loop.Iterator(10)) {
+        for( const _ of Ts.Loop.Iterator( 10 ) ) {
             this.Looks.size.h -= 5;
             //console.log('h - 5 ', this.Looks.size.scale)
             yield;

@@ -82,7 +82,7 @@ await stage.Looks.backdrop.nextAndWait();
 await stage.Looks.backdrop.name = HogeBackdropImage.name;
 
 // 指定した背景にして待つ ( HogeBackdropImage にする )
-await stage.Looks.backdrop.switch( HogeBackdropImage);
+await stage.Looks.backdrop.switch( HogeBackdropImage );
 
 // 前の背景にして待つ
 await stage.Looks.backdrop.previousAndWait();

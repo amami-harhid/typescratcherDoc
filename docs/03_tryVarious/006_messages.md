@@ -60,7 +60,7 @@ const StageHeight = Ts.StageBounds.h;
 // 【スプライト】(犬)
 const dog = new Ts.Sprite('shark');
 // 画像をスプライトへ追加
-dog.Costume.add( [DogImage] );
+dog.Costume.add( DogImage );
 // 大きさを設定
 dog.Looks.size.scale = [30, 30];
 // 位置座標を設定
@@ -69,7 +69,7 @@ dog.Motion.position.xy = [ 0, -130 ];
 // 【スプライト】(ブロック)
 const block = new Ts.Sprite('block');
 // 画像をスプライトへ追加
-block.Costume.add( [ BlockImage ] );
+block.Costume.add( BlockImage );
 // 非表示にする
 block.Looks.hide();
 // 半透明にする
@@ -77,7 +77,7 @@ block.Looks.effect.set(Ts.ImageEffective.GHOST, 50);
 
 // 【ステージ】
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] ); // 背景を追加
+stage.Backdrop.add( WaterImage ); // 背景を追加
 
 // 変数
 const method = Ts.Variable.string(''); 
@@ -122,7 +122,7 @@ let onFloor = false; // 着地していない
 /**
  * moveSpeed の速さで移動したとき targetに衝突するかを判定する
  */
-const isTouching = function(this:Sprite, target:Sprite, moveSpeed: number):boolean {
+const isTouching = function( this:Sprite, target:Sprite, moveSpeed: number ): boolean {
 
     // 自分自身の高さ
     const ownHeight = this.Looks.size.drawingSize.height;
@@ -145,29 +145,29 @@ let firstTouch = true;
 let walkSpeed = 0;
 
 // 犬がメッセージ(START)を受信したとき
-dog.Broadcast.receiver("START").func = async function*(this: Sprite, blockBound: Bounds) {
+dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite, blockBound: Bounds ) {
     firstTouch = true;
     speed = 0;
     onFloor = false;
     const Bounds = this.Looks.size.drawingSize;
     const DogHeigth = Bounds.height;
-    const _IsTouching = isTouching.bind(this);
+    const _IsTouching = isTouching.bind( this );
     this.Pen.penDown(); // 自由落下中ペン描画をする
     // ずっと繰り返す
-    for(;;){
-        if(_IsTouching(block, speed)){
+    for( ;; ){
+        if( _IsTouching( block, speed ) ){
             firstTouch = false;
             // 次に衝突が予想されるとき
-            this.Motion.position.y = blockBound.height - StageHeight/2 + (DogHeigth/2);;
+            this.Motion.position.y = blockBound.height - StageHeight/2 + DogHeigth/2;
             onFloor = true;
             speed = 0;
         }
         // 自由落下
-        if(onFloor === false ) {
+        if( onFloor === false ) {
             this.Motion.position.y += speed;
-            this.Motion.move.steps(walkSpeed);
+            this.Motion.move.steps( walkSpeed );
             speed -= GRAVITY;
-            if(firstTouch === false){
+            if( firstTouch === false ){
             }
         }
         yield;
@@ -175,21 +175,21 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite, blockBound:
 }
 
 // 犬がメッセージ(START)を受信したとき
-dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
+dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite ) {
 
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
     // ずっと繰り返す
-    for(;;){
-        if( onFloor === true){
+    for( ;; ){
+        if( onFloor === true ){
             // 進める
-            if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)) {
+            if( this.Sensing.keyboard.isDown( Ts.Keyboard.RIGHT ) ) {
                 this.Motion.direction.degree = 90;
                 walkSpeed = 10;
-                this.Motion.move.steps(walkSpeed);
-            }else if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)) {
+                this.Motion.move.steps( walkSpeed );
+            }else if( this.Sensing.keyboard.isDown( Ts.Keyboard.LEFT ) ) {
                 this.Motion.direction.degree = -90;
                 walkSpeed = 10;
-                this.Motion.move.steps(walkSpeed);
+                this.Motion.move.steps( walkSpeed );
             }else{
                 // 地面についていないときはゼロにはならない
                 walkSpeed = 0;
@@ -202,16 +202,16 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
 }
 
 // 犬がメッセージ(START)を受信したとき
-dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
+dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite ) {
 
     method.text = '放物風';
     method.show();
-    for(;;) {
-        if(onFloor === true && this.Sensing.keyboard.isDown(Ts.Keyboard.SPACE)){
+    for( ;; ) {
+        if( onFloor === true && this.Sensing.keyboard.isDown( Ts.Keyboard.SPACE ) ){
             speed = INIT_JUMP;
             onFloor = false;
             // スペースキーが押されている間、待つ
-            await this.Control.waitWhile(()=>this.Sensing.keyboard.isDown(Ts.Keyboard.SPACE));
+            await this.Control.waitWhile( () => this.Sensing.keyboard.isDown( Ts.Keyboard.SPACE ) );
         }
         yield;
     }

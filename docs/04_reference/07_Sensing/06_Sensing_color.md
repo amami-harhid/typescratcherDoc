@@ -25,12 +25,12 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 const targetColor = '#000000'; // 黒色
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターの方向へ向く
@@ -68,14 +68,14 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 const maskColor = '#ff0000'; // 赤色
 
 const targetColor = '#000000'; // 黒色
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターの方向へ向く

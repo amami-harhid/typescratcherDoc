@@ -36,15 +36,13 @@ import { WaterImage, BlueskyImage } from "./sub/images";
 const stage = new Ts.Stage();
 
 // 背景(Backdrop)へイメージを追加する
-stage.Backdrop.add( [ WaterImage, BlueskyImage ] );
+stage.Backdrop.add( WaterImage, BlueskyImage );
 // これで、ステージ へ ２つの背景を持たせました。
 
 ```
 
 :::tip Backdrop の渡し方
-`stage.Backdrop.add( [ WaterImage, BlueskyImage ] )` と 背景イメージを配列で渡してください。<br><br>
-背景が１個だけのときでも １個の要素を持つ配列を渡してください。<br>
-`stage.Backdrop.add( [ WaterImage ] )`
+`stage.Backdrop.add( WaterImage, BlueskyImage )` と 背景イメージを引数で渡してください。<br><br>
 <br>
 <br>
 最初に渡したイメージが、デフォルトの背景になります。
@@ -95,7 +93,7 @@ stage.Looks.backdrop.name = BlueskyImage.name;
 ```
 
 :::tip 背景を◎◎にする
-指定する背景イメージは、背景追加『`stage.Backdrop.add( [～,～,] )`』にて追加している背景イメージとします<br>追加されていないイメージを指定した場合は、この処理の結果、何も変化しません。<br>
+指定する背景イメージは、背景追加『`stage.Backdrop.add( ～,～, )`』にて追加している背景イメージとします<br>追加されていないイメージを指定した場合は、この処理の結果、何も変化しません。<br>
 :::
 
 
@@ -112,13 +110,13 @@ stage.Looks.backdrop.name = BlueskyImage.name;
 async function*( this:Stage ) { 
     // ステージのスレッドのなかで実行する
     // 背景が切り替わったときのスレッドが終わるまで待つ。
-    await this.Looks.backdrop.switchAndWait(BlueskyImage.name);
+    await this.Looks.backdrop.switchAndWait( BlueskyImage.name );
 }
 
 ```
 
 :::tip 背景を◎◎にして待つ
-指定する背景イメージは、背景追加『`stage.Backdrop.add( [～,～,] )`』にて追加している背景イメージとします<br>追加されていないイメージを指定した場合は、この処理の結果、何も変化しません。<br>
+指定する背景イメージは、背景追加『`stage.Backdrop.add( ～,～, )`』にて追加している背景イメージとします<br>追加されていないイメージを指定した場合は、この処理の結果、何も変化しません。<br>
 :::
 
 :::tip 背景が◎◎になったときのスレッド
@@ -135,7 +133,7 @@ async function*( this:Stage ) {
 
 ```typescript:line-numbers
 // 背景が◎◎になったときのスレッドの定義
-stage.Event.backdropSwitcher(BlueSkyImage).func = async function*(this:Stage) {
+stage.Event.backdropSwitcher(BlueSkyImage).func = async function* ( this:Stage ) {
 
 }
 

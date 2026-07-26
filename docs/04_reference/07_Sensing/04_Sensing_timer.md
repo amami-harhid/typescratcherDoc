@@ -28,17 +28,17 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 
     // タイマーをリセットする
     this.Sensing.timer.reset();
 
     // ずっと繰り返す    
     for( ;; ) {
-        if( this.Sensing.timer.timer > 1500 ) { // ミリ秒
+        if( this.Sensing.timer.msValue > 1500 ) { // ミリ秒
             // スレッド開始から 1500 秒経過していたら
             // ループを抜ける
             breka;

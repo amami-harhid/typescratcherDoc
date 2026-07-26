@@ -25,16 +25,16 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
-const dog = new Ts.Sprite('dog');
+const dog = new Ts.Sprite( 'dog' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // スプライト『dog』に触れているかの判定
-        if( this.Sensing.sprite.isTouching( [dog] ) ) {
+        if( this.Sensing.sprite.isTouching( dog ) ) {
             // Trueのとき『dog』に触れている
             // 非表示にする
             this.Looks.visible.hide();
@@ -66,12 +66,12 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
-const dog = new Ts.Sprite('dog');
+const dog = new Ts.Sprite( 'dog' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function*(this:Sprite) {
+cat.Event.flagPresser().func = async function* ( this:Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
 
