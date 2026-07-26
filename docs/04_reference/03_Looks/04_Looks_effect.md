@@ -103,25 +103,25 @@ sprite.Looks.effect.clear();
 ```typescript:line-numbers
 
 // 色の効果
-sprite.Looks.effect.set(Ts.ImageEffective.COLOR, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.COLOR, 50 );
 
 // 魚眼レンズの効果
-sprite.Looks.effect.set(Ts.ImageEffective.FISHEYE, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.FISHEYE, 50 );
 
 // 渦巻きの効果
-sprite.Looks.effect.set(Ts.ImageEffective.WHIRL, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.WHIRL, 50 );
 
 // ピクセルの効果
-sprite.Looks.effect.set(Ts.ImageEffective.PIXELATE, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.PIXELATE, 50 );
 
 // モザイクの効果
-sprite.Looks.effect.set(Ts.ImageEffective.MOSAIC, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.MOSAIC, 50 );
 
 // 明るさの効果
-sprite.Looks.effect.set(Ts.ImageEffective.BRIGHTNESS, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.BRIGHTNESS, 50 );
 
 // 幽霊の効果
-sprite.Looks.effect.set(Ts.ImageEffective.GHOST, 50);
+sprite.Looks.effect.set( Ts.ImageEffective.GHOST, 50 );
 
 ```
 

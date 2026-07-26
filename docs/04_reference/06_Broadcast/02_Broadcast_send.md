@@ -38,7 +38,7 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
 cat.Broadcast.receiver( messageId ).func = async function* ( this:Sprite ) {
-    this.Looks.bubble.say('メッセージ受信した');
+    this.Looks.bubble.say( 'メッセージ受信した' );
 }
 ```
 ---

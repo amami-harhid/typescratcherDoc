@@ -123,25 +123,25 @@ TypeScratcherでは スプライトの大きさとして マイナス値を指�
 // 横150%, 縦 50%
 sprite.Looks.bubble.say(
                         'こんにちは', 
-                        {scale: {w: 150,  h: 50 } });
+                        { scale: { w: 150,  h: 50 } } );
 
 // 考える
 // 横150%, 縦 50%
 sprite.Looks.bubble.think(
                         'うーん...', 
-                        {scale: {w: 150,  h: 50 } }); 
+                        { scale: { w: 150,  h: 50 } } ); 
 
 // 〇秒、言う
 // 横150%, 縦 50%
 await sprite.Looks.bubble.sayForSecs(
                             'こんにちは', 2, 
-                            {scale: { w: 150,  h: 50 } }); 
+                            { scale: { w: 150,  h: 50 } } ); 
 
 // 〇秒、考える
 // 横150%, 縦 50%
 await sprite.Looks.bubble.thinkForSecs(
                             'うーん...', 2, 
-                            {scale: {w: 150,  h: 50 } });
+                            { scale: { w: 150,  h: 50 } } );
 
 ```
 

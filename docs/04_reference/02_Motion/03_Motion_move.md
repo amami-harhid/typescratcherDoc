@@ -24,7 +24,7 @@ outline: deep
 ```typescript:line-numbers
 
 // 10歩動かす
-sprite.Motion.move.steps(10);
+sprite.Motion.move.steps( 10 );
 
 // 指定した座標へ行く( [X座標, Y座標 ] )
 sprite.Motion.move.to( [ 150, 100] )
