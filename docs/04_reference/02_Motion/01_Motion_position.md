@@ -26,7 +26,7 @@ outline: deep
 ```typescript:line-numbers
 
 // [X座標,Y座標]を指定する
-sprite.Motion.position.xy = [150, 100]; 
+sprite.Motion.position.xy = [ 150, 100 ]; 
 
 ```
 ---

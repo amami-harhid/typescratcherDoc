@@ -28,7 +28,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.edge.isDown( Ts.Keyboard.SPACE ) ) {
@@ -79,7 +79,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.edge.isDown( Ts.Keyboard.ANY ) ) {

@@ -28,7 +28,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 
 const cat = new Ts.Sprite( 'cat' );
 
-const thread = async function* ( this:Sprite ) {
+const thread = async function* ( this : Sprite ) {
     // HSVカラー値を設定する
     this.Pen.HSVColor.hsv = {
         hue: 67,          // 色

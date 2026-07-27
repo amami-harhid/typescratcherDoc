@@ -24,7 +24,7 @@ outline: deep
 
 ```typescript:line-numbers
 // 大きさ(パーセンテージ)を設定する ( 横150%, 縦150% )
-sprite.Looks.size.scale = [150, 150]; 
+sprite.Looks.size.scale = [ 150, 150 ]; 
 
 // 大きさ(パーセンテージ)を設定する ( 横150%  )
 sprite.Looks.size.scale.w = 150; 
@@ -61,20 +61,20 @@ sprite.Looks.size.scale.h += 10;
 
 ```typescript:line-numbers
 // スプライトのサイズ(ピクセルサイズ)を設定する
-sprite.Looks.size.drawingSize = {w: 200, h: 200}; // 横、縦、200ピクセル
+sprite.Looks.size.drawingSize = { w : 200, h : 200 }; // 横、縦、200ピクセル
 
 // スプライトの横サイズ(ピクセルサイズ)を設定する
-sprite.Looks.size.drawingSize = {w: 200}; // 横　00ピクセル
+sprite.Looks.size.drawingSize = { w: 200 }; // 横　00ピクセル
 
 // スプライトの縦サイズ(ピクセルサイズ)を設定する
-sprite.Looks.size.drawingSize = {h: 200}; // 縦　00ピクセル
+sprite.Looks.size.drawingSize = { h: 200 }; // 縦　00ピクセル
 
 ```
 ::: tip 矩形情報
-パーセンテージではなく、ピクセル数で描画する大きさを指定します。<br>
+パーセンテージではなく、ピクセル数によって大きさを指定します。<br>
 例えば、コスチュームが異なる２つのスプライトの横サイズをぴったりと合わせたいとき、<br>
-ステージの横幅にスプライトの横幅をぴったりと合わせたいとき、<br>
-などのときに使うと便利です。 
+ステージの横幅にスプライトの横幅をぴったりと合わせて横に伸ばしたいとき、<br>
+などのときに便利です。 
 :::
 
 ### 矩形情報

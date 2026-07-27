@@ -31,7 +31,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
 
     // タイマーをリセットする
     this.Sensing.timer.reset();

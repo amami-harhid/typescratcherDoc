@@ -54,10 +54,10 @@ sprite.Looks.bubble.think( 'うーん...' );
 
 ```typescript:line-numbers
 // 〇秒、言う
-await sprite.Looks.bubble.sayForSecs('こんにちは', 2 ); // 2秒、言う 
+await sprite.Looks.bubble.sayForSecs( 'こんにちは', 2 ); // 2秒、言う 
 
 // 〇秒、考える
-await sprite.Looks.bubble.thinkForSecs('うーん...', 2 ); // 2秒、考える
+await sprite.Looks.bubble.thinkForSecs( 'うーん...', 2 ); // 2秒、考える
 
 ```
 

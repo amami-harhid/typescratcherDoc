@@ -22,7 +22,7 @@ const cat = new Ts.Sprite( 'cat' );
 const messageId = 'BroadcastTest';
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
 
     await this.Control.wait(10); // 10秒待つ
     const bubbleMessage = 'メッセージ受信した';
@@ -31,7 +31,8 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 }
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
-cat.Broadcast.receiver( messageId ).func = async function* ( this:Sprite, 
+// 渡される引数を『bubbleMessage』として受け取る
+cat.Broadcast.receiver( messageId ).func = async function* ( this : Sprite, 
     bubbleMessage: string) {
 
     // 渡された文字列を使って『言う』
@@ -60,7 +61,7 @@ const cat = new Ts.Sprite( 'cat' );
 const messageId = 'BroadcastTest';
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
 
     await this.Control.wait(10); // 10秒待つ
     const bubbleMessage = 'メッセージ受信した';
@@ -72,7 +73,8 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 }
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
-cat.Broadcast.receiver( messageId ).func = async function* ( this:Sprite, 
+// 渡される２つの引数を受け取ることができる
+cat.Broadcast.receiver( messageId ).func = async function* ( this : Sprite, 
     bubbleMessage: string, bubbleSec: number) {
 
     // 渡された文字列を使って『言う』

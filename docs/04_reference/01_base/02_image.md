@@ -15,11 +15,11 @@ import CatSvg from '../../assets/cat.svg';
 const CatImage = new Ts.Image( { CatSvg } );
 ```
 :::tip Imageへの渡し方
-`Ts.Image( { CatSvg } )` と `{ 変数 }` の形で渡してください。<br><br>
+`Ts.Image( { CatSvg } )` のように `{ 変数 }` の形で渡してください。<br><br>
 `{  }`で囲むとオブジェクトになります。<br><br>
 `{ CatSvg }` は、次と同じです。<br>
-`{ 'CatSvg': CatSvgの中身 }`<br><br>
-変数名と変数の中身を一緒に渡したいので `{ CatSvg }`の形で渡す必要があります。
+`{ 'CatSvg' : CatSvgの中身 }`<br><br>
+変数名と変数の中身を一緒に渡したいので `{ CatSvg }`の形で渡す仕様にしています。
 :::
 
 

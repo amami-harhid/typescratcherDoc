@@ -62,7 +62,7 @@ volume.value += 10;  // 変数の値に 10を加算する
 // 変数を定義する
 const volume = Ts.Variable.number( 100 ); // 初期値を100とする
 // モニター表示の名前を 'ボリューム'にする
-Ts.Variable.monitoring( { 'ボリューム': volume } ); 
+Ts.Variable.monitoring( { 'ボリューム' : volume } ); 
 
 ```
 

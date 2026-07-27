@@ -30,7 +30,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
         // スプライトが質問する
@@ -60,7 +60,7 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗が押されたときの『stage』のスレッド
-stage.Event.flagPresser().func = async function* ( this:Stage ) {
+stage.Event.flagPresser().func = async function* ( this : Stage ) {
     // ずっと繰り返す
     for( ;; ) {
         // ステージが質問する

@@ -28,7 +28,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 自身のスプライトが押されたときの『cat』のスレッド
-cat.Event.clicker().func = async function* ( this:Sprite ) {
+cat.Event.clicker().func = async function* ( this : Sprite ) {
     // ここにスレッドのコードを書く
 }
 
@@ -45,7 +45,7 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 自身(ステージ)が押されたときの『stage』のスレッド
-stage.Event.clicker().func = async function* ( this:Sprite ) {
+stage.Event.clicker().func = async function* ( this : Sprite ) {
     // ここにスレッドのコードを書く
 } 
 ```

@@ -23,7 +23,7 @@ outline: deep
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
+sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
 
     // ずっと繰り返す
     for(;;) {
@@ -33,7 +33,7 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
     }
 }
 
-stage.Event.flagPresser().func = async function* ( this: Stage ) {
+stage.Event.flagPresser().func = async function* ( this : Stage ) {
 
     // ずっと繰り返す
     for( ;; ) {
@@ -79,7 +79,7 @@ while( true ) {
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
+sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
 
     // 〇回繰り返す
     for( const _idx of Ts.Loop.Iterator( 10 ) ) { // 10回繰り返す
@@ -92,7 +92,7 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
 ```
 ::: warning Ts.Loop.Iterator
-『`Ts.Loop.Iterator(10)`』は、配列[0,1,2,3,4,5,6,7,8,9]を返す『TypeScratcher』のサポートメソッドです。<br>
+『`Ts.Loop.Iterator( 10 )`』は、配列[0,1,2,3,4,5,6,7,8,9]を返す『TypeScratcher』のサポートメソッドです。<br>
 <br>
 ```
 for( const _idx of Ts.Loop.Iterator( 10 ) ) {
@@ -164,7 +164,7 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
 ```typescript:line-numbers
 
-sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
+sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
 
     for( ;; ) {
         this.Motion.move.steps( 10 ); // 10 進める
@@ -203,7 +203,7 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
 
 例えば二重ループは次のように書きます。<br>
-Scratch3流とするには、すべての繰り返しの最後に『`yield`』(次のフレームになるまで停止して待つ)が必要です。
+『Scratch3』流とするには、すべての繰り返しの最後に『`yield`』(次のフレームになるまで停止して待つ)が必要です。
 
 ```typescript:line-numbers
 sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
@@ -215,24 +215,24 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
         for( const _idx of Ts.Loop.Iterator( 10 ) ) {
             // スプライトの大きさ(幅)を 5%ずつ大きくする
             this.Looks.size.scale.w += 5;
-            yield;
+            yield; // 次のフレームになるまで停止して待つ
         }
         
         // 10回繰り返す
         for( const _idx of Ts.Loop.Iterator( 10 ) ) {
             // スプライトの大きさ(幅)を 5%ずつ小さくする
             this.Looks.size.scale.w -= 5;            
-            yield;
+            yield; // 次のフレームになるまで停止して待つ
         }
 
-        yield;
+        yield; // 次のフレームになるまで停止して待つ
     }
 }
 ```
-::: tip 『Scratch3流』の意味
+::: tip 『Scratch3』流の意味
 『`yield`』がないときには、１つのフレームで『超爆速でループ』してしまいます。<br><br>
 爆速でループさせてしまうと、『10だけ進める』『大きさを5ずつ変える』といった処理が、１つのフレームのなかで数百回（？）繰り返されることになり、スプライトの変化を目視できなくなってしまいます。<br><br>
-『１つのフレームで１回の繰り返し』とするのが『Scratch3流』です。<br><br>
+『１つのフレームで１回の繰り返し』とするのが『Scratch3』流です。<br><br>
 明確な目的がない限り、繰り返しの最後には『`yield`』を書きましょう。<br><br>
 描画に直接関係のない繰り返しであれば、『`yield`』は不要かもしれません。
 ::: 

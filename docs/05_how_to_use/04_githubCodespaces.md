@@ -78,21 +78,6 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces05_1_first.p
 
 ---
 
-#### 拡張機能を追加(Prettier - Code formatter)【最初の１回だけ】
-
-拡張機能の検索欄に 『 **prettier** 』と入力して、『Prettier - Code formatter』を探し、インストールしましょう。
-
----
-
-<small>マウスを重ねるとGIF再生</small>
-<img src="/github_create_codespaces07_first.png"  width="100%" heigth="100%" 
-style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces07.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces07_first.png';"
-/>
-
----
-
 
 ### 『ESLintサーバー再起動』【最初の１回だけ】
 
@@ -126,21 +111,6 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces06_first.png
 style="border: 1px solid red;"
 onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces07.gif';"
 onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces07_first.png';"
-/>
-
----
-
-### 『Prettier』によるコード整形を確認する【最初の１回だけ】
-
-コードの途中に『スペース』を入れてみたり、インデントを崩してみたりして、保存（『Ctrl』キー+『s』キー)してみてください。
-自動的にコードが整形されるはずです。
-
----
-<small>マウスを重ねるとGIF再生</small>
-<img src="/github_create_codespaces08_first.png"  width="100%" heigth="100%" 
-style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces08.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces08_first.png';"
 />
 
 ---

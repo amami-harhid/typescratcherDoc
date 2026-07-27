@@ -15,11 +15,11 @@ import ChillWav from '../../assets/chill.wav';
 const ChillSound = new Ts.Sound( { ChillWav } );
 ```
 :::tip Soundへの渡し方
-`Ts.Sound( { ChillWav } )` と `{ 変数 }` の形で渡してください。<br><br>
+`Ts.Sound( { ChillWav } )` のように `{ 変数 }` の形で渡してください。<br><br>
 `{  }`で囲むとオブジェクトになります。<br><br>
 `{ ChillWav }` は、次と同じです。<br>
-`{ 'ChillWav': ChillWavの中身 }`<br><br>
-変数名と変数の中身を一緒に渡したいので `{ ChillWav }`の形で渡す必要があります。
+`{ 'ChillWav' : ChillWavの中身 }`<br><br>
+変数名と変数の中身を一緒に渡したいので `{ ChillWav }`の形で渡す仕様にしています。
 :::
 
 

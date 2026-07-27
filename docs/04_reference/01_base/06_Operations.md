@@ -29,12 +29,12 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 // 乱数を生成する( 0 以上 ～ 10 以下の間の整数の乱数 )
 const randomValue = Ts.operations.randomValue( 0, 10 );
-console.log(`randomValue=${ randomValue }`);
+console.log( `randomValue=${ randomValue }` );
 // → 整数で 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 がランダムに出力される
 
 // 乱数を生成する( 0 以上 ～ 10 未満の間の小数付きの乱数 )
 const randomDecimalValue = Ts.operations.randomDecimalValue( 0, 10 );
-console.log(`randomDecimalValue=${ randomDecimalValue }`);
+console.log( `randomDecimalValue=${ randomDecimalValue }` );
 // → 0 ～ 10 (0を含み,10を含まない)小数値がランダムに出力される
 ```
 
@@ -114,8 +114,8 @@ const val02 = 4 % 3; // ==> 1
 四捨五入はTypescript(Javascript)の標準構文で実現してください。
 
 ```typescript:line-numbers
-const val01 = Math.round(2.6); // ==> 3
-const val02 = Math.round(2.4); // ==> 2
+const val01 = Math.round( 2.6 ); // ==> 3
+const val02 = Math.round( 2.4 ); // ==> 2
 ```
 
 ### 比較演算

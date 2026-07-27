@@ -27,7 +27,7 @@ outline: deep
 sprite.Motion.move.steps( 10 );
 
 // 指定した座標へ行く( [X座標, Y座標 ] )
-sprite.Motion.move.to( [ 150, 100] )
+sprite.Motion.move.to( [ 150, 100 ] )
 
 ```
 
@@ -60,7 +60,7 @@ sprite.Motion.move.to( [ 150, 100] )
 
 // 指定した秒数をかけて、指定した座標へ行く
 // 第一引数(秒数)、第二引数( [X座標, Y座標 ] )
-await sprite.Motion.move.glideTo( 1, [200, 50]);
+await sprite.Motion.move.glideTo( 1, [ 200, 50 ]);
 
 // 指定した秒数をかけて、どこかの座標へ行く
 // 第一引数(秒数)

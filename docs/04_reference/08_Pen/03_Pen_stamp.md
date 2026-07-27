@@ -24,7 +24,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 
 const cat = new Ts.Sprite( 'cat' );
 
-const thread = async function* ( this:Sprite ) {
+const thread = async function* ( this : Sprite ) {
     this.Pen.stamp();
 } 
 ```

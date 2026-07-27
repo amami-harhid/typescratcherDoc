@@ -28,7 +28,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -49,7 +49,7 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗が押されたときの『stage』のスレッド
-stage.Event.flagPresser().func = async function* ( this:Stage ) {
+stage.Event.flagPresser().func = async function* ( this : Stage ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -83,10 +83,10 @@ stage.Event.flagPresser().func = async function* ( this:Stage ) {
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import type { Sprite } from "@tscratch3/typescratcher";
 
-const cat = new Ts.Sprite('cat');
+const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -94,7 +94,7 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
             const _x = this.Sensing.mouse.x; // マウスのX座標
             const _y = this.Sensing.mouse.y; // マウスのY座標
             // マウスが押されたとき、マウス座標へスプライト移動させる
-            this.Mouse.position.xy = [_x, _y];
+            this.Mouse.position.xy = [ _x, _y ];
         }
         yield;
     }
@@ -109,7 +109,7 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗が押されたときの『stage』のスレッド
-stage.Event.flagPresser().func = async function* ( this:Stage ) {
+stage.Event.flagPresser().func = async function* ( this : Stage ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -156,7 +156,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isTouching ) {
@@ -196,7 +196,7 @@ Ts.Variable.monitoring( distanceVal );
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターまでの距離
@@ -222,7 +222,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = async function* ( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターへの向き
@@ -241,7 +241,7 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 ```typescript
 Motion.point.toMouse();
 ```
-と同じ結果になる。
+と同じ結果になります。
 
 :::
 
