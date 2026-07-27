@@ -8,8 +8,11 @@ outline: deep
 :::
 
 ### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
+スプライトが横方向と縦方向に大きくなったり小さくなったりします。
+
+---
+<small>※ TypeScratcherロゴをクリック、緑の旗をクリックでスタート</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/001/"
 />
@@ -55,9 +58,9 @@ stage.Backdrop.add( BasketballImage );
 // 旗が押されたときの『obake』のスレッド
 obake.Event.flagPresser().func = async function* ( this: Sprite ) {
     // 初期位置 ( 中央 )
-    this.Motion.position.xy = [0, 0];
+    this.Motion.position.xy = [ 0, 0 ];
     // 初期の大きさ ( 100% )
-    this.Looks.size.scale = [100, 100];
+    this.Looks.size.scale = [ 100, 100 ];
 
     // ずっと繰り返す
     for( ;; ){

@@ -9,8 +9,13 @@ outline: deep
 
 ### 動作例 【タブレット非推奨】
 
-TypeScratcherロゴをクリックすると表示を始めます
+キー『A』『B』を押して、スプライトをジャンプさせます。
 
+---
+キーボード操作を必要としますので、タブレットは推奨いたしません。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/"
 />
@@ -50,7 +55,7 @@ const dog = new Ts.Sprite('shark');
 // 画像をスプライトへ追加
 dog.Costume.add( [DogImage] );
 // 大きさを設定
-dog.Looks.size.scale = [30, 30];
+dog.Looks.size.scale = [ 30, 30 ];
 // 位置座標を設定
 dog.Motion.position.xy = [ 0, -130 ];
 
@@ -68,7 +73,7 @@ method.hide(); // 隠す
 // 旗が押されたとき
 dog.Event.flagPresser().func = async function* ( this: Sprite ) {
 
-    this.Motion.position.xy = [0, -130];
+    this.Motion.position.xy = [ 0, -130 ];
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
 
     // ずっと繰り返す

@@ -8,8 +8,11 @@ outline: deep
 そして、スタンプを押してみましょう。
 :::
 ### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
+スプライトを使ってPENでラインを引きます。次にスプライトのスタンプを取ります。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/003/"
 />
@@ -54,7 +57,7 @@ const shark = new Ts.Sprite( 'shark' );
 // サメイメージをスプライトへ追加
 shark.Costume.add( SharkImage );
 // サメの大きさを 30%にする
-shark.Looks.size.scale = [30, 30];
+shark.Looks.size.scale = [ 30, 30 ];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
@@ -64,9 +67,9 @@ stage.Backdrop.add( WaterImage );
 // 旗が押されたときの『shark』のスレッド
 shark.Event.flagPresser().func = async function* ( this: Sprite ) {
     // 初期位置 ( 中央 )
-    this.Motion.position.xy = [0, 0];
+    this.Motion.position.xy = [ 0, 0 ];
     // 初期の大きさ ( 30% )
-    this.Looks.size.scale = [30, 30];
+    this.Looks.size.scale = [ 30, 30 ];
     // 画像効果初期化
     this.Looks.effect.clear();
     // 少しまつ

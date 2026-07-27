@@ -8,8 +8,11 @@ outline: deep
 :::
 
 ### 動作例
-TypeScratcherロゴをクリックすると表示を始めます
 
+いろいろな『画像効果』を変化させます。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/002/"
 />
@@ -53,9 +56,9 @@ stage.Backdrop.add( WaterImage );
 // 旗が押されたときの『shark』のスレッド
 shark.Event.flagPresser().func = async function* ( this: Sprite ) {
     // 初期位置 ( 中央 )
-    this.Motion.position.xy = [0, 0];
+    this.Motion.position.xy = [ 0, 0 ];
     // 初期の大きさ ( 100% )
-    this.Looks.size.scale = [100, 100];
+    this.Looks.size.scale = [ 100, 100 ];
     // 画像効果初期化
     this.Looks.effect.clear();
     // 少しまつ
@@ -89,7 +92,7 @@ shark.Event.flagPresser().func = async function* ( this: Sprite ) {
 
         // 50回繰り返す
         this.Looks.bubble.say( 'モザイクの効果を変えるよ' );
-        for(const _ of Ts.Loop.Iterator(50)) {
+        for( const _ of Ts.Loop.Iterator( 50 ) ) {
             this.Looks.effect.change( Ts.ImageEffective.MOSAIC, +5 );
             yield;
         }

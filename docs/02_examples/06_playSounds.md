@@ -13,9 +13,11 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
-緑の旗をクリックすると、ずっとスプライトが移動し、端に触れたら音を鳴らします<br>
 
+緑の旗をクリックすると、ずっと繰り返し、スプライトが移動して、端に触れたら音を鳴らします<br>
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/006/"
 />

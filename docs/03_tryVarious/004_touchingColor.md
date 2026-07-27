@@ -10,7 +10,13 @@ outline: deep
 
 ### 動作例 【タブレット非推奨】
 
-TypeScratcherロゴをクリックすると表示を始めます。
+マウスを操作してサメを動かします。サメが指定の色に触れたら『変数欄』の表示が変わります。<br>
+
+---
+タブレットやスマホの『タッチパネル』のタップやフリックにはうまく対応していませんので、パソコンのマウスで操作することをおすすめします。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/004/"

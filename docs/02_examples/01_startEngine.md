@@ -9,10 +9,11 @@ outline: deep
 :::
 
 ### 動作例
-TypeScratcherロゴをクリックすると表示を始めます。
 
-なにも表示しないステージだけが表示されるはずです。
+なにも表示しないステージだけが表示されます。
 
+---
+<small>※ TypeScratcherロゴをクリックで表示</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/001/"
 />
@@ -46,7 +47,7 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 Ts.engine.start();
 ```
 ::: warning index.tsについて
-`@tscratch3/typescratcher`をimportする、`engine.start()`、この２つが最小限の構成要素です。
+`@tscratch3/typescratcher`のimport、`engine.start()`、この２つが最小限の構成要素です。
 :::
 
 <br>

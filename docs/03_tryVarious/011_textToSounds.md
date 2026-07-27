@@ -9,8 +9,14 @@ outline: deep
 
 ### 動作例 【タブレット非推奨】
 
-TypeScratcherロゴをクリックすると表示を始めます
+マウスカーソルでスプライトに触れると、スピーチ(音声合成)をします。<br>
+赤い枠は、スプライトを囲む矩形です。カーソルが矩形の中に入っていてもスプライトに触れていないときはスピーチをしません。<br>
 
+---
+タブレットやスマホの『タッチパネル』のタップやフリックにはうまく対応していませんので、パソコンのマウスで操作することをおすすめします。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/"
 />
@@ -70,7 +76,7 @@ Ts.Variable.monitoring( { text: speechText } );
 
 // 緑の旗が押されたときの「ねこ」のスレッド
 cat.Event.flagPresser().func = async function* ( this:Sprite ) {
-    this.Looks.size.scale = [250, 250];
+    this.Looks.size.scale = [ 250, 250 ];
     // Speech 
     // 国をJAPANESEとし、
     // 声タイプ(ALTO)⇒声タイプ(FEMAIL)へ新規コピー

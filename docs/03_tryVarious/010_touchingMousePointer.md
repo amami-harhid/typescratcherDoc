@@ -9,8 +9,13 @@ outline: deep
 
 ### 動作例 【タブレット非推奨】
 
-TypeScratcherロゴをクリックすると表示を始めます
+マウスカーソルでスプライトに触れると、画像効果（色）が変化します。
 
+---
+タブレットやスマホの『タッチパネル』のタップやフリックにはうまく対応していませんので、パソコンのマウスで操作することをおすすめします。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/010/"
 />
@@ -56,7 +61,7 @@ cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
-cat.Looks.size.scale = [250, 250];
+cat.Looks.size.scale = [ 250, 250 ];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();

@@ -28,6 +28,8 @@ outline: deep
 
 ---
 
+<small>※ 動画再生ボタンを押して再生しましょう</small>
+
 <video width="100%" controls preload="metadata">
 <source src="/gameSampleTeleportation.mp4" type="video/mp4"></source>
 </video>

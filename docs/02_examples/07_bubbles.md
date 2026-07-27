@@ -10,10 +10,10 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
 緑の旗をクリックすると、左右のネコが挨拶を交わします。<br>
-スプライト座標は Scratch3の座標と同じ設定値です。<br>
 
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/007/"
 />
@@ -31,12 +31,12 @@ import { CatAImage, CatBImage, BlueskyImage } from "./sub/images";
 // スプライト作成(左のネコ)
 const catA = new Ts.Sprite( "catA" );
 catA.Costume.add( CatAImage ); // イメージを追加
-catA.Motion.position.xy = [-100, -100]; // 座標の位置[X座標、Y座標]
+catA.Motion.position.xy = [ -100, -100 ]; // 座標の位置[X座標、Y座標]
 
 // スプライト作成(右のネコ)
 const catB = new Ts.Sprite( "catB" );
 catB.Costume.add( CatBImage ); // イメージを追加
-catB.Motion.position.xy = [ 100, -100]; // 座標の位置[X座標、Y座標]
+catB.Motion.position.xy = [ 100, -100 ]; // 座標の位置[X座標、Y座標]
 catB.Looks.size.w = -100;  // 幅をマイナスとすることで 反対に向く
 
 // ステージ作成

@@ -9,10 +9,12 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
+
 緑の旗をクリックすると、ずっとスプライトを移動させます。<br>
 スプライトが端に触れたとき、反転させます。
 
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/004/"
 />
@@ -44,8 +46,8 @@ cat.Event.flagPresser().func = async function*( this: Sprite ) {
         // Motion.move.ifOnEdgeBounce: もし端についていたら跳ね返る
         this.Motion.move.steps(5);
         this.Motion.move.ifOnEdgeBounce();
-        // フレームごとに休止
-        yield;
+        
+        yield; // 次のフレームになるまで一時停止する
     }
 }
 
@@ -57,9 +59,9 @@ Ts.engine.start();
 <br>
 なお、Scratch3にならい、『永久ループ』とは呼ばすに『ずっと繰り返す』と呼ぶことにしています。<br>
 <br>
-Javascriptによる『ずっと繰り返す』の一番簡単な書き方は 『`for( ; ; ) { }`』だと思います。<br>
+TypsScratcherの『ずっと繰り返す』の書き方としては、『`for( ;; ) { }`』の形で統一しています。<br>
 <br>
-他に 『`while( true ) { }`』や 『`while( 1 == 1 ) { }`』がありますが、繰り返し構文は『`for`』で統一したいという『個人的コダワリ』がありまして、本サイトでは『`for( ; ; ) { }`』を多用しています。<br><br>TypeScratcherでは制限はありませんので、お好きなやり方でＯＫです。
+他に 『`while( true ) { }`』や 『`while( 1 == 1 ) { }`』がありますが、繰り返し構文は『`for`』で統一したいという『個人的コダワリ』がありまして、本サイトでは『`for( ;; ) { }`』を多用しています。<br><br>TypeScratcherでは制限はありませんので、お好きなやり方でＯＫです。
 :::
 
 ::: tip 『`yield`』

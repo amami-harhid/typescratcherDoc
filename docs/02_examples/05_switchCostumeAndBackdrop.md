@@ -12,9 +12,10 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
-緑の旗をクリックすると、ずっとスプライトが移動しながら、コスチュームと背景が切り替わります。<br>
+緑の旗をクリックすると、ずっと繰り返し、スプライトが移動して、コスチュームと背景が切り替わります。
 
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/005/"
 />

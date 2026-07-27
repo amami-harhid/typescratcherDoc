@@ -10,9 +10,11 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
+
 緑の旗をクリックすると、１秒ごとにクローンを作成し（大きさ２０％にする）、クローンはランダムな方向へ「端に触れるまで」走り出します。<br>
 
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/008/"
 />
@@ -49,7 +51,7 @@ cat.Event.flagPresser().func = async function* ( this: Sprite ) {
 // ネコがクローンされたときのクローンのスレッド
 cat.Event.cloned().func = async function* ( this:Sprite ) {
     // Looks.size.scale　へ 大きさの配列を設定
-    this.Looks.size.scale = [20, 20]; // 横・縦 20% にする
+    this.Looks.size.scale = [ 20, 20 ]; // 横・縦 20% にする
     this.Motion.direction.degree = Ts.Utils.randomValue( 0, 360 );
     // ずっと繰り返す
     for( ;; ) {

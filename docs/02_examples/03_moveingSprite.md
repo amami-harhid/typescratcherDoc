@@ -9,9 +9,12 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
-緑の旗をクリックするたび、スプライトを少しだけ右側へ移動させます。
 
+緑の旗をクリックするたびに、スプライトを少しだけ右側へ移動させます。
+
+---
+
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/003/"
 />

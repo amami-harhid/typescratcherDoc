@@ -9,9 +9,10 @@ outline: deep
 :::
 
 ### 動作例
-Typescracherマークをクリックすると表示を開始します。<br>
 スプライトと背景を表示します。
 
+---
+<small>※ TypeScratcherロゴをクリックで表示</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/002/"
 />

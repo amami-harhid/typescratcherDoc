@@ -13,7 +13,7 @@ TypeScracherをインストールしておけば、次の方法でインポー�
 import { Typescratcher } from "@tscratch3/typescratcher";
 ```
 <br>
-`Typescracher` は長い文字列でコードに書くとき横に長くなるので、別名をつけると便利です。
+`Typescracher` は長い文字列でコードに書くとき横に長くなるので、別名( as Ts )をつけると便利です。
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";

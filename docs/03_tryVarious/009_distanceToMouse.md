@@ -9,8 +9,13 @@ outline: deep
 
 ### 動作例 【タブレット非推奨】
 
-TypeScratcherロゴをクリックすると表示を始めます
+マウスカーソルをスプライトに近づけると、画像効果（ピクセル化）の程度が変化します。
 
+---
+タブレットやスマホの『タッチパネル』のタップやフリックにはうまく対応していませんので、パソコンのマウスで操作することをおすすめします。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/009/"
 />
@@ -57,7 +62,7 @@ cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
-cat.Looks.size.scale = [250, 250];
+cat.Looks.size.scale = [ 250, 250 ];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
@@ -75,7 +80,7 @@ Ts.Variable.monitoring( { pixelate } )
 
 // 緑の旗が押されたときの「ねこ」のスレッド
 cat.Event.flagPresser().func = async function* ( this:Sprite ){
-    this.Looks.size.scale = [250, 250];
+    this.Looks.size.scale = [ 250, 250 ];
     // スプライトを囲む矩形の情報を取り出す
     const bounds = this.Looks.size.drawingSize;
     //スプライトを囲む矩形の上下・左右の辺のいずれかに接する円を
@@ -91,7 +96,7 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ){
     // を変化させる。
     for( ;; ) {
         const _distance = this.Sensing.mouse.distance;
-        distance.value = Math.floor(_distance);
+        distance.value = Math.floor( _distance );
         if( distance.value < radius.value ) {
             const _ghost = ( 1 - distance.value/radius.value ) * 100;
             ghost.value = Math.floor(_ghost); 

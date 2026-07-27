@@ -44,9 +44,10 @@ cat.Costume.add( CatImage, Cat2Image );
 ```
 
 :::tip Costume の渡し方
-`cat.Costume.add( CatImage, Cat2Image )` と イメージを引数で渡してください。<br><br>
-<br>
-<br>
+コスチュームイメージが１個だけのときは<br>
+`cat.Costume.add( CatImage )`,<br>
+コスチュームイメージが２個のときは<br>
+`cat.Costume.add( CatImage, Cat2Image )` ,<br> と 必要な数のイメージを引数で渡してください。<br><br>
 最初に渡したイメージが、デフォルトのコスチュームになります。
 <br><br>
 コスチュームを１個も渡さないときは、スプライトは姿がなく、見えないままですので、何かのイメージをコスチュームとして渡すべきです。

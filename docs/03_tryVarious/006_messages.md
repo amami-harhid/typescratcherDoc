@@ -9,8 +9,13 @@ outline: deep
 
 ### 動作例 【タブレット非推奨】
 
-TypeScratcherロゴをクリックすると表示を始めます
+スプライト『犬』が自由落下して地面に着地します。着地後には左右に動いたりジャンプしたりします。
 
+---
+矢印キーやスペースキーを使うので、タブレットでの利用は推奨しません。
+
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/006/"
 />
@@ -62,7 +67,7 @@ const dog = new Ts.Sprite('shark');
 // 画像をスプライトへ追加
 dog.Costume.add( DogImage );
 // 大きさを設定
-dog.Looks.size.scale = [30, 30];
+dog.Looks.size.scale = [ 30, 30 ];
 // 位置座標を設定
 dog.Motion.position.xy = [ 0, -130 ];
 
@@ -73,15 +78,15 @@ block.Costume.add( BlockImage );
 // 非表示にする
 block.Looks.hide();
 // 半透明にする
-block.Looks.effect.set(Ts.ImageEffective.GHOST, 50);
+block.Looks.effect.set( Ts.ImageEffective.GHOST, 50 );
 
 // 【ステージ】
 const stage = new Ts.Stage();
 stage.Backdrop.add( WaterImage ); // 背景を追加
 
 // 変数
-const method = Ts.Variable.string(''); 
-Ts.Variable.monitoring({'ジャンプ': method});
+const method = Ts.Variable.string( '' ); 
+Ts.Variable.monitoring( { 'ジャンプ': method } );
 method.hide(); // 隠す
 
 /* 着地フラグ */
@@ -90,7 +95,7 @@ let onFloor = false;
 let speed = 0;
 
 // 旗が押されたとき（犬）
-dog.Event.flagPresser().func = async function*(this:Sprite){
+dog.Event.flagPresser().func = async function* ( this:Sprite ){
     this.Motion.position.xy = [ 0, 250 ];
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
     speed = 0;
@@ -99,8 +104,8 @@ dog.Event.flagPresser().func = async function*(this:Sprite){
 };
 
 // 旗が押されたとき（ブロック）
-block.Event.flagPresser().func = async function*(this:Sprite){
-    this.Motion.position.xy = [0,0];
+block.Event.flagPresser().func = async function* ( this:Sprite ){
+    this.Motion.position.xy = [ 0,0 ];
     const bounds = block.Looks.size.drawingSize;
     this.Looks.size.w = StageWidth;
     const blockY = bounds.height/2 -StageHeight/2
@@ -108,7 +113,7 @@ block.Event.flagPresser().func = async function*(this:Sprite){
 
     this.Looks.show();
 
-    this.Broadcast.send('START', bounds);
+    this.Broadcast.send( 'START', bounds );
 };
 
 /** 初期速度 */
