@@ -119,25 +119,30 @@ TypeScratcherでは スプライトの大きさとして マイナス値を指�
 『`Ts.Env.bubbleScaleLinkedToSprite = true`』の場合でも、個別の指定が優先されます。
 
 ```typescript:line-numbers
+import type { BubbleProperties } from "@tscratch3/typescratcher";
+
+// フキダシのプロパティ(横150%, 縦 150%)
+const BubbleProp: BubbleProperties = { scale : {w : 150, h :150 } };
+
 // 言う
+sprite.Looks.bubble.say( 'こんにちは', BubbleProp );
 // 横150%, 縦 50%
-sprite.Looks.bubble.say(
-                        'こんにちは', 
-                        { scale: { w: 150,  h: 50 } } );
+sprite.Looks.bubble.say( 'こんにちは', { scale : { w : 150, h : 50 } } );
 
 // 考える
+sprite.Looks.bubble.think( 'うーん...', BubbleProp ); 
 // 横150%, 縦 50%
-sprite.Looks.bubble.think(
-                        'うーん...', 
-                        { scale: { w: 150,  h: 50 } } ); 
+sprite.Looks.bubble.think( 'うーん...', { scale : { w: 150,  h: 50 } } ); 
 
 // 〇秒、言う
+await sprite.Looks.bubble.sayForSecs( 'こんにちは', 2, BubbleProp );
 // 横150%, 縦 50%
 await sprite.Looks.bubble.sayForSecs(
                             'こんにちは', 2, 
-                            { scale: { w: 150,  h: 50 } } ); 
+                            { scale : { w : 150,  h : 50 } } ); 
 
 // 〇秒、考える
+await sprite.Looks.bubble.thinkForSecs( 'うーん...', 2, BubbleProp );
 // 横150%, 縦 50%
 await sprite.Looks.bubble.thinkForSecs(
                             'うーん...', 2, 

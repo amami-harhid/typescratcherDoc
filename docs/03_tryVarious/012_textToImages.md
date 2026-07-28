@@ -40,7 +40,7 @@ export const BlueSkyImage = new Ts.Image( { BluSkySvg } );
 ### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import { Sprite } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
 
 // イメージを取り込む
 import { BlueSkyImage } from './sub/images';

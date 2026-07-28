@@ -63,7 +63,7 @@ export const ChillSound = new Ts.Sound( { ChillWav } );
 ### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import { Sprite } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
 
 // イメージを取り込む
 import { CatImage, WaterImage } from './sub/images';
