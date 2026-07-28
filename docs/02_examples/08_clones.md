@@ -25,7 +25,7 @@ src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/008/"
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import { Sprite } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
 
 // イメージ作成
 import { CatAImage, BlueskyImage } from "./sub/images";

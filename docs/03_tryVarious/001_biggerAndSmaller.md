@@ -41,7 +41,7 @@ export const BasketballImage = new Ts.Image( { BasketballPng } );
 ### **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import { Sprite } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
 
 // イメージを取り込む
 import { ObakeImage, BasketballImage } from './sub/images';

@@ -131,6 +131,8 @@ fuga.Event.flagPresser().func = async function* ( this : Sprite ) {
 
 #### Sprite/Stage
 ```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
 
 const hoge = new Ts.Sprite( 'hoge' );
 

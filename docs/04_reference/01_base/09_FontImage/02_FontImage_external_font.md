@@ -19,7 +19,7 @@ const HarryPotterFont = new Ts.Font( { HarryPotter } );
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import { Sprite, SvgImageAttributes } from "@tscratch3/typescratcher";
+import type { Sprite, SvgImageAttributes } from "@tscratch3/typescratcher";
 
 // 外部フォントを読み込む
 const HarryPotter = "https://amami-harhid.github.io/tscratch3assets/assets/fonts/HarryPotter-ov4z.woff";

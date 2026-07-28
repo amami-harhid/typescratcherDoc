@@ -45,7 +45,7 @@ export const CanyonImage = new Ts.Image( { CanyonPng } );
 **index.ts**
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import { Sprite } from "@tscratch3/typescratcher";
+import type { Sprite } from "@tscratch3/typescratcher";
 
 // イメージ作成
 import { CatAImage, CatBImage, BlueskyImage, CanyonImage } from './sub/images';
