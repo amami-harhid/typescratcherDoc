@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
     title: "TypeScratcher Docs",
-    base: "/typescratcherDoc/web/",
+    base: "/web/",
     outDir: '../web',
     description: "Scratch3風TypeScriptゲームエンジン",
     themeConfig: {
