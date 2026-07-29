@@ -85,6 +85,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
@@ -116,7 +117,7 @@ export default defineConfig({
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
-            '/04_reference/01_base/FontImage/':[{
+            '/04_reference/01_base/09_FontImage/':[{
                 text: '目次',
                 items: [
                     { text: 'ホーム', link: '/' },
@@ -130,11 +131,12 @@ export default defineConfig({
                     { text: '4-1-3 サウンド', link: '/04_reference/01_base/03_sound' },
                     { text: '4-1-4 スプライト', link: '/04_reference/01_base/04_sprite' },
                     { text: '4-1-5 ステージ', link: '/04_reference/01_base/05_stage' },
-                    { text: '4-1-6 Variable(変数)', link: '/04_reference/01_base/06_Variable' },
-                    { text: '4-1-7 繰り返し構文', link: '/04_reference/01_base/07_Loop' },
-                    { text: '4-1-8 Font(フォント)', link: '/04_reference/01_base/FontImage/'},
-                    { text: '4-1-8-1 Font.scratch3フォント', link: '/04_reference/01_base/FontImage/01_FontImage_scratch3' },
-                    { text: '4-1-8-2 Font.外部フォント', link: '/04_reference/01_base/FontImage/02_FontImage_external_font' },
+                    { text: '4-1-6 Operations(演算)', link: '/04_reference/01_base/06_Operations' },
+                    { text: '4-1-7 Variable(変数)', link: '/04_reference/01_base/07_Variable' },
+                    { text: '4-1-8 繰り返し構文', link: '/04_reference/01_base/08_Loop' },
+                    { text: '4-1-9 Font(フォント)', link: '/04_reference/01_base/09_FontImage/'},
+                    { text: '4-1-9-1 Font.scratch3フォント', link: '/04_reference/01_base/09_FontImage/01_FontImage_scratch3' },
+                    { text: '4-1-9-2 Font.外部フォント', link: '/04_reference/01_base/09_FontImage/02_FontImage_external_font' },
                     { text: '4-2 Motion(動き)', link: '/04_reference/02_Motion/' },
                     { text: '4-3 Looks(見た目)', link: '/04_reference/03_Looks/' },
                     { text: '4-4 Control(制御)', link: '/04_reference/04_Control/' },
@@ -166,6 +168,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
@@ -192,6 +195,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
@@ -213,6 +217,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
@@ -237,6 +242,7 @@ export default defineConfig({
                     { text: '4-6 Broadcast(メッセージ)', link: '/04_reference/06_Broadcast/' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
@@ -259,6 +265,7 @@ export default defineConfig({
                     { text: '4-6-3 Broadcast.send(引数付き)', link: '/04_reference/06_Broadcast/03_Broadcast_send_params' },
                     { text: '4-7 Sensing(調べる)', link: '/04_reference/07_Sensing/' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
@@ -286,6 +293,7 @@ export default defineConfig({
                     { text: '4-7-7 Sensing.sprite', link: '/04_reference/07_Sensing/07_Sensing_sprite' },
                     { text: '4-7-8 Sensing.dragMode', link: '/04_reference/07_Sensing/08_Sensing_dragMode' },
                     { text: '4-8 Pen(ペン)', link: '/04_reference/08_Pen/' },
+                    { text: '4-9 FontImage(フォント付きイメージ)', link: '/04_reference/09_FontImage/' },
                     { text: '5 Codespaces', link: '/05_how_to_use/' },
                 ]
             }],
