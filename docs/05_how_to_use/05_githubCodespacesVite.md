@@ -15,8 +15,8 @@ outline: deep
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_codespace_vite_open_first.png" width="80%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_codespace_vite_open.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_codespace_vite_open_first.png';"/>
+onmouseover="this.src='/web/github_codespace_vite_open.gif';"
+onmouseout="this.src='/web/github_codespace_vite_open_first.png';"/>
 
 ### (2) ブラウザ表示
 
@@ -31,7 +31,7 @@ onmouseout="this.src='/typescratcherDoc/web/github_codespace_vite_open_first.png
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_codespace_vite_open02_first.png" 
 style="width:100%; border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_codespace_vite_open02.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_codespace_vite_open02_first.png';"/>
+onmouseover="this.src='/web/github_codespace_vite_open02.gif';"
+onmouseout="this.src='/web/github_codespace_vite_open02_first.png';"/>
 
 ---

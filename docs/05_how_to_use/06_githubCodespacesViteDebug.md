@@ -12,8 +12,8 @@ outline: deep
 <small>マウスを重ねるとGIF再生</small>
 <img src="/vite_debug01_first.png" width="80%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/vite_debug01.gif';"
-onmouseout="this.src='/typescratcherDoc/web/vite_debug01_first.png';"/>
+onmouseover="this.src='/web/vite_debug01.gif';"
+onmouseout="this.src='/web/vite_debug01_first.png';"/>
 
 
 ### ブラウザ開発者ツール
@@ -23,5 +23,5 @@ onmouseout="this.src='/typescratcherDoc/web/vite_debug01_first.png';"/>
 <small>マウスを重ねるとGIF再生</small>
 <img src="/vite_debug02_first.png" width="80%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/vite_debug02.gif';"
-onmouseout="this.src='/typescratcherDoc/web/vite_debug02_first.png';"/>
+onmouseover="this.src='/web/vite_debug02.gif';"
+onmouseout="this.src='/web/vite_debug02_first.png';"/>

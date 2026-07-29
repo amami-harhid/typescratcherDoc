@@ -11,8 +11,8 @@ outline: deep
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces_first.png" width="80%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces_first.png';"/>
+onmouseover="this.src='/web/github_create_codespaces.gif';"
+onmouseout="this.src='/web/github_create_codespaces_first.png';"/>
 
 ### (2) メニューから『Codespaces』を開く
 
@@ -25,8 +25,8 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces_first.png';
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces02_first.png" 
 style="width:100%; border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces02.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces02_first.png';"/>
+onmouseover="this.src='/web/github_create_codespaces02.gif';"
+onmouseout="this.src='/web/github_create_codespaces02_first.png';"/>
 
 ---
 
@@ -39,8 +39,8 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces02_first.png
 
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces03_first.png"
- onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces03.gif';"
- onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces03_first.png';"
+ onmouseover="this.src='/web/github_create_codespaces03.gif';"
+ onmouseout="this.src='/web/github_create_codespaces03_first.png';"
  style="width:100%; border: 1px solid red;"/>
 
 ---
@@ -55,8 +55,8 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces02_first.png
 
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces04_first.png" width="100%" heigth="100%" 
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces04.gif'"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces04_first.png'"
+onmouseover="this.src='/web/github_create_codespaces04.gif'"
+onmouseout="this.src='/web/github_create_codespaces04_first.png'"
 style="border: 1px solid red;" 
 />
 
@@ -72,8 +72,8 @@ style="border: 1px solid red;"
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces05_1_first.png"  width="100%" heigth="100%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces05_1.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces05_1_first.png';"
+onmouseover="this.src='/web/github_create_codespaces05_1.gif';"
+onmouseout="this.src='/web/github_create_codespaces05_1_first.png';"
 />
 
 ---
@@ -94,8 +94,8 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces05_1_first.p
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces06_first.png"  width="100%" heigth="100%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces06.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces06_first.png';"
+onmouseover="this.src='/web/github_create_codespaces06.gif';"
+onmouseout="this.src='/web/github_create_codespaces06_first.png';"
 />
 
 ---
@@ -109,8 +109,8 @@ onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces06_first.png
 <small>マウスを重ねるとGIF再生</small>
 <img src="/github_create_codespaces07_first.png"  width="100%" heigth="100%" 
 style="border: 1px solid red;"
-onmouseover="this.src='/typescratcherDoc/web/github_create_codespaces07.gif';"
-onmouseout="this.src='/typescratcherDoc/web/github_create_codespaces07_first.png';"
+onmouseover="this.src='/web/github_create_codespaces07.gif';"
+onmouseout="this.src='/web/github_create_codespaces07_first.png';"
 />
 
 ---
