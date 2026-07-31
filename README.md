@@ -4,7 +4,7 @@
 
 VitaPressを使って作成しています。
 
-[公開サイトはこちらです](https://amami-harhid.github.io/typescratcherDoc/web/)
+[公開サイトはこちらです](https://tsdoc.mirai-logic.com/web/)
 
 # npm scripts
 
