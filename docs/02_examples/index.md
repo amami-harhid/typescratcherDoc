@@ -12,7 +12,13 @@ outline: deep
 
 ## Game Sample (Teleportation)
 
-[ゲームサンプルを別タブで開く](https://amami-harhid.github.io/typeScratchCoder/src/04_games/001/)
+---
+<small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
+<AutoReloadIframe
+src="https://amami-harhid.github.io/typeScratchCoder/src/04_games/001/"
+/>
+
+---
 
 ::: tip Teleportation
 
@@ -25,13 +31,3 @@ outline: deep
 テレポートするたびに変数 **Count** がカウントアップします。
 
 :::
-
----
-
-<small>※ 動画再生ボタンを押して再生しましょう</small>
-
-<video width="100%" controls preload="metadata">
-<source src="/gameSampleTeleportation.mp4" type="video/mp4"></source>
-</video>
-
----
