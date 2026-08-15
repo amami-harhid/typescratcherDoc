@@ -12,9 +12,6 @@ outline: deep
 マウスカーソルをスプライトに近づけると、画像効果（ピクセル化）の程度が変化します。
 
 ---
-タブレットやスマホの『タッチパネル』のタップやフリックにはうまく対応していませんので、パソコンのマウスで操作することをおすすめします。
-
----
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/009/"

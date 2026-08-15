@@ -12,12 +12,10 @@ outline: deep
 スプライト、ステージが質問をします。
 
 ---
-『A』キーやスペースキーを使うので、タブレットでの利用は推奨しません。
-
----
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/007/"
+height=750
 />
 
 ::: tip メッセージ

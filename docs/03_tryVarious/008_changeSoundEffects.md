@@ -12,12 +12,10 @@ outline: deep
 キーボードのキーを押すことで、音の音量を下げたり上げたり、音のピッチを上げたり下げたりします。
 
 ---
-キーボード操作を要しますので、タブレットでの利用は推奨しません。
-
----
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/008/"
+height=750
 />
 
 ::: tip メッセージ

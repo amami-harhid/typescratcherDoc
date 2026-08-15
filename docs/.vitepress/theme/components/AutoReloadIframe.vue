@@ -1,8 +1,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const { src } = defineProps({
-  src: String
+const props = defineProps({
+  src: {
+    type: String,
+    required: true
+  },
+  height: {
+    type: Number,
+    default: 500
+  }
 })
 
 const containerRef = ref(null)
@@ -21,7 +28,7 @@ onMounted(() => {
         // 画面外に出た
         if(showIframe.value == true){
           // ロード済の場合、再ロードする
-          iframeRef.value.src = `${src}?timestamp=${new Date().getTime()}`
+          iframeRef.value.src = `${props.src}?timestamp=${new Date().getTime()}`
         }
         showIframe.value = false
       }
@@ -39,10 +46,39 @@ onUnmounted(() => {
 })
 </script>
 
+
+
 <template>
   <div loading="lazy"
     ref="containerRef"
   >
-    <iframe :src=src style="width:100%;height:500px;" ref="iframeRef"></iframe>
+    <iframe :src=src class="responsive-iframe" ref="iframeRef"></iframe>
   </div>
 </template>
+
+<style scoped>
+.responsive-iframe {
+  width: 100%;
+}
+
+/* 1. 基本（タッチパネル・スマホ・タブレットなど）の高さ */
+@media (pointer: coarse) {
+  .responsive-iframe {
+    height: v-bind("props.height + 'px'"); /* タッチパネル時の希望の高さ */
+  }
+}
+
+/* 2. それ以外（マウス操作のPCなど）の高さ */
+@media (pointer: fine) {
+  .responsive-iframe {
+    height: 500px; /* PCなどマウス操作時の高さ */
+  }
+}
+
+/* 3. 万が一どちらも検知できない環境用のフォールバック */
+@media (pointer: none) {
+  .responsive-iframe {
+    height: 500px;
+  }
+}
+</style>

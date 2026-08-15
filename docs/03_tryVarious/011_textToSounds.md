@@ -13,9 +13,6 @@ outline: deep
 赤い枠は、スプライトを囲む矩形です。カーソルが矩形の中に入っていてもスプライトに触れていないときはスピーチをしません。<br>
 
 ---
-タブレットやスマホの『タッチパネル』のタップやフリックにはうまく対応していませんので、パソコンのマウスで操作することをおすすめします。
-
----
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/"

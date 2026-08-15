@@ -12,12 +12,10 @@ outline: deep
 スプライト『犬』が自由落下して地面に着地します。着地後には左右に動いたりジャンプしたりします。
 
 ---
-矢印キーやスペースキーを使うので、タブレットでの利用は推奨しません。
-
----
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/006/"
+height=760
 />
 
 ::: tip メッセージ
