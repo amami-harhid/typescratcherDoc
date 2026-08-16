@@ -9,6 +9,10 @@ const props = defineProps({
   height: {
     type: Number,
     default: 500
+  },
+  id: {
+    type: String,
+    default: "test"
   }
 })
 
@@ -47,6 +51,9 @@ onMounted(() => {
 
 // --- ここからリサイズ処理 ---
 const startResize = (event) => {
+  // 【追加】タッチデバイスではない場合はリサイズ処理を即座に終了する
+  if (!isTouchDevice) return
+
   // 【重要】スマホ（タッチ）の場合は touches[0] から座標を取得、マウスならそのまま clientY
   if (event.touches && event.touches.length > 0) {
     startY = event.touches[0].clientY
@@ -67,7 +74,7 @@ const startResize = (event) => {
 }
 
 const onResizing = (event) => {
-  // 【重要修正】移動中も touches[0] から正しく座標を取得する
+  // 移動中も touches[0] から正しく座標を取得する
   let currentY = 0
   if (event.touches && event.touches.length > 0) {
     currentY = event.touches[0].clientY
@@ -94,6 +101,26 @@ const stopResize = () => {
 }
 // --- ここまでリサイズ処理 ---
 
+// --- ここから iframe側からのメッセージ受信
+window.addEventListener('message', function(event) {
+  // データが存在し、かつ指定したタイプのアクションであるか確認
+  if (event.data && event.data.type === 'resize-iframe') {
+    if( event.data.id == props.id ) {
+      console.log('event.data.id=',event.data.id)
+      console.log('event.data.width=',event.data.width)
+      console.log('event.data.height=',event.data.height)
+      const iframeElement = document.querySelector('#'+props.id)
+      const handle_icon = document.querySelector('.handle-icon');
+      console.log(iframeElement)
+      console.log('iframeElement.clientWidth=', iframeElement.clientWidth)
+      console.log('iframeElement.clientHeight=', iframeElement.clientHeight)
+      currentHeight.value = event.data.height + handle_icon.offsetHeight
+      console.log('event.data.height + handle_icon.offsetHeight = ',event.data.height + handle_icon.offsetHeight);
+    }
+  }
+});
+
+
 onUnmounted(() => {
   observer?.disconnect()
   stopResize()
@@ -108,14 +135,16 @@ onUnmounted(() => {
   >
     <!-- style属性で動的に高さをバインド -->
     <iframe 
+      :id="id"
       :src="src" 
       class="responsive-iframe" 
       :style="{ height: currentHeight + 'px' }"
       ref="iframeRef">
     </iframe>
 
-    <!-- 高さ調整用のハンドルバー -->
+    <!-- 【修正】v-if="isTouchDevice" を追加し、タッチデバイスのみ表示・動作するように制御 -->
     <div 
+      v-if="isTouchDevice"
       class="resize-handle" 
       @mousedown="startResize" 
       @touchstart="startResize"
@@ -124,12 +153,3 @@ onUnmounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-/* 1. 基本（タッチパネル・スマホ・タブレットなど）の高さ */
-@media (pointer: coarse) {
-  .responsive-iframe {
-    height: v-bind("currentHeight + 'px'"); /* タッチパネル時の希望の高さ */
-  }
-}
-</style>

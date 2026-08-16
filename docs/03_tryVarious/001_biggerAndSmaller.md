@@ -14,7 +14,8 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリック、緑の旗をクリックでスタート</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/001/"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/001/?id=i3-1"
+id="i3-1"
 />
 
 ::: warning 大きさの変化の方向

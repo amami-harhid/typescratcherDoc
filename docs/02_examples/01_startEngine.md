@@ -15,7 +15,8 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/001/"
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/001/?id=i2-1"
+id="i2-1" 
 />
 
 ---
