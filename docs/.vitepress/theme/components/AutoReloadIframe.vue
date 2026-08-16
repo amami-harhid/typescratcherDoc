@@ -108,7 +108,7 @@ window.addEventListener('message', function(event) {
     if( event.data.id == props.id ) {
       const iframeElement = document.querySelector('#'+props.id)
       const handle_icon = document.querySelector('.handle-icon');
-      currentHeight.value = event.data.height + handle_icon.offsetHeight
+      currentHeight.value = event.data.height + ((handle_icon)? handle_icon.offsetHeight:0 )
     }
   }
 });
