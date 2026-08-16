@@ -106,16 +106,9 @@ window.addEventListener('message', function(event) {
   // データが存在し、かつ指定したタイプのアクションであるか確認
   if (event.data && event.data.type === 'resize-iframe') {
     if( event.data.id == props.id ) {
-      console.log('event.data.id=',event.data.id)
-      console.log('event.data.width=',event.data.width)
-      console.log('event.data.height=',event.data.height)
       const iframeElement = document.querySelector('#'+props.id)
       const handle_icon = document.querySelector('.handle-icon');
-      console.log(iframeElement)
-      console.log('iframeElement.clientWidth=', iframeElement.clientWidth)
-      console.log('iframeElement.clientHeight=', iframeElement.clientHeight)
       currentHeight.value = event.data.height + handle_icon.offsetHeight
-      console.log('event.data.height + handle_icon.offsetHeight = ',event.data.height + handle_icon.offsetHeight);
     }
   }
 });
