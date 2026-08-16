@@ -16,7 +16,7 @@ outline: deep
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/04_games/001/"
-height=750
+:height="750"
 />
 
 ---
