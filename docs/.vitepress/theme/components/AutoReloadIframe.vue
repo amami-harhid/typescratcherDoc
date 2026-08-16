@@ -23,8 +23,14 @@ const showIframe = ref(true)
 
 // --- 環境（ポインター）に応じて初期高さを条件分岐 ---
 // 💡 typeof window !== 'undefined' の判定により、SSR（ビルド）時もエラーになりません
-const isTouchDevice = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
-const currentHeight = ref(isTouchDevice ? props.height : 500)
+const isTouchDevice = ref(false)
+const currentHeight = ref(500)
+// =================================
+// Error 対策 => 
+// 「Hydration completed but contains mismatches.」
+// =================================
+//const isTouchDevice = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
+//const currentHeight = ref(isTouchDevice ? props.height : 500)
 
 let observer
 let startY = 0
@@ -43,6 +49,11 @@ const handleMessage = (event) => {
 }
 
 onMounted(() => {
+  // 💡 デバイスの判定や、判定に伴うデータの書き換えは「すべて onMounted の中」で行います
+  isTouchDevice.value = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
+  if (isTouchDevice.value) {
+    currentHeight.value = props.height
+  }
   // 💡 windowへのイベント登録は、必ずブラウザ環境が確定する onMounted 内で行います
   window.addEventListener('message', handleMessage)
 
