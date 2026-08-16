@@ -18,10 +18,11 @@ const props = defineProps({
 
 const containerRef = ref(null)
 const iframeRef = ref(null)
+const handleIconRef = ref(null) // 【追加】handle-icon のテンプレート参照
 const showIframe = ref(true)
 
 // --- 環境（ポインター）に応じて初期高さを条件分岐 ---
-// window が存在しない環境（SSRなど）を考慮し、安全に判定します
+// 💡 typeof window !== 'undefined' の判定により、SSR（ビルド）時もエラーになりません
 const isTouchDevice = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
 const currentHeight = ref(isTouchDevice ? props.height : 500)
 
@@ -29,16 +30,29 @@ let observer
 let startY = 0
 let startHeight = 0
 
+// --- iframe側からのメッセージ受信ハンドラー ---
+// 💡 解除できるように名前付き関数として定義します
+const handleMessage = (event) => {
+  if (event.data && event.data.type === 'resize-iframe') {
+    if (event.data.id === props.id) {
+      // 💡 querySelector を使わず、Vue の ref から安全に高さを取得します
+      const handle_icon_height = handleIconRef.value ? handleIconRef.value.offsetHeight : 0
+      currentHeight.value = event.data.height + handle_icon_height
+    }
+  }
+}
+
 onMounted(() => {
-  // メッセージ受信
-  messageReceive();
+  // 💡 windowへのイベント登録は、必ずブラウザ環境が確定する onMounted 内で行います
+  window.addEventListener('message', handleMessage)
+
   // サイズ変更を監視
   observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
         showIframe.value = true
       } else {
-        if(showIframe.value == true && iframeRef.value){
+        if (showIframe.value === true && iframeRef.value) {
           iframeRef.value.src = `${props.src}?timestamp=${new Date().getTime()}`
         }
         showIframe.value = false
@@ -49,15 +63,15 @@ onMounted(() => {
     }
   )
 
-  observer.observe(containerRef.value)
+  if (containerRef.value) {
+    observer.observe(containerRef.value)
+  }
 })
 
 // --- ここからリサイズ処理 ---
 const startResize = (event) => {
-  // 【追加】タッチデバイスではない場合はリサイズ処理を即座に終了する
   if (!isTouchDevice) return
 
-  // 【重要】スマホ（タッチ）の場合は touches[0] から座標を取得、マウスならそのまま clientY
   if (event.touches && event.touches.length > 0) {
     startY = event.touches[0].clientY
   } else {
@@ -66,10 +80,8 @@ const startResize = (event) => {
   
   startHeight = currentHeight.value
 
-  // ドラッグ中にiframe内にイベントが吸い込まれて動作が止まるのを完全に防ぐ
   if (iframeRef.value) iframeRef.value.style.pointerEvents = 'none'
 
-  // グローバルイベントの登録
   window.addEventListener('mousemove', onResizing)
   window.addEventListener('mouseup', stopResize)
   window.addEventListener('touchmove', onResizing, { passive: false })
@@ -77,7 +89,6 @@ const startResize = (event) => {
 }
 
 const onResizing = (event) => {
-  // 移動中も touches[0] から正しく座標を取得する
   let currentY = 0
   if (event.touches && event.touches.length > 0) {
     currentY = event.touches[0].clientY
@@ -86,44 +97,27 @@ const onResizing = (event) => {
   }
 
   const deltaY = currentY - startY
-  
-  // 新しい高さを計算（可動範囲を最小300px〜最大1200pxに広げています）
   const newHeight = startHeight + deltaY
   currentHeight.value = Math.max(300, Math.min(1200, newHeight))
 }
 
 const stopResize = () => {
-  // iframeのポインターイベントを元に戻す
   if (iframeRef.value) iframeRef.value.style.pointerEvents = 'auto'
 
-  // イベントリスナーの解除
   window.removeEventListener('mousemove', onResizing)
   window.removeEventListener('mouseup', stopResize)
   window.removeEventListener('touchmove', onResizing)
   window.removeEventListener('touchend', stopResize)
 }
-// --- ここまでリサイズ処理 ---
-
-// --- ここから iframe側からのメッセージ受信
-const messageReceive = () => {
-  window.addEventListener('message', function(event) {
-    // データが存在し、かつ指定したタイプのアクションであるか確認
-    if (event.data && event.data.type === 'resize-iframe') {
-      if( event.data.id == props.id ) {
-        const iframeElement = document.querySelector('#'+props.id)
-        const handle_icon = document.querySelector('.handle-icon')
-        const handle_icon_height = handle_icon? handle_icon.offsetHeight : 0
-        currentHeight.value = event.data.height + handle_icon_height
-      }
-    }
-  });
-}
 
 onUnmounted(() => {
-
+  // 💡 ページ移動時にメッセージイベントを綺麗にクリーンアップ（メモリリーク防止）
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('message', handleMessage)
+  }
+  
   observer?.disconnect()
   stopResize()
-
 })
 </script>
 
@@ -133,7 +127,6 @@ onUnmounted(() => {
     ref="containerRef"
     class="iframe-container"
   >
-    <!-- style属性で動的に高さをバインド -->
     <iframe 
       :id="id"
       :src="src" 
@@ -142,14 +135,14 @@ onUnmounted(() => {
       ref="iframeRef">
     </iframe>
 
-    <!-- 【修正】v-if="isTouchDevice" を追加し、タッチデバイスのみ表示・動作するように制御 -->
     <div 
       v-if="isTouchDevice"
       class="resize-handle" 
       @mousedown="startResize" 
       @touchstart="startResize"
     >
-      <span class="handle-icon">＝</span>
+      <!-- 💡 ここに ref="handleIconRef" を追加して、querySelectorを撲滅 -->
+      <span ref="handleIconRef" class="handle-icon">＝</span>
     </div>
   </div>
 </template>
