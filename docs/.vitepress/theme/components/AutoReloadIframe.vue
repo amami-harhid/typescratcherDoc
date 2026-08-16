@@ -30,6 +30,9 @@ let startY = 0
 let startHeight = 0
 
 onMounted(() => {
+  // メッセージ受信
+  messageReceive();
+  // サイズ変更を監視
   observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
@@ -102,21 +105,25 @@ const stopResize = () => {
 // --- ここまでリサイズ処理 ---
 
 // --- ここから iframe側からのメッセージ受信
-window.addEventListener('message', function(event) {
-  // データが存在し、かつ指定したタイプのアクションであるか確認
-  if (event.data && event.data.type === 'resize-iframe') {
-    if( event.data.id == props.id ) {
-      const iframeElement = document.querySelector('#'+props.id)
-      const handle_icon = document.querySelector('.handle-icon');
-      currentHeight.value = event.data.height + ((handle_icon)? handle_icon.offsetHeight:0 )
+const messageReceive = () => {
+  window.addEventListener('message', function(event) {
+    // データが存在し、かつ指定したタイプのアクションであるか確認
+    if (event.data && event.data.type === 'resize-iframe') {
+      if( event.data.id == props.id ) {
+        const iframeElement = document.querySelector('#'+props.id)
+        const handle_icon = document.querySelector('.handle-icon')
+        const handle_icon_height = handle_icon? handle_icon.offsetHeight : 0
+        currentHeight.value = event.data.height + handle_icon_height
+      }
     }
-  }
-});
-
+  });
+}
 
 onUnmounted(() => {
+
   observer?.disconnect()
   stopResize()
+
 })
 </script>
 
