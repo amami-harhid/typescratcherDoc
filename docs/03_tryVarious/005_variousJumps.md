@@ -19,6 +19,8 @@ outline: deep
 <AutoReloadIframe
 src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/?id=i3-5"
 id="i3-5"
+expandVertical
+virticalPad
 />
 
 ::: tip 線とスタンプ
