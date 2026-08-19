@@ -16,7 +16,7 @@ outline: deep
 
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/003/"
+src="https://amami-harhid.github.io/typeScratchCoder/01_quickStart/003/"
 />
 
 ---
