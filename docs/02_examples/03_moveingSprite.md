@@ -16,8 +16,7 @@ outline: deep
 
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/003/?id=i2-3"
-id="i2-3"
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/003/"
 />
 
 ---
@@ -49,7 +48,7 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BlueskyImage ); // 背景を追加
 
 // 旗クリックされたとき、のイベント定義
-cat.Event.flagPresser().func = async function*( this: Sprite ) {
+cat.Event.flagPresser().func = function( this: Sprite ) {
     // Motion.move.steps : 指定した数だけ動かす
     this.Motion.move.steps(5);
 }
@@ -63,7 +62,7 @@ Ts.engine.start();
 <br>
 『スレッド』は同時に複数存在でき、『スレッド』は同時並列で動作します。
 <br>
-イベントを定義する関数の代表的な形は『`async function*( ) { }`』です。
+イベントを定義する関数の代表的な形は『`function() { }`』です。
 :::
 
 ::: tip 『`this`』

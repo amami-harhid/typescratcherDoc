@@ -15,15 +15,14 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/?id=i3-11"
-id="i3-11"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/011/"
 />
 
 ::: tip メッセージ
 緑の旗を押して開始します。<br>
 <br>
-スプライトにマウスが触れると、「こら、触ったね」とスピーチします。<br>
-スプライトにマウスが触れるつど、声が「女性」⇒「男性」⇒「女性」・・・<br>
+マウス(ポインター)がスプライトに触れると、「こら、触ったね」とスピーチします。<br>
+マウス(ポインター)がスプライトに触れるつど、声が「女性」⇒「男性」⇒「女性」・・・<br>
 と切り替わります。
 <br>
 :::
@@ -73,7 +72,7 @@ const speechText = Ts.Variable.string( 'こら、触ったね' );
 Ts.Variable.monitoring( { text: speechText } );
 
 // 緑の旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = function( this:Sprite ) {
     this.Looks.size.scale = [ 250, 250 ];
     // Speech 
     // 国をJAPANESEとし、
@@ -96,17 +95,19 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
         if( _touch() ){ // タッチしているとき
             if( speechFlag ){ 
                 // ピッチ加工したFEMAILの声
-                await this.Speech.type( "FEMAIL" ).speech( speechText.text );
+                this.Speech.type( "FEMAIL" );
+                this.Speech.speech( speechText.text );
 
             }else{
                 // ピッチ加工したMAILの声
-                await this.Speech.type( "MAIL" ).speech( speechText.text );
+                this.Speech.type( "MAIL" );
+                this.Speech.speech( speechText.text );
 
             }
             // 声タイプ反転
             speechFlag = !speechFlag;
             // マウスが触っている間、待つ
-            await this.Control.waitWhile( _touch );
+            this.Control.waitWhile( _touch );
         }
         yield;
     }
@@ -134,7 +135,7 @@ ENGLISHにしたい場合は`Ts.SpeechLocale.ENGLISH`とします。<br>
 『`this.Speech.pitch(150)`』 <br>
 現在選択している声タイプのピッチを指定値で設定します。<br>
 <br>
-『`await this.Speech.speech(文字列)`』<br>
+『`this.Speech.speech(文字列)`』<br>
 選択中の声タイプによる音声合成を行い、発声します。<br>
 声タイプを切り替えない場合は １度だけ声タイプを選択しておけばよいのですが、声タイプを切り替えて発声したい場合は、『this.Speech.type(声タイプ)』として声タイプを都度選択しましょう。
 

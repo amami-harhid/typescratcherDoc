@@ -28,12 +28,12 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗を押されたときのスプライト(cat)のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ここにスレッドのコードを書く
 } 
 ```
 
-::: tip 『`async function* ( this:Sprite ) `』
+::: tip 『`function( this:Sprite ) `』
 
 スレッドの function 引数として、『`this: 型`』を渡していますが、これは本当に呼出し時に『`this`』が渡されてくるわけではありません。<br>
 
@@ -53,7 +53,7 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗を押されたときのステージのスレッド
-stage.Event.flagPresser().func = async function* ( this : Stage ) {
+stage.Event.flagPresser().func = function( this : Stage ) {
     // ここにスレッドのコードを書く
 } 
 ```

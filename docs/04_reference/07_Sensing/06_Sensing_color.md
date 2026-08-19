@@ -30,7 +30,7 @@ const cat = new Ts.Sprite( 'cat' );
 const targetColor = '#000000'; // 黒色
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターの方向へ向く
@@ -41,7 +41,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             // どこかに行く
             this.Motion.move.toRandom();
         }
-        yield;
     }
 }
 ```
@@ -75,7 +74,7 @@ const maskColor = '#ff0000'; // 赤色
 const targetColor = '#000000'; // 黒色
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターの方向へ向く
@@ -86,7 +85,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             // どこかに行く
             this.Motion.move.toRandom();
         }
-        yield;
     }
 }
 ```

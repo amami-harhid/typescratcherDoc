@@ -14,8 +14,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/003/?id=i3-3"
-id="i3-3"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/003/"
 />
 
 ::: tip 線とスタンプ
@@ -66,15 +65,15 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( WaterImage );
 
 // 旗が押されたときの『shark』のスレッド
-shark.Event.flagPresser().func = async function* ( this: Sprite ) {
+shark.Event.flagPresser().func = function( this: Sprite ) {
     // 初期位置 ( 中央 )
     this.Motion.position.xy = [ 0, 0 ];
     // 初期の大きさ ( 30% )
     this.Looks.size.scale = [ 30, 30 ];
     // 画像効果初期化
     this.Looks.effect.clear();
-    // 少しまつ
-    await this.Control.wait( 1 );
+    // 少し待つ
+    this.Control.wait( 1 );
 
     // ペンを準備する(クリア)
     this.Pen.penClear();
@@ -101,9 +100,7 @@ shark.Event.flagPresser().func = async function* ( this: Sprite ) {
             this.Pen.HSVColor.hue += 15; // 色相 [0 - 360]
             this.Pen.HSVColor.transparency += 10; // 透明度
             // すこし待つ
-            await this.Control.wait( 0.5 );
-
-            yield;
+            this.Control.wait( 0.5 );
         }
         this.Pen.penUp();
         this.Pen.penClear();
@@ -120,13 +117,10 @@ shark.Event.flagPresser().func = async function* ( this: Sprite ) {
             this.Pen.stamp();
 
             // すこし待つ
-            await this.Control.wait( 0.5 );
-
-            yield;
+            this.Control.wait( 0.5 );
         }
         // ペンをクリアする
         this.Pen.penClear();
-        yield;
     }
 }
 

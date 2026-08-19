@@ -14,8 +14,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/012/?id=i3-12"
-id="i3-12"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/012/"
 />
 
 ::: tip メッセージ
@@ -57,7 +56,7 @@ const attribute : SvgImageAttributes = {
     font_family: Ts.ScratchFontFamily.Scratch
 };
 const helloImage = new Ts.FontImage( attribute );
-await helloImage.textToSvg( HELLO );
+helloImage.Text.textToSvg( HELLO );
 
 // 文字スプライトを作成
 const moji = new Ts.Sprite( 'moji' );
@@ -65,7 +64,7 @@ moji.Costume.add( helloImage );
 moji.Looks.size.scale = [ 50, 50 ];
 
 // 旗が押されたときの「文字」のスレッド
-moji.Event.flagPresser().func = async function* ( this: Sprite ) {
+moji.Event.flagPresser().func = function( this: Sprite ) {
     // 中心座標
     this.Motion.position.xy = [ 0, 0 ];
     // 右90度
@@ -80,7 +79,6 @@ moji.Event.flagPresser().func = async function* ( this: Sprite ) {
         this.Motion.direction.degree += 1;
         // もし端に触れたら跳ね返る
         this.Motion.move.ifOnEdgeBounce();
-        yield;
     }   
 }
 
@@ -92,7 +90,7 @@ Ts.engine.start();
 文字列イメージ化<br>
 『`new Ts.FontImage(attribute)`』<br>
 これはイメージ作成をする`new Ts.Image({イメージ変数})` の拡張版であり、<br>
-『`await helloImage.textToSvg(HELLO)`』<br>
+『`helloImage.Text.textToSvg(HELLO)`』<br>
 のように文字列を与えることができます。
 <br>
 出来上がったイメージを スプライトのコスチュームとして使うことができます。

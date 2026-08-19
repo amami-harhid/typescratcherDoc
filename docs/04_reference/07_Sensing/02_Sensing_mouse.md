@@ -28,7 +28,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -36,7 +36,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             this.Looks.visible.hide(); // 隠す
             break; // ループを抜ける
         }
-        yield;
     }
 }
 ```
@@ -49,14 +48,13 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗が押されたときの『stage』のスレッド
-stage.Event.flagPresser().func = async function* ( this : Stage ) {
+stage.Event.flagPresser().func = function( this : Stage ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
             // Trueのとき『マウス』が押されている
             break; // ループを抜ける
         }
-        yield;
     }
 }
 ```
@@ -86,7 +84,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -96,7 +94,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             // マウスが押されたとき、マウス座標へスプライト移動させる
             this.Mouse.position.xy = [ _x, _y ];
         }
-        yield;
     }
 }
 ```
@@ -109,7 +106,7 @@ import type { Stage } from "@tscratch3/typescratcher";
 const stage = new Ts.Stage();
 
 // 旗が押されたときの『stage』のスレッド
-stage.Event.flagPresser().func = async function* ( this : Stage ) {
+stage.Event.flagPresser().func = function( this : Stage ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isDown ) {
@@ -127,7 +124,6 @@ stage.Event.flagPresser().func = async function* ( this : Stage ) {
                 break;
             }
         }
-        yield;
     }
 }
 ```
@@ -156,7 +152,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.mouse.isTouching ) {
@@ -164,7 +160,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             this.Looks.visible.hide(); // 隠す
             break; // ループを抜ける
         }
-        yield;
     }
 }
 ```
@@ -196,7 +191,7 @@ Ts.Variable.monitoring( distanceVal );
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターまでの距離
@@ -207,7 +202,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
         }
         // 変数表示欄に『距離』を表示する
         distanceVal.value = distance;
-        yield;
     }
 }
 ```
@@ -222,14 +216,13 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // マウスポインターへの向き
         const _degree = this.Sensing.mouse.degree;
         // スプライトの向きを マウスポインターへの向きにする
         this.Motion.direction.degree = _degree;
-        yield;
     }
 }
 ```

@@ -30,7 +30,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         this.Motion.move.steps( 10 ); // 10 進める
@@ -38,7 +38,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             // Trueのとき端にふれている
             this.Motion.direction.degree *= -1; // 向きを反転させる
         }
-        yield;
     }
 }
 ```

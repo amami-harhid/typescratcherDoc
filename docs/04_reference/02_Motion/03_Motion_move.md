@@ -60,19 +60,19 @@ sprite.Motion.move.to( [ 150, 100 ] )
 
 // 指定した秒数をかけて、指定した座標へ行く
 // 第一引数(秒数)、第二引数( [X座標, Y座標 ] )
-await sprite.Motion.move.glideTo( 1, [ 200, 50 ]);
+sprite.Motion.move.glideTo( 1, [ 200, 50 ]);
 
 // 指定した秒数をかけて、どこかの座標へ行く
 // 第一引数(秒数)
-await sprite.Motion.move.glideToRandom( 1 );
+sprite.Motion.move.glideToRandom( 1 );
 
 // 指定した秒数をかけて、マウスポインターの座標へ行く
 // 第一引数(秒数)
-await sprite.Motion.move.glideToMouse( 1 );
+sprite.Motion.move.glideToMouse( 1 );
 
 // 指定した秒数をかけて、他のスプライトの座標へ行く
 // 第一引数(秒数)、第二引数( 他のスプライト )
-await sprite.Motion.move.glideToMouse( 1, otherSprite );
+sprite.Motion.move.glideToMouse( 1, otherSprite );
 
 ```
 

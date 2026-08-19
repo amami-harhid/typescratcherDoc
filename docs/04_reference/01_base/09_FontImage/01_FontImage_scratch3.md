@@ -45,7 +45,7 @@ const attribute : SvgImageAttributes = {
 // 属性を指定して、FontImageを作成
 const helloImage = new Ts.FontImage( attribute );
 // 文字列を設定してSVGイメージに変換
-await helloImage.textToSvg(HellText);
+helloImage.Text.textToSvg(HellText);
 
 // スプライトを作成
 const helloSprite = new Ts.Sprite( 'hello' );

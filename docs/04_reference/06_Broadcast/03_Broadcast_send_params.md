@@ -22,9 +22,9 @@ const cat = new Ts.Sprite( 'cat' );
 const messageId = 'BroadcastTest';
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
 
-    await this.Control.wait(10); // 10秒待つ
+    this.Control.wait(10); // 10秒待つ
     const bubbleMessage = 'メッセージ受信した';
     // メッセージを送る
     this.Broadcast.send( messageId, bubbleMessage );
@@ -32,7 +32,7 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
 // 渡される引数を『bubbleMessage』として受け取る
-cat.Broadcast.receiver( messageId ).func = async function* ( this : Sprite, 
+cat.Broadcast.receiver( messageId ).func = function( this : Sprite, 
     bubbleMessage: string) {
 
     // 渡された文字列を使って『言う』
@@ -61,25 +61,25 @@ const cat = new Ts.Sprite( 'cat' );
 const messageId = 'BroadcastTest';
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
 
-    await this.Control.wait(10); // 10秒待つ
+    this.Control.wait(10); // 10秒待つ
     const bubbleMessage = 'メッセージ受信した';
     const bubbleSec = 2;
     // メッセージを送って待つ
-    await this.Broadcast.sendAndWait( messageId, bubbleSec );// 引数２つ
+    this.Broadcast.sendAndWait( messageId, bubbleSec );// 引数２つ
     // 『変数を使って言う』が終わった
     console.log( '終わり' );
 }
 
 // メッセージ『messageId』を受信したときの『cat』のスレッド
 // 渡される２つの引数を受け取ることができる
-cat.Broadcast.receiver( messageId ).func = async function* ( this : Sprite, 
+cat.Broadcast.receiver( messageId ).func = function( this : Sprite, 
     bubbleMessage: string, bubbleSec: number) {
 
     // 渡された文字列を使って『言う』
     // 渡された秒数の間、言う
-    await this.Looks.bubble.sayForSecs( 'メッセージ受信した', bubbleSec ); 
+    this.Looks.bubble.sayForSecs( 'メッセージ受信した', bubbleSec ); 
 }
 ```
 

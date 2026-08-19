@@ -34,14 +34,14 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BackdropImage01, BackdropImage02 );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     this.Looks.backdrop.switch( BackdropImage01 ); // <-- 背景『BackdropImage01』
-    await this.Control.wait( 5 ); // 5秒待つ
+    this.Control.wait( 5 ); // 5秒待つ
     this.Looks.backdrop.next(); // 次の背景にする
 }
 
 // 指定した背景になったときの『cat』のスレッド
-cat.Event.backdropSwitcher(BackdropImage02).func = async function* ( this : Sprite ) {
+cat.Event.backdropSwitcher(BackdropImage02).func = function( this : Sprite ) {
     // 背景が『BackdropImage02』になったとき、このスレッドが起動される。
 }
 
@@ -64,14 +64,14 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BackdropImage01, BackdropImage02 );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     this.Looks.backdrop.switch( BackdropImage01 ); // <-- 背景『BackdropImage01』
-    await this.Control.wait( 5 ); // 5秒待つ
+    this.Control.wait( 5 ); // 5秒待つ
     this.Looks.backdrop.next(); // 次の背景にする
 }
 
 // 指定した背景になったときの『stage』のスレッド
-const BackdropImage02Swicther = async function* (this : Sprite) {
+const BackdropImage02Swicther = function(this : Sprite) {
     // 背景が『BackdropImage02』になったとき、このスレッドが起動される。
 }
 // functionをconst定義しておいて ～.func へ代入してもOK

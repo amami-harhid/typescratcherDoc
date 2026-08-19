@@ -30,7 +30,7 @@ const cat = new Ts.Sprite( 'cat' );
 const dog = new Ts.Sprite( 'dog' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         // スプライト『dog』に触れているかの判定
@@ -39,7 +39,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             // 非表示にする
             this.Looks.visible.hide();
         }
-        yield;
     }
 }
 ```
@@ -71,7 +70,7 @@ const cat = new Ts.Sprite( 'cat' );
 const dog = new Ts.Sprite( 'dog' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
 
@@ -83,7 +82,6 @@ cat.Event.flagPresser().func = async function* ( this : Sprite ) {
             //  ループを抜ける（スレッドが終わる）
             break;
         }
-        yield;
     }
 }
 ```

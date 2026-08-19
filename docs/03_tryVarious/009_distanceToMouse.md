@@ -14,8 +14,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/009/?id=i3-9"
-id="i3-9"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/009/"
 />
 
 ::: tip メッセージ
@@ -77,7 +76,7 @@ const pixelate = Ts.Variable.number( 0 ); // ピクセル効果の値
 Ts.Variable.monitoring( { pixelate } )
 
 // 緑の旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ){
+cat.Event.flagPresser().func = function( this:Sprite ){
     this.Looks.size.scale = [ 250, 250 ];
     // スプライトを囲む矩形の情報を取り出す
     const bounds = this.Looks.size.drawingSize;
@@ -87,7 +86,7 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ){
 };
 
 // 緑の旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ){
+cat.Event.flagPresser().func = function( this:Sprite ){
     // スプライト中心座標とマウス座標の間の距離を取得する。
     // 距離を元にスプライトを囲む「円」にマウスポインターが入ったか
     // を計算し、円に入っているときは画像効果（幽霊効果・ピクセル効果）
@@ -105,7 +104,6 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ){
         }else{
             this.Looks.effect.clear();
         }
-        yield;
     }
 };
 

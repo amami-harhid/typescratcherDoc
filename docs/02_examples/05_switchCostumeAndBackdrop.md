@@ -17,8 +17,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/005/?id=i2-5"
-id="i2-5"
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/005/"
 />
 
 ---
@@ -60,7 +59,7 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BlueskyImage, CanyonImage ); // 背景を２個追加
 
 // 【旗クリックされたとき】
-cat.Event.flagPresser().func = async function*( this: Sprite ) {
+cat.Event.flagPresser().func = function( this: Sprite ) {
     
     for( ;; ) {
         this.Motion.move.steps( 5 );
@@ -70,8 +69,6 @@ cat.Event.flagPresser().func = async function*( this: Sprite ) {
         // Looks.backdrop.next: 「次の背景にする」
         this.Looks.costume.next(); // 次のコスチュームにする
         this.Looks.backdrop.next(); // 次の背景にする
-        // フレームごとの休止
-        yield;
     }
 }
 

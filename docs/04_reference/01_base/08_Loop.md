@@ -23,23 +23,19 @@ outline: deep
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
+sprite.Event.flagPresser().func = function( this : Sprite ) {
 
     // ずっと繰り返す
     for(;;) {
-
         // いろんな処理を書く
-        yield; // 次のフレームになるまで待つ
     }
 }
 
-stage.Event.flagPresser().func = async function* ( this : Stage ) {
+stage.Event.flagPresser().func = function( this : Stage ) {
 
     // ずっと繰り返す
     for( ;; ) {
-
         // いろんな処理を書く
-        yield; // 次のフレームになるまで待つ
     }
 }
 
@@ -53,7 +49,6 @@ stage.Event.flagPresser().func = async function* ( this : Stage ) {
 ```
 while( true ) {
     // いろんな処理を書く
-    yield;
 }
 ```
 :::
@@ -79,12 +74,11 @@ while( true ) {
 スレッドの中で書くとします。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
+sprite.Event.flagPresser().func = function( this : Sprite ) {
 
     // 〇回繰り返す
     for( const _idx of Ts.Loop.Iterator( 10 ) ) { // 10回繰り返す
         // いろんな処理を書く
-        yield; // 次のフレームになるまで待つ
     }
 }
 
@@ -97,7 +91,6 @@ sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
 ```
 for( const _idx of Ts.Loop.Iterator( 10 ) ) {
     console.log( `_idx=`, _idx );
-    yield;
 }
 ```
 <br>
@@ -123,7 +116,6 @@ _idx= 9<br>
 // idx++ を間違えて別の変数をインクリメントしてしまうと、下のループは永久に終わりません。
 for(let idx = 0 ; idx < 10; idx++) {
     // いろんなコード
-    yield;
 }
 ```
 間違えて永久ループになってしまうことは絶対に避けるようにしてください。
@@ -137,7 +129,7 @@ for(let idx = 0 ; idx < 10; idx++) {
 
 ```typescript:line-numbers
 
-sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
+sprite.Event.flagPresser().func = function( this: Sprite ) {
 
     for( ;; ) {
         // いろんなコードを書く
@@ -148,7 +140,6 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
             // 繰り返しを抜ける
             break;
         }
-        yield;
     }
 }
 ```
@@ -164,7 +155,7 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
 
 ```typescript:line-numbers
 
-sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
+sprite.Event.flagPresser().func = function( this : Sprite ) {
 
     for( ;; ) {
         this.Motion.move.steps( 10 ); // 10 進める
@@ -175,7 +166,6 @@ sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
             continue;
         }
         // いろんなコード(B)を書く
-        yield;
     }
 }
 ```
@@ -206,7 +196,7 @@ sprite.Event.flagPresser().func = async function* ( this : Sprite ) {
 『Scratch3』流とするには、すべての繰り返しの最後に『`yield`』(次のフレームになるまで停止して待つ)が必要です。
 
 ```typescript:line-numbers
-sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
+sprite.Event.flagPresser().func = function( this: Sprite ) {
 
     //　ずっと繰り返す (内部で〇回繰り返す)
     for( ;; ) {
@@ -215,24 +205,14 @@ sprite.Event.flagPresser().func = async function* ( this: Sprite ) {
         for( const _idx of Ts.Loop.Iterator( 10 ) ) {
             // スプライトの大きさ(幅)を 5%ずつ大きくする
             this.Looks.size.scale.w += 5;
-            yield; // 次のフレームになるまで停止して待つ
         }
         
         // 10回繰り返す
         for( const _idx of Ts.Loop.Iterator( 10 ) ) {
             // スプライトの大きさ(幅)を 5%ずつ小さくする
             this.Looks.size.scale.w -= 5;            
-            yield; // 次のフレームになるまで停止して待つ
         }
 
-        yield; // 次のフレームになるまで停止して待つ
     }
 }
 ```
-::: tip 『Scratch3』流の意味
-『`yield`』がないときには、１つのフレームで『超爆速でループ』してしまいます。<br><br>
-爆速でループさせてしまうと、『10だけ進める』『大きさを5ずつ変える』といった処理が、１つのフレームのなかで数百回（？）繰り返されることになり、スプライトの変化を目視できなくなってしまいます。<br><br>
-『１つのフレームで１回の繰り返し』とするのが『Scratch3』流です。<br><br>
-明確な目的がない限り、繰り返しの最後には『`yield`』を書きましょう。<br><br>
-描画に直接関係のない繰り返しであれば、『`yield`』は不要かもしれません。
-::: 

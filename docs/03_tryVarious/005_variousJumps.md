@@ -17,10 +17,8 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/?id=i3-5"
-id="i3-5"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/005/"
 expandVertical
-virticalPad
 />
 
 ::: tip 線とスタンプ
@@ -74,7 +72,7 @@ method.hide(); // 隠す
 
 
 // 旗が押されたとき
-dog.Event.flagPresser().func = async function* ( this: Sprite ) {
+dog.Event.flagPresser().func = function( this: Sprite ) {
 
     this.Motion.position.xy = [ 0, -130 ];
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
@@ -85,27 +83,24 @@ dog.Event.flagPresser().func = async function* ( this: Sprite ) {
         this.Motion.move.steps( 10 );
         // 端についたら跳ね返る
         this.Motion.move.ifOnEdgeBounce();
-        yield;
     }
 }
 // A キーが押されたとき(等速ジャンプ)
-dog.Event.keyPresser( 'a' ).func = async function* ( this:Sprite ) {
+dog.Event.keyPresser( 'a' ).func = function( this:Sprite ) {
     method.text = '等速';
     method.show();
     const JUMP = 10;
     for( const _ of Ts.Loop.Iterator( 10 ) ) {
         this.Motion.position.y += JUMP;
-        yield;
     }
     for( const _ of Ts.Loop.Iterator( 10 ) ) {
         this.Motion.position.y -= JUMP;
-        yield;
     }
     method.hide();
     method.text = '';
 }
 // B キーが押されたとき(放物風ジャンプ)
-dog.Event.keyPresser( 'b' ).func = async function* ( this:Sprite ) {
+dog.Event.keyPresser( 'b' ).func = function( this:Sprite ) {
     method.text = '放物風';
     method.show();
     const INIT_JUMP = 30;
@@ -118,7 +113,6 @@ dog.Event.keyPresser( 'b' ).func = async function* ( this:Sprite ) {
         if( this.Motion.position.y < -130 ) {
             break;
         }
-        yield;
     }
     this.Motion.position.y = -130;
     method.hide();

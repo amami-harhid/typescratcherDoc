@@ -33,7 +33,7 @@ const fontAttribute: SvgImageAttributes = {
 // フォントイメージを作成
 const mojiImage = new Ts.FontImage(fontAttribute);
 // フォントイメージへテキストを渡す（SVGイメージ化）
-mojiImage.textToSvg( 'HarryPotter text' );
+mojiImage.Text.textToSvg( 'HarryPotter text' );
 
 // スプライトを作成
 const moji = new Ts.Sprite( 'moji' );

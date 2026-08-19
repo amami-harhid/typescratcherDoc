@@ -14,8 +14,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/010/?id=i3-10"
-id="i3-10"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/010/"
 />
 
 ::: tip メッセージ
@@ -70,13 +69,13 @@ const touch = Ts.Variable.string( '' ); // タッチ
 Ts.Variable.monitoring( { touch } );
 
 // 旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = function( this:Sprite ) {
     this.Looks.size.scale = [250, 250];
     touch.text = ''; // 変数の値を初期化
 };
 
 // 旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ) {
+cat.Event.flagPresser().func = function( this:Sprite ) {
     /** 色の変化量 */
     const changeColor = 15;
     for(;;) {
@@ -89,7 +88,6 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ) {
 
             touch.text = '';
         }
-        yield;
     }
 };
 

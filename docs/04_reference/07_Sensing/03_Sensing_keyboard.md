@@ -28,14 +28,13 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.edge.isDown( Ts.Keyboard.SPACE ) ) {
             // Trueのときキーが押されている
             this.Motion.direction.degree *= -1; // 向きを反転させる
         }
-        yield;
     }
 }
 ```
@@ -79,14 +78,13 @@ import type { Sprite } from "@tscratch3/typescratcher";
 const cat = new Ts.Sprite( 'cat' );
 
 // 旗が押されたときの『cat』のスレッド
-cat.Event.flagPresser().func = async function* ( this : Sprite ) {
+cat.Event.flagPresser().func = function( this : Sprite ) {
     // ずっと繰り返す    
     for( ;; ) {
         if( this.Sensing.edge.isDown( Ts.Keyboard.ANY ) ) {
             // どれかのキーが押されていたらTrueが返る
             this.Motion.direction.degree *= -1; // 向きを反転させる
         }
-        yield;
     }
 }
 ```

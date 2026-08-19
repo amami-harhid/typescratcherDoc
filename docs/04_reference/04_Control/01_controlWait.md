@@ -21,14 +21,14 @@ outline: deep
 #### sprite
 ```typescript:line-numbers
 // 指定した秒数、待つ
-await sprite.Control.wait( 2 ); 
+sprite.Control.wait( 2 ); 
 ```
 ---
 
 #### stage
 ```typescript:line-numbers
 // 指定した秒数、待つ
-await stage.Control.wait( 2 ); 
+stage.Control.wait( 2 ); 
 ```
 ---
 
@@ -49,12 +49,12 @@ await stage.Control.wait( 2 );
 #### Sprite/Stage
 ```typescript:line-numbers
 // 指定した秒数、待つ 
-await spriteA.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 ); 
+spriteA.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 ); 
 // ↑ スプライトAの大きさ(横)が 90%より小さくなるまで、
 // スプライトAのスレッドを止めて待つ
 
 // 指定した秒数、待つ
-await stage.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 ); 
+stage.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 ); 
 // ↑ スプライトAの大きさ(横)が 90%より小さくなるまで、
 // ステージAのスレッドを止めて待つ
 
@@ -78,12 +78,12 @@ let hogeFlag = true; // <-- どこかで falseにしているとする。
 
 ```typescript:line-numbers
 // 指定した秒数、待つ 
-await spriteA.Control.waitWhile( () => hogeFlag == true ); 
+spriteA.Control.waitWhile( () => hogeFlag == true ); 
 // ↑ hogeFlagがtrueである間、
 // スプライトAのスレッドを止めて待つ
 
 // 指定した秒数、待つ
-await stage.Control.waitWhile( () => hogeFlag == true ); 
+stage.Control.waitWhile( () => hogeFlag == true ); 
 // ↑ hogeFlagがtrueである間、
 // ステージAのスレッドを止めて待つ
 

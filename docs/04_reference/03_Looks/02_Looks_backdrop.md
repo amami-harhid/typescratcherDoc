@@ -76,19 +76,19 @@ sprite.Looks.backdrop.switchRandom();
 
 ```typescript:line-numbers
 // 次の背景にして待つ
-await stage.Looks.backdrop.nextAndWait(); 
+stage.Looks.backdrop.nextAndWait(); 
 
 // 指定した背景にして待つ ( HogeBackdropImage にする )
-await stage.Looks.backdrop.name = HogeBackdropImage.name;
+stage.Looks.backdrop.name = HogeBackdropImage.name;
 
 // 指定した背景にして待つ ( HogeBackdropImage にする )
-await stage.Looks.backdrop.switch( HogeBackdropImage );
+stage.Looks.backdrop.switch( HogeBackdropImage );
 
 // 前の背景にして待つ
-await stage.Looks.backdrop.previousAndWait();
+stage.Looks.backdrop.previousAndWait();
 
 // どれかの背景にして待つ
-await stage.Looks.backdrop.switchRandomAndWait();
+stage.Looks.backdrop.switchRandomAndWait();
 
 ```
 

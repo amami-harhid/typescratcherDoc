@@ -14,8 +14,8 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/007/?id=i3-7"
-id="i3-7"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/007/"
+expandVertical
 />
 
 ::: tip メッセージ
@@ -75,7 +75,7 @@ answer.hide(); // 隠す
 /** 質問中のフラグ */
 let askingNow = false;
 // 旗が押されたときの「ねこ」のスレッド
-cat.Event.flagPresser().func = async function* ( this:Sprite ){
+cat.Event.flagPresser().func = function( this:Sprite ){
     answer.hide(); // 変数(answer)を隠す
     askingNow = false;
     this.Motion.position.xy = [ 0, 0 ];
@@ -84,18 +84,19 @@ cat.Event.flagPresser().func = async function* ( this:Sprite ){
 /** スプライト（ねこ）に質問をさせるメッセージ */
 const ASKING = 'ASKING';
 // スペースキーが押されたときの「ねこ」のスレッド
-cat.Event.keyPresser( Ts.Keyboard.SPACE ).func = async function* ( this:Sprite ) {
+cat.Event.keyPresser( Ts.Keyboard.SPACE ).func = function( this:Sprite ) {
     if( askingNow === true )
         return;
     // 質問処理中でないときメッセージ（ASKING）を送る
     this.Broadcast.send( ASKING );
 }
 // メッセージ「ASKING」を受け取ったときの「ネコ」のスレッド
-cat.Broadcast.receiver( ASKING ).func = async function* ( this:Sprite ) {
+cat.Broadcast.receiver( ASKING ).func = function( this:Sprite ) {
     askingNow = true;
     // 質問をして応答を待つ
+    this.Sensing.askAndWait( '今日はご機嫌よろしいですか？' );
     // 応答が返ったとき変数(answer)に答えを入れる
-    answer.text = await this.Sensing.askAndWait( '今日はご機嫌よろしいですか？' );
+    answer.text = this.Sensing.answer;
     answer.show();
 
     if( answer.text == 'はい' ) {
@@ -115,22 +116,23 @@ cat.Broadcast.receiver( ASKING ).func = async function* ( this:Sprite ) {
 /** メッセージＩＤ(ステージに質問させる) */
 const ASKING_STAGE = "ASKING_STAGE";
 // キー「Ａ」が押されたときの「ステージ」のスレッド
-stage.Event.keyPresser( 'A' ).func = async function* ( this:Stage ) {
+stage.Event.keyPresser( 'A' ).func = function( this:Stage ) {
     if( askingNow === false ){
         askingNow = true;
         // メッセージを送り、終わるまで待つ
-        await this.Broadcast.sendAndWait( ASKING_STAGE );
+        this.Broadcast.sendAndWait( ASKING_STAGE );
         askingNow = false;
     }
 
 }
 // メッセージ「ASKING_STAGE」を受け取ったときの「ステージ」のスレッド
-stage.Broadcast.receiver( ASKING_STAGE ).func = async function* ( this:Sprite ) {
+stage.Broadcast.receiver( ASKING_STAGE ).func = function( this:Sprite ) {
     answer.hide();
 
     // 質問をして応答を待つ
+    this.Sensing.askAndWait( 'ステージだよ。「はい」か「いいえ」で答えて' );
     // 応答が返ったとき変数(answer)に答えを入れる
-    answer.text = await this.Sensing.askAndWait( 'ステージだよ。「はい」か「いいえ」で答えて' );
+    answer.text = this.Sensing.answer;
     answer.show();
     if( answer.text == 'はい' || answer.text == 'いいえ' ){
         return;
@@ -145,7 +147,8 @@ Ts.engine.start();
 ```
 
 ::: warning index.tsについて
-『`await this.Sensing.askAndWait('今日はご機嫌よろしいですか？')`』: 質問をして答えが返るのを待ちます。<br>
+『`this.Sensing.askAndWait('今日はご機嫌よろしいですか？')`』: 質問をして答えが返るのを待ちます。<br>
+質問の答えは『`this.Sensing.answer`』に入っています。<br>
 スプライトから質問をすると、フキダシで質問文を表示します。<br>
 ステージから質問すると、質問欄の上部に質問文を表示します。
 :::

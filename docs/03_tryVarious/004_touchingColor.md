@@ -16,8 +16,7 @@ outline: deep
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/004/?id=i3-4"
-id="i3-4"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/004/"
 />
 
 ::: tip 線とスタンプ
@@ -67,7 +66,7 @@ Ts.Variable.monitoring( { Touching } ); // モニター監視対象
 
 
 // 旗が押されたとき（マウスの方向へ移動させる）
-shark.Event.flagPresser().func = async function* ( this: Sprite ) {
+shark.Event.flagPresser().func = function( this: Sprite ) {
 
     this.Motion.position.xy = [ 0, 0 ];
     // ずっと繰り返す
@@ -76,12 +75,11 @@ shark.Event.flagPresser().func = async function* ( this: Sprite ) {
         this.Motion.point.toMouse();
         // 進める
         this.Motion.move.steps( 5 );
-        yield;
     }
 }
 
 // 旗が押されたとき( )
-shark.Event.flagPresser().func = async function* ( this: Sprite ) {
+shark.Event.flagPresser().func = function( this: Sprite ) {
 
     // ずっと繰り返す
     for( ;; ){
@@ -92,8 +90,6 @@ shark.Event.flagPresser().func = async function* ( this: Sprite ) {
         }else{
             Touching.text = '';
         }
-
-        yield;
     }
 }
 // 開始

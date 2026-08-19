@@ -14,8 +14,8 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/006/?id=i3-6"
-id="i3-6"
+src="https://amami-harhid.github.io/typeScratchCoder/src/02_tryVarious/006/"
+expandVertical
 />
 
 ::: tip メッセージ
@@ -93,7 +93,7 @@ let onFloor = false;
 let speed = 0;
 
 // 旗が押されたとき（犬）
-dog.Event.flagPresser().func = async function* ( this:Sprite ){
+dog.Event.flagPresser().func = function( this:Sprite ){
     this.Motion.position.xy = [ 0, 250 ];
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
     speed = 0;
@@ -102,7 +102,7 @@ dog.Event.flagPresser().func = async function* ( this:Sprite ){
 };
 
 // 旗が押されたとき（ブロック）
-block.Event.flagPresser().func = async function* ( this:Sprite ){
+block.Event.flagPresser().func = function( this:Sprite ){
     this.Motion.position.xy = [ 0,0 ];
     const bounds = block.Looks.size.drawingSize;
     this.Looks.size.w = StageWidth;
@@ -142,14 +142,11 @@ const isTouching = function( this:Sprite, target:Sprite, moveSpeed: number ): bo
 
 }
 
-/** 最初の着地 */
-let firstTouch = true;
 /** 歩く速さ */
 let walkSpeed = 0;
 
 // 犬がメッセージ(START)を受信したとき
-dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite, blockBound: Bounds ) {
-    firstTouch = true;
+dog.Broadcast.receiver( "START" ).func = function( this: Sprite, blockBound: Bounds ) {
     speed = 0;
     onFloor = false;
     const Bounds = this.Looks.size.drawingSize;
@@ -159,7 +156,6 @@ dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite, blockBo
     // ずっと繰り返す
     for( ;; ){
         if( _IsTouching( block, speed ) ){
-            firstTouch = false;
             // 次に衝突が予想されるとき
             this.Motion.position.y = blockBound.height - StageHeight/2 + DogHeigth/2;
             onFloor = true;
@@ -170,15 +166,12 @@ dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite, blockBo
             this.Motion.position.y += speed;
             this.Motion.move.steps( walkSpeed );
             speed -= GRAVITY;
-            if( firstTouch === false ){
-            }
         }
-        yield;
     }
 }
 
 // 犬がメッセージ(START)を受信したとき
-dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite ) {
+dog.Broadcast.receiver( "START" ).func = function( this: Sprite ) {
 
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
     // ずっと繰り返す
@@ -200,12 +193,11 @@ dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite ) {
             // 端についたら跳ね返る
             this.Motion.move.ifOnEdgeBounce();
         }
-        yield;
     }
 }
 
 // 犬がメッセージ(START)を受信したとき
-dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite ) {
+dog.Broadcast.receiver( "START" ).func = function( this: Sprite ) {
 
     method.text = '放物風';
     method.show();
@@ -214,9 +206,8 @@ dog.Broadcast.receiver( "START" ).func = async function* ( this: Sprite ) {
             speed = INIT_JUMP;
             onFloor = false;
             // スペースキーが押されている間、待つ
-            await this.Control.waitWhile( () => this.Sensing.keyboard.isDown( Ts.Keyboard.SPACE ) );
+            this.Control.waitWhile( () => this.Sensing.keyboard.isDown( Ts.Keyboard.SPACE ) );
         }
-        yield;
     }
 
 }
@@ -228,10 +219,10 @@ Ts.engine.start();
 『`this.Broadcast.send('START', bounds);`』にて　メッセージID『START』を送ります。<br>
 (第一引数：メッセージID、第二引数：パラメータ）<br>
 <br>
-『`dog.Broadcast.receiver("START").func = async function*(this: Sprite, blockBound: Bounds) {  }`』<br>
+『`dog.Broadcast.receiver("START").func = function(this: Sprite, blockBound: Bounds) {  }`』<br>
 にて メッセージ『START』を受け取ったときのスレッドを定義します。<br>
 <br>
-『`function*()`』の第二パラメータで、`send`で付与したパラメータを受け取ります。<br>
+『`function()`』の第二パラメータで、`send`で付与したパラメータを受け取ります。<br>
 
 :::
 

@@ -107,10 +107,10 @@ stage.Looks.backdrop.name = BlueskyImage.name;
 ```typescript:line-numbers
 
 // 『背景を◎◎にして待つ』
-async function*( this:Stage ) { 
+function( this:Stage ) { 
     // ステージのスレッドのなかで実行する
     // 背景が切り替わったときのスレッドが終わるまで待つ。
-    await this.Looks.backdrop.switchAndWait( BlueskyImage.name );
+    this.Looks.backdrop.switchAndWait( BlueskyImage.name );
 }
 
 ```
@@ -133,7 +133,7 @@ async function*( this:Stage ) {
 
 ```typescript:line-numbers
 // 背景が◎◎になったときのスレッドの定義
-stage.Event.backdropSwitcher(BlueSkyImage).func = async function* ( this:Stage ) {
+stage.Event.backdropSwitcher(BlueSkyImage).func = function( this:Stage ) {
 
 }
 

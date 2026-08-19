@@ -16,8 +16,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/008/?id=i2-8"
-id="i2-8"
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/008/"
 />
 
 ---
@@ -40,17 +39,16 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BlueskyImage ); // 背景を追加
 
 // 【旗クリックされたとき】( ネコ )
-cat.Event.flagPresser().func = async function* ( this: Sprite ) {
+cat.Event.flagPresser().func = function( this: Sprite ) {
     // ずっと繰り返す
     for( ;; ){
         // 1秒ごとにクローンを作る
-        await this.Control.wait( 1 );
+        this.Control.wait( 1 );
         this.Control.clone();
-        yield;
     }
 }
 // ネコがクローンされたときのクローンのスレッド
-cat.Event.cloned().func = async function* ( this:Sprite ) {
+cat.Event.cloned().func = function( this:Sprite ) {
     // Looks.size.scale　へ 大きさの配列を設定
     this.Looks.size.scale = [ 20, 20 ]; // 横・縦 20% にする
     this.Motion.direction.degree = Ts.Utils.randomValue( 0, 360 );
@@ -62,7 +60,6 @@ cat.Event.cloned().func = async function* ( this:Sprite ) {
             // break で繰り返しループを抜ける
             break;
         }
-        yield;
     }
     // クローンを削除する
     this.Control.removeClone();
@@ -76,7 +73,7 @@ Ts.engine.start();
 『`this.Control.clone()`』を実行すると、クローンが作成されます。<br>
 クローンは本体のプロパティ（位置、大きさ、表示非表示、画像効果、など）を全て引き継ぎますので、本体と異なるプロパティにするならばクローン側で変更する必要があります。<br>
 <br>
-`cat.Event.cloned().func = async function*(this:Sprite) {  
+`cat.Event.cloned().func = function(this:Sprite) {  
     // クローンのコード
 }`
 <br>

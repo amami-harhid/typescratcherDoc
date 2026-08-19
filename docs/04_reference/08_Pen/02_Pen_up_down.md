@@ -24,7 +24,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 
 const cat = new Ts.Sprite( 'cat' );
 
-const thread = async function* ( this : Sprite ) {
+const thread = function( this : Sprite ) {
     this.Pen.penDown();
 } 
 ```
@@ -50,7 +50,7 @@ import type { Sprite } from "@tscratch3/typescratcher";
 
 const cat = new Ts.Sprite( 'cat' );
 
-const thread = async function* ( this : Sprite ) {
+const thread =　function( this : Sprite ) {
     this.Pen.penUp();
 } 
 ```

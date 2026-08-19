@@ -54,10 +54,10 @@ sprite.Looks.bubble.think( 'うーん...' );
 
 ```typescript:line-numbers
 // 〇秒、言う
-await sprite.Looks.bubble.sayForSecs( 'こんにちは', 2 ); // 2秒、言う 
+sprite.Looks.bubble.sayForSecs( 'こんにちは', 2 ); // 2秒、言う 
 
 // 〇秒、考える
-await sprite.Looks.bubble.thinkForSecs( 'うーん...', 2 ); // 2秒、考える
+sprite.Looks.bubble.thinkForSecs( 'うーん...', 2 ); // 2秒、考える
 
 ```
 
@@ -135,16 +135,16 @@ sprite.Looks.bubble.think( 'うーん...', BubbleProp );
 sprite.Looks.bubble.think( 'うーん...', { scale : { w: 150,  h: 50 } } ); 
 
 // 〇秒、言う
-await sprite.Looks.bubble.sayForSecs( 'こんにちは', 2, BubbleProp );
+sprite.Looks.bubble.sayForSecs( 'こんにちは', 2, BubbleProp );
 // 横150%, 縦 50%
-await sprite.Looks.bubble.sayForSecs(
+sprite.Looks.bubble.sayForSecs(
                             'こんにちは', 2, 
                             { scale : { w : 150,  h : 50 } } ); 
 
 // 〇秒、考える
-await sprite.Looks.bubble.thinkForSecs( 'うーん...', 2, BubbleProp );
+sprite.Looks.bubble.thinkForSecs( 'うーん...', 2, BubbleProp );
 // 横150%, 縦 50%
-await sprite.Looks.bubble.thinkForSecs(
+sprite.Looks.bubble.thinkForSecs(
                             'うーん...', 2, 
                             { scale: { w: 150,  h: 50 } } );
 

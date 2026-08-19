@@ -19,8 +19,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/006/?id=i2-6"
-id="i2-6"
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/006/"
 />
 
 ---
@@ -64,19 +63,18 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BlueskyImage, CanyonImage ); // 背景を追加
 
 // 【旗クリックされたとき】のイベント定義
-cat.Event.flagPresser().func = async function*( this: Sprite ) {
+cat.Event.flagPresser().func = function( this: Sprite ) {
 
     for( ;; ) {
         this.Motion.move.steps( 10 );
         this.Motion.move.ifOnEdgeBounce();
         this.Looks.costume.next(); // 次のコスチュームにする
         this.Looks.backdrop.next(); // 次の背景にする
-        await this.Control.wait( 0.1 ); // 0.1秒だけ待つ
-        yield;
+        this.Control.wait( 0.1 ); // 0.1秒だけ待つ
     }
 }
 // 【旗クリックされたとき】のイベント定義（別スレッド）
-cat.Event.flagPresser().func = async function*( this: Sprite ) {
+cat.Event.flagPresser().func = function( this: Sprite ) {
     
     let boingSoundFlag = true;
     for( ;; ){
@@ -92,11 +90,10 @@ cat.Event.flagPresser().func = async function*( this: Sprite ) {
             }else{
                 this.Sound.play( AElecGuitarSound );
             }
-            await this.Control.wait(0.1);
+            this.Control.wait(0.1);
             // 鳴らす音のフラグを反転させる
             boingSoundFlag = !boingSoundFlag;
         }
-        yield;
     }
 }
 

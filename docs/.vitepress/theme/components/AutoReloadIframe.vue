@@ -52,29 +52,14 @@ onMounted(() => {
   タブレット端末の画面幅（768px〜1024px）
   かつ、expandVertical が true の場合（クラスが付与されている時）のみ適用
 */
+@media (min-width: 360px) and (max-width: 767px) {
+  .responsive-iframe.allow-tablet-square {
+    aspect-ratio: 0.65;
+  }
+}
 @media (min-width: 768px) and (max-width: 1024px) {
   .responsive-iframe.allow-tablet-square {
-    aspect-ratio: 1 / 1;
-  }
-}
-@media (min-width: 360px) and (max-width: 374px) {
-  .responsive-iframe.allow-tablet-vpad {
-    aspect-ratio: 9 / 13 ;
-  }
-}
-@media (min-width: 375px) and (max-width: 411px) {
-  .responsive-iframe.allow-tablet-vpad {
-    aspect-ratio: 9 / 13 ;
-  }
-}
-@media (min-width: 412px) and (max-width: 767px) {
-  .responsive-iframe.allow-tablet-vpad {
-    aspect-ratio: 9 / 13 ;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .responsive-iframe.allow-tablet-vpad {
-    aspect-ratio: 0.9 ;
+    aspect-ratio: 0.85;
   }
 }
 

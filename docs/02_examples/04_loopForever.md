@@ -16,8 +16,7 @@ outline: deep
 ---
 <small>※ TypeScratcherロゴをクリックで表示、緑の旗クリックで動作開始</small>
 <AutoReloadIframe
-src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/004/?id=i2-4"
-id="i2-4"
+src="https://amami-harhid.github.io/typeScratchCoder/src/01_quickStart/004/"
 />
 
 ---
@@ -39,7 +38,7 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( BlueskyImage ); // 背景を追加
 
 // 【旗クリックされたとき】のイベント定義
-cat.Event.flagPresser().func = async function*( this: Sprite ) {
+cat.Event.flagPresser().func = function( this: Sprite ) {
     // ずっと繰り返す
     for( ;; ) {
         // Motion: 「動き」系
@@ -48,7 +47,7 @@ cat.Event.flagPresser().func = async function*( this: Sprite ) {
         this.Motion.move.steps(5);
         this.Motion.move.ifOnEdgeBounce();
         
-        yield; // 次のフレームになるまで一時停止する
+        // 繰り返しの最後で次のフレームになるまで一時停止する
     }
 }
 
@@ -65,15 +64,12 @@ TypsScratcherの『ずっと繰り返す』の書き方としては、『`for( ;
 他に 『`while( true ) { }`』や 『`while( 1 == 1 ) { }`』がありますが、繰り返し構文は『`for`』で統一したいという『個人的コダワリ』がありまして、本サイトでは『`for( ;; ) { }`』を多用しています。<br><br>TypeScratcherでは制限はありませんので、お好きなやり方でＯＫです。
 :::
 
-::: tip 『`yield`』
-TypeScratcherは、構文チェックをしますので、繰り返し構文の最後に『`yield`』がないと『エラー』になります。<br>
-30FPS（1秒間に30フレーム)の場合、登場キャラクターの変化を 1秒間に30回描画しなおすわけですが、１回の繰り返しとフレーム切り替えを同期させるために『`yield`』を必要とします。<br>
+::: tip 『`繰り返しの最後`』
+TypeScratcherは、繰り返し構文のとき『`次のフレームになるまで一時停止`』します。<br>
+30FPS（1秒間に30フレーム)の場合、登場キャラクターの変化を 1秒間に30回描画し直すわけですが、フレームとフレームの間で『`一時停止`』する仕様になっています。<br>
 <br>
-『`yield`』がないと繰り返し構文はフレームの切り替えに関係なく超高速動作をし、たいていの場合はブラウザハングを引き起こします。<br>
-ブラウザハングを予防するため、TypeScratcherの繰り返し構文では、TypeScratcherが強制的に『yield』を付けるように誘導します。<br>
-<br>
-なお、Scratch3のターボモードのように高速で繰り返し構文を実行したい!という場合(『`yield`』無視せせたい場合)があります。<br>
-意図的に『`yield`』を無視する方法については、ここでは割愛します（別の箇所で解説をします）。<br>
+この『`一時停止`』がない繰り返し構文はフレームの切り替えに関係なく超高速動作をし、たいていの場合はブラウザハングを引き起こします。<br>
+ブラウザハングを予防するため、TypeScratcherの繰り返し構文では、TypeScratcherが自動的に『`一時停止`』を発生させています。<br>
 
 
 :::
