@@ -22,6 +22,7 @@ outline: deep
 ```typescript:line-numbers
 // 指定した秒数、待つ
 sprite.Control.wait( 2 ); 
+// ※ TypsScratcherにより自動的に『await』が付きます
 ```
 ---
 
@@ -29,6 +30,7 @@ sprite.Control.wait( 2 );
 ```typescript:line-numbers
 // 指定した秒数、待つ
 stage.Control.wait( 2 ); 
+// ※ TypsScratcherにより自動的に『await』が付きます
 ```
 ---
 
@@ -52,11 +54,13 @@ stage.Control.wait( 2 );
 spriteA.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 ); 
 // ↑ スプライトAの大きさ(横)が 90%より小さくなるまで、
 // スプライトAのスレッドを止めて待つ
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 // 指定した秒数、待つ
 stage.Control.waitUntil( () => spriteA.Looks.size.scale.w < 90 ); 
 // ↑ スプライトAの大きさ(横)が 90%より小さくなるまで、
 // ステージAのスレッドを止めて待つ
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 ```
 ::: tip 条件式
@@ -81,11 +85,13 @@ let hogeFlag = true; // <-- どこかで falseにしているとする。
 spriteA.Control.waitWhile( () => hogeFlag == true ); 
 // ↑ hogeFlagがtrueである間、
 // スプライトAのスレッドを止めて待つ
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 // 指定した秒数、待つ
 stage.Control.waitWhile( () => hogeFlag == true ); 
 // ↑ hogeFlagがtrueである間、
 // ステージAのスレッドを止めて待つ
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 ```
 ::: tip 条件式

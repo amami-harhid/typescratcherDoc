@@ -36,8 +36,8 @@ import type { Sprite } from "@tscratch3/typescratcher";
 import { CatAImage, BlueskyImage } from './sub/images';
 
 // イメージ作成
-const CatAImage = new Ts.Image( { CatASvg } );
-const BlueskyImage = new Ts.Image( { BlueskySvg } );
+const CatAImage = new Ts.Image( CatASvg );
+const BlueskyImage = new Ts.Image( BlueskySvg );
 
 // スプライト作成
 const cat = new Ts.Sprite( "cat" );

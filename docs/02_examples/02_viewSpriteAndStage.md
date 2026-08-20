@@ -30,14 +30,15 @@ const CatASvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/bcf454acf8
 const BlueskySvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/e7c147730f19d284bcd7b3f00af19bb6.svg/get';
 
 // イメージ作成
-export const CatAImage = new Ts.Image( { CatASvg } );
-export const BlueskyImage = new Ts.Image( { BlueskySvg } );
+export const CatAImage = new Ts.Image( CatASvg );
+export const BlueskyImage = new Ts.Image( BlueskySvg );
 ```
 ::: warning sub/sounds.ts
 サウンドを作りだすコードです。<br><br>このコードを本体(index.ts)の中に書いてもOKですが、サブモジュールとして分離してみました。<br>
-『`new Image( { 〇〇 } )`』を使い、サウンドインスタンスを生成しています。<br>
+『`new Image( 〇〇 )`』を使い、サウンドインスタンスを生成しています。<br>
+引数『`CatSvg `』は 引数『`{ CatSvg }`』と記述してもＯＫです。<br><br>
 引数『`{ CatSvg }`』は、オブジェクトであり、これは 『`{ CatSvg: CatSvg }`』, 『`{ 'CatSvg': CatSvg }`』 と同義です。<br>
-『`new Image( オブジェクト )`』は、名前キー付きのオブジェクトを与える仕様ですので『`{ }`』とすることに注意してください。<br>
+<br>
 『`export`』 と書かれている部分は、このサブモジュールを使用する側へインスタンスを引き渡すための書き方です。<br>
 このサブモジュールは、次に紹介する`index.ts`の LINE #4 にて 『`import`』しています。
 :::

@@ -34,8 +34,8 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 import ObakeSvg from './assets/obake.svg';
 import BasketballPng from './assets/Basketball 2.png';
 
-export const ObakeImage = new Ts.Image( { ObakeSvg } );
-export const BasketballImage = new Ts.Image( { BasketballPng } );
+export const ObakeImage = new Ts.Image( ObakeSvg );
+export const BasketballImage = new Ts.Image( BasketballPng );
 
 ```
 ### **index.ts**

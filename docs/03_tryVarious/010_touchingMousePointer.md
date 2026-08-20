@@ -35,9 +35,9 @@ import catSvg from './assets/cat.svg';
 import WaterSvg from './assets/water.svg';
 
 /* ネコ */
-export const CatImage = new Ts.Image( { catSvg } );
+export const CatImage = new Ts.Image( catSvg );
 /* 水中 */
-export const WaterImage = new Ts.Image( { WaterSvg } );
+export const WaterImage = new Ts.Image( WaterSvg );
 
 ```
 

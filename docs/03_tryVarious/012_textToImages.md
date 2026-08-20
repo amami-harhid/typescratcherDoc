@@ -33,7 +33,7 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 // 【画像読み込み】
 import BluSkySvg from './assets/Blue Sky.svg';
-export const BlueSkyImage = new Ts.Image( { BluSkySvg } );
+export const BlueSkyImage = new Ts.Image( BluSkySvg );
 
 ```
 

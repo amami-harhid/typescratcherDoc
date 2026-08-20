@@ -77,6 +77,7 @@ sprite.Looks.backdrop.switchRandom();
 ```typescript:line-numbers
 // 次の背景にして待つ
 stage.Looks.backdrop.nextAndWait(); 
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 // 指定した背景にして待つ ( HogeBackdropImage にする )
 stage.Looks.backdrop.name = HogeBackdropImage.name;
@@ -86,9 +87,11 @@ stage.Looks.backdrop.switch( HogeBackdropImage );
 
 // 前の背景にして待つ
 stage.Looks.backdrop.previousAndWait();
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 // どれかの背景にして待つ
 stage.Looks.backdrop.switchRandomAndWait();
+// ※ TypsScratcherにより自動的に『await』が付きます
 
 ```
 

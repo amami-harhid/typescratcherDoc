@@ -35,9 +35,9 @@ import sharkPng from '@Assets/shark.png';
 const ColorfulCityPng = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/04d18ddd1b85f0ea30beb14b8da49f60.png/get';
 
 /** サメ **/
-const SharkImage = new Ts.Image( { sharkPng } );
+const SharkImage = new Ts.Image( sharkPng );
 /** カラフルな街 **/
-const ColorfulCityImage = new Ts.Image( { ColorfulCityPng } );
+const ColorfulCityImage = new Ts.Image( ColorfulCityPng );
 
 ```
 ### **index.ts**

@@ -32,6 +32,8 @@ const messageId = 'BroadcastTest';
 cat.Event.flagPresser().func = function( this : Sprite ) {
 
     this.Control.wait( 10 ); // 10秒待つ
+    // ※ TypsScratcherにより自動的に『await』が付きます
+
     // メッセージを送る
     this.Broadcast.send( messageId );
 }
@@ -72,8 +74,12 @@ const messageId = 'BroadcastTest';
 cat.Event.flagPresser().func = function( this : Sprite ) {
 
     this.Control.wait( 10 ); // 10秒待つ
+    // ※ TypsScratcherにより自動的に『await』が付きます
+
     // メッセージを送って待つ
     this.Broadcast.sendAndWait( messageId );
+    // ※ TypsScratcherにより自動的に『await』が付きます
+
     // 『２秒間言う』が終わった
     console.log( '終わり' )
 }
@@ -82,6 +88,7 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
 cat.Broadcast.receiver( messageId ).func = function( this : Sprite ) {
     // 2秒間言う
     this.Looks.bubble.sayForSecs( 'メッセージ受信した', 2 ); 
+    // ※ TypsScratcherにより自動的に『await』が付きます
 }
 ```
 

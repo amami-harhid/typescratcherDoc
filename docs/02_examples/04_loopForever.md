@@ -47,7 +47,8 @@ cat.Event.flagPresser().func = function( this: Sprite ) {
         this.Motion.move.steps(5);
         this.Motion.move.ifOnEdgeBounce();
         
-        // 繰り返しの最後で次のフレームになるまで一時停止する
+        // １回の繰り返しごとに次のフレームになるまで一時停止します。
+        // これはTypescratcherの独自機能です。
     }
 }
 

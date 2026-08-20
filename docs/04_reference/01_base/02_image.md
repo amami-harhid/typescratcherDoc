@@ -12,14 +12,20 @@ outline: deep
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 import CatSvg from '../../assets/cat.svg'; 
-const CatImage = new Ts.Image( { CatSvg } );
+const CatImage = new Ts.Image( CatSvg );
 ```
 :::tip Imageへの渡し方
-`Ts.Image( { CatSvg } )` のように `{ 変数 }` の形で渡してください。<br><br>
-`{  }`で囲むとオブジェクトになります。<br><br>
+`Ts.Image( CatSvg )` のように `変数` の形で渡してください。<br><br>
+`または、Ts.Image( { CatSvg } )` のように `{ 変数 }` の形で渡してください。<br>
+<br>
+`{  }`で囲むとオブジェクトになります。<br>
+<br>
 `{ CatSvg }` は、次と同じです。<br>
-`{ 'CatSvg' : CatSvgの中身 }`<br><br>
-変数名と変数の中身を一緒に渡したいので `{ CatSvg }`の形で渡す仕様にしています。
+`{ 'CatSvg' : CatSvgの中身 }`<br>
+<br>
+変数名と変数の中身を一緒に渡したいので `{ CatSvg }`の形にする仕様です。<br>
+
+`Ts.Image( CatSvg )`の形で書かれたコードは、TypeScratcher側で `Ts.Image( { CatSvg } )`の形へ自動的に書き換わります。
 :::
 
 
@@ -29,7 +35,7 @@ const CatImage = new Ts.Image( { CatSvg } );
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 import CatSvg from '@Assets/cat.svg'; 
-const CatImage = new Ts.Image( { CatSvg } );
+const CatImage = new Ts.Image( CatSvg );
 ```
 
 
@@ -41,7 +47,7 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
 const Ballerina_b = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/4ccb1752a43f48aafe490c9c08e58c27.svg/get';
 
-const BallerinaBImage = new Ts.Image( { Ballerina_b } );
+const BallerinaBImage = new Ts.Image( Ballerina_b );
 ```
 
 ## Scratchアセットの探し方

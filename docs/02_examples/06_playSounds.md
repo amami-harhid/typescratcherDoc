@@ -33,8 +33,8 @@ import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 const Boing = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/53a3c2e27d1fb5fdb14aaf0cb41e7889.wav/get'; 
 const AElecGuitar = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/fa5f7fea601e9368dd68449d9a54c995.wav/get';
 // サウンド作成
-export const BoingSound = new Ts.Sound( { Boing } )
-export const AElecGuitarSound = new Ts.Sound( { AElecGuitar } );
+export const BoingSound = new Ts.Sound( Boing )
+export const AElecGuitarSound = new Ts.Sound( AElecGuitar );
 ```
 ::: warning sub/sounds.ts
 『サウンド』を作るサブモジュールです。<br>
@@ -71,6 +71,9 @@ cat.Event.flagPresser().func = function( this: Sprite ) {
         this.Looks.costume.next(); // 次のコスチュームにする
         this.Looks.backdrop.next(); // 次の背景にする
         this.Control.wait( 0.1 ); // 0.1秒だけ待つ
+
+        // １回の繰り返しごとに次のフレームになるまで一時停止します。
+        // これはTypescratcherの独自機能です。
     }
 }
 // 【旗クリックされたとき】のイベント定義（別スレッド）
@@ -94,6 +97,9 @@ cat.Event.flagPresser().func = function( this: Sprite ) {
             // 鳴らす音のフラグを反転させる
             boingSoundFlag = !boingSoundFlag;
         }
+
+        // １回の繰り返しごとに次のフレームになるまで一時停止します。
+        // これはTypescratcherの独自機能です。
     }
 }
 

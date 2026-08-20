@@ -41,11 +41,11 @@ import blockSvg from './assets/block.svg';
 import WaterSvg from './assets/water.svg';
 
 /* 犬 */
-export const DogImage = new Ts.Image( {dogPng} );
+export const DogImage = new Ts.Image( dogPng );
 /* ブロック */
-export const BlockImage = new Ts.Image({blockSvg});
+export const BlockImage = new Ts.Image( blockSvg );
 /* 水中 */
-export const WaterImage = new Ts.Image({WaterSvg});
+export const WaterImage = new Ts.Image( WaterSvg );
 
 ```
 ### **index.ts**

@@ -35,6 +35,8 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
     for( ;; ) {
         // スプライトが質問する
         this.Sensing.askAndWait( '何か答えて' );
+        // ※ TypsScratcherにより自動的に『await』が付きます
+
         // 質問の答えを取り出す
         const answer = this.Sensing.answer;
         if( answer == 'YES' ) {
@@ -66,6 +68,8 @@ stage.Event.flagPresser().func = function( this : Stage ) {
     for( ;; ) {
         // ステージが質問する
         this.Sensing.askAndWait( '何か答えて' );
+        // ※ TypsScratcherにより自動的に『await』が付きます
+
         // 質問の答えを取り出す
         const answer = this.Sensing.answer;
         if( answer == 'YES' ) {

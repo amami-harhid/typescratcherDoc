@@ -25,6 +25,8 @@ const messageId = 'BroadcastTest';
 cat.Event.flagPresser().func = function( this : Sprite ) {
 
     this.Control.wait(10); // 10秒待つ
+    // ※ TypsScratcherにより自動的に『await』が付きます
+
     const bubbleMessage = 'メッセージ受信した';
     // メッセージを送る
     this.Broadcast.send( messageId, bubbleMessage );
@@ -64,10 +66,14 @@ const messageId = 'BroadcastTest';
 cat.Event.flagPresser().func = function( this : Sprite ) {
 
     this.Control.wait(10); // 10秒待つ
+    // ※ TypsScratcherにより自動的に『await』が付きます
+
     const bubbleMessage = 'メッセージ受信した';
     const bubbleSec = 2;
     // メッセージを送って待つ
     this.Broadcast.sendAndWait( messageId, bubbleSec );// 引数２つ
+    // ※ TypsScratcherにより自動的に『await』が付きます
+
     // 『変数を使って言う』が終わった
     console.log( '終わり' );
 }
@@ -80,6 +86,7 @@ cat.Broadcast.receiver( messageId ).func = function( this : Sprite,
     // 渡された文字列を使って『言う』
     // 渡された秒数の間、言う
     this.Looks.bubble.sayForSecs( 'メッセージ受信した', bubbleSec ); 
+    // ※ TypsScratcherにより自動的に『await』が付きます
 }
 ```
 

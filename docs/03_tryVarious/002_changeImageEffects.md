@@ -31,9 +31,9 @@ import sharkPng from './assets/shark.png';
 import WaterSvg from './assets/water.svg';
 
 /** サメ **/
-export const SharkImage = new Ts.Image( { sharkPng } );
+export const SharkImage = new Ts.Image( sharkPng );
 /** 水中 **/
-export const WaterImage = new Ts.Image( { WaterSvg } );
+export const WaterImage = new Ts.Image( WaterSvg );
 
 ```
 ### **index.ts**
