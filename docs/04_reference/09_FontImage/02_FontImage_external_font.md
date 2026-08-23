@@ -19,7 +19,7 @@ const HarryPotterFont = new Ts.Font( { HarryPotter } );
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import type { Sprite, SvgImageAttributes } from "@tscratch3/typescratcher";
+import type { Sprite, FontImageAttribute, SvgImageAttributes } from "@tscratch3/typescratcher";
 
 // 外部フォントを読み込む
 const HarryPotter = "https://amami-harhid.github.io/tscratch3assets/assets/fonts/HarryPotter-ov4z.woff";
@@ -29,11 +29,12 @@ const HarryPotterFont = new Ts.Font( { HarryPotter } );
 const fontAttribute: SvgImageAttributes = {
     font_family: HarryPotterFont.name,
 };
-
+const fontImageAttr: FontImageAttribute = {
+    text: 'HarryPotter text',
+    attributes: fontAttribute,
+}
 // フォントイメージを作成
-const mojiImage = new Ts.FontImage(fontAttribute);
-// フォントイメージへテキストを渡す（SVGイメージ化）
-mojiImage.Text.textToSvg( 'HarryPotter text' );
+const mojiImage = new Ts.FontImage( fontImageAttr );
 
 // スプライトを作成
 const moji = new Ts.Sprite( 'moji' );

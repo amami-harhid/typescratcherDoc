@@ -33,19 +33,18 @@ Ts.ScratchFontFamily.Scratch
 
 ```typescript:line-numbers
 import { Typescratcher as Ts } from "@tscratch3/typescratcher";
-import type { Sprite, SvgImageAttributes } from "@tscratch3/typescratcher";
-
-const HellText = "Hello TypeScratcher's World!";
+import type { Sprite, FontImageAttribute, SvgImageAttributes } from "@tscratch3/typescratcher";
 
 const attribute : SvgImageAttributes = {
-    fill: '#f0f0f0', // 文字色
-    font_family: Ts.ScratchFontFamily.Scratch // Scratch3のフォントを使用
+    fill : '#f0f0f0', // 文字色
+    font_famil y: Ts.ScratchFontFamily.Scratch // Scratch3のフォントを使用
 };
-
+const fontImageAttr : FontImageAttribute = {
+    text : "Hello TypeScratcher's World!",
+    attributes : attribute,
+}
 // 属性を指定して、FontImageを作成
-const helloImage = new Ts.FontImage( attribute );
-// 文字列を設定してSVGイメージに変換
-helloImage.Text.textToSvg(HellText);
+const helloImage = new Ts.FontImage( FontImageAttribute );
 
 // スプライトを作成
 const helloSprite = new Ts.Sprite( 'hello' );
