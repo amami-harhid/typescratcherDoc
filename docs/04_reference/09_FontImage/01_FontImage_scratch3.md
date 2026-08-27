@@ -6,6 +6,8 @@ outline: deep
 
 ## Scratch3 Fontを指定
 
+`Scratch3`の`scratch-render`に梱包されているフォントを使用することができます。
+
 ### 『Ts.ScratchFontFamily』
 
 ```typescript:line-numbers
