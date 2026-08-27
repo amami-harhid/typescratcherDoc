@@ -32,6 +32,8 @@ cat.Event.clicker().func = function( this : Sprite ) {
     // ここにスレッドのコードを書く
 }
 
+// 開始
+Ts.engine.start();
 ```
 
 ---
@@ -47,7 +49,10 @@ const stage = new Ts.Stage();
 // 自身(ステージ)が押されたときの『stage』のスレッド
 stage.Event.clicker().func = function( this : Sprite ) {
     // ここにスレッドのコードを書く
-} 
+}
+
+// 開始
+Ts.engine.start();
 ```
 ---
 

@@ -86,7 +86,10 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
             this.Motion.move.toRandom();
         }
     }
-}
+};
+
+// 開始
+Ts.engine.start();
 ```
 
 ---

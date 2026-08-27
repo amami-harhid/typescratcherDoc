@@ -40,6 +40,9 @@ cat.Broadcast.receiver( messageId ).func = function( this : Sprite,
     // 渡された文字列を使って『言う』
     this.Looks.bubble.say( bubbleMessage );
 }
+
+// 開始
+Ts.engine.start();
 ```
 
 ---
@@ -88,5 +91,8 @@ cat.Broadcast.receiver( messageId ).func = function( this : Sprite,
     this.Looks.bubble.sayForSecs( 'メッセージ受信した', bubbleSec ); 
     // ※ TypsScratcherにより自動的に『await』が付きます
 }
+
+// 開始
+Ts.engine.start();
 ```
 

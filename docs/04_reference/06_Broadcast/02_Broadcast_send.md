@@ -90,6 +90,9 @@ cat.Broadcast.receiver( messageId ).func = function( this : Sprite ) {
     this.Looks.bubble.sayForSecs( 'メッセージ受信した', 2 ); 
     // ※ TypsScratcherにより自動的に『await』が付きます
 }
+
+// 開始
+Ts.engine.start();
 ```
 
 ---

@@ -55,6 +55,9 @@ const stage = new Ts.Stage();
 // 旗を押されたときのステージのスレッド
 stage.Event.flagPresser().func = function( this : Stage ) {
     // ここにスレッドのコードを書く
-} 
+}
+
+// 開始
+Ts.engine.start();
 ```
 ---

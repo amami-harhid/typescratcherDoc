@@ -40,6 +40,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 

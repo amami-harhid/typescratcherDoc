@@ -30,7 +30,10 @@ const cat = new Ts.Sprite('cat');
 // キー『スペース』が押されたときのスプライト(cat)のスレッド
 cat.Event.keyPresser( Ts.Keyboard.SPACE ).func = function( this : Sprite ) {
     // ここにスレッドのコードを書く
-} 
+}
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -76,7 +79,10 @@ const KEY_A = 'a';
 // キー『A』が押されたときのスプライト(cat)のスレッド
 cat.Event.keyPresser( KEY_A ).func = function( this : Sprite ) {
     // ここにスレッドのコードを書く
-} 
+}
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -108,7 +114,10 @@ const cat = new Ts.Sprite( 'cat' );
 // 『どれかの』キーが押されたときのスプライト(cat)のスレッド
 cat.Event.keyPresser( Ts.Keyboard.ANY ).func = function( this : Sprite ) {
     // ここにスレッドのコードを書く
-} 
+}
+
+// 開始
+Ts.engine.start();
 ```
 ---
 

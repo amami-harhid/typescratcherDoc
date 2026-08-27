@@ -34,6 +34,8 @@ hoge.Event.flagPresser().func = function( this : Sprite ) {
     }
 }
 
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -103,7 +105,8 @@ fuga.Event.flagPresser().func = function( this : Sprite ) {
 // よってスレッド０４は終わらない
 // ◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇
 
-
+// 開始
+Ts.engine.start();
 ```
 
 ---

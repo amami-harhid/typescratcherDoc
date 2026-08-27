@@ -80,6 +80,9 @@ stage.Event.flagPresser().func = function( this : Stage ) {
     }
     console.log( 'おわり' );
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 

@@ -25,6 +25,34 @@ Ts.ScratchFontFamily.Pixel
 Ts.ScratchFontFamily.Scratch
 ```
 
+#### SansSerif
+
+![画像](/scratchFontFamily_SansSerif.png)
+
+#### Serif
+
+![画像](/scratchFontFamily_Serif.png)
+
+#### Handwriting
+
+![画像](/scratchFontFamily_Handwriting.png)
+
+#### Marker
+
+![画像](/scratchFontFamily_Marker.png)
+
+#### Curly
+
+![画像](/scratchFontFamily_Curly.png)
+
+#### Pixel
+
+![画像](/scratchFontFamily_Pixel.png)
+
+#### Scratch
+
+![画像](/scratchFontFamily_Scratch.png)
+
 ---
 
 ### 『`Ts.FontImage`』
@@ -37,7 +65,7 @@ import type { Sprite, FontImageAttribute, SvgImageAttributes } from "@tscratch3/
 
 const attribute : SvgImageAttributes = {
     fill : '#f0f0f0', // 文字色
-    font_famil y: Ts.ScratchFontFamily.Scratch // Scratch3のフォントを使用
+    font_family: Ts.ScratchFontFamily.Scratch // Scratch3のフォントを使用
 };
 const fontImageAttr : FontImageAttribute = {
     text : "Hello TypeScratcher's World!",
@@ -51,4 +79,10 @@ const helloSprite = new Ts.Sprite( 'hello' );
 // コスチュームとして FontImageを設定
 helloSprite.Costume.add( helloImage );
 
+// 開始
+Ts.engine.start();
 ```
+::: tip 文字を表示するスプライト
+上記で作るスプライトは、文字列画像をコスチュームとするものです。<br>
+スプライトがもつメソッドは全て使用可能です。
+:::

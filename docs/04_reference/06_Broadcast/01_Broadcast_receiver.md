@@ -37,5 +37,8 @@ cat.Broadcast.reciever( messageId ).func = function( this : Sprite ) {
 stage.Broadcast.reciever( messageId ).func = function( this : Stage ) {
     // ここにスレッドのコードを書く
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---

@@ -174,4 +174,4 @@ const threadA = function(this:Sprite) {
 const threadB = function(this:Sprite) {
     this.Pen.HSVColor.transparency += 10; // HSV(透明度)を10ずつ変える
 } 
-
+```

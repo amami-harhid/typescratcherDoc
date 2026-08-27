@@ -26,7 +26,7 @@ const cat = new Ts.Sprite( 'cat' );
 
 const thread = function( this : Sprite ) {
     this.Pen.penDown();
-} 
+}
 ```
 
 
@@ -52,6 +52,6 @@ const cat = new Ts.Sprite( 'cat' );
 
 const thread =　function( this : Sprite ) {
     this.Pen.penUp();
-} 
+}
 ```
 

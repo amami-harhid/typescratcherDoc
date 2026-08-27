@@ -38,6 +38,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -96,6 +99,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -126,6 +132,9 @@ stage.Event.flagPresser().func = function( this : Stage ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -162,6 +171,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -204,6 +216,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         distanceVal.value = distance;
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
@@ -225,6 +240,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         this.Motion.direction.degree = _degree;
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 
 ---

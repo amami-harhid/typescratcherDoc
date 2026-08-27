@@ -45,6 +45,8 @@ cat.Event.backdropSwitcher(BackdropImage02).func = function( this : Sprite ) {
     // 背景が『BackdropImage02』になったとき、このスレッドが起動される。
 }
 
+// 開始
+Ts.engine.start();
 ```
 
 ---
@@ -77,6 +79,9 @@ const BackdropImage02Swicther = function(this : Sprite) {
 // functionをconst定義しておいて ～.func へ代入してもOK
 stage.Event.backdropSwitcher( BackdropImage02 ).func = BackdropImage02Swicther;
 
+
+// 開始
+Ts.engine.start();
 ```
 
 ---

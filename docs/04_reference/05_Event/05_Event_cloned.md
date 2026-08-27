@@ -38,6 +38,9 @@ cat.Event.cloned().func = function( this : Sprite ) {
     // このスレッドの中では、『this』は クローンのインスタンスである。
 }
 
+
+// 開始
+Ts.engine.start();
 ```
 
 ---

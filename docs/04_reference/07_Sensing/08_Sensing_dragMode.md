@@ -44,5 +44,8 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
     this.Sensing.dragMode.draggable = false;
 
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---

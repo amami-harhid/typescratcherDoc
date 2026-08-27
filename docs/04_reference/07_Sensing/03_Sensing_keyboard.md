@@ -37,6 +37,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 
 ---
@@ -87,6 +90,9 @@ cat.Event.flagPresser().func = function( this : Sprite ) {
         }
     }
 }
+
+// 開始
+Ts.engine.start();
 ```
 ---
 
